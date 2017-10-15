@@ -3,7 +3,7 @@
 
 ###技术栈：
 
-前端：wxml+wxss+ws
+前端：wxml+wxss+js
 
 后端：Python-Django
 
