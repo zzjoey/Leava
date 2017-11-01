@@ -1,0 +1,13 @@
+<view class="container">
+ <image src="http://pic.baike.soso.com/ugc/baikepic2/17344/20150601110047-263656143.jpg/0"style="height:80px;width:80px  " >  
+</image>  
+  <view class="container_col">
+     <text style="text-align:center;margin-right:10px;">学号/工号:</text>
+     <input bindinput="userName" style="border:1px solid ;padding:3px;margin:10px" placeholder="{{userName}}"/>
+  </view>
+     <view class="container_col">
+     <text style="text-align:center:margin-right:300px;">密码：</text>
+    <input bindinput="password"style="border:1px solid ;padding:3px;margin:10px"password="true"type="password" placeholder="{{password}}"/>
+   </view>
+    <button  bindtap="loginClick" type="primary" style="width:80%;height:40px;margin:15px;padding:2px;font-size:15px;color:black;background-color:green " hover-class="button-hover"plain="false"  >登录</button>
+</view>

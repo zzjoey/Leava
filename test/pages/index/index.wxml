@@ -1,0 +1,41 @@
+<!--index.wxml-->
+ <view class="section" >
+  <view class="section__title"style=" padding:2px;width:100%; text-align:center">周数:</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker"style="border:1px solid;width:100%;padding:3px;background-color:#ffccff;text-align:center">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+ <view class="section__title"style=" padding:2px;width:100%; text-align:center">日期:</view>
+ <picker mode="date" value="{{date}}" start="2017-09-01" end="2018-09-01" bindchange="bindDateChange">
+ <view class="picker"style="border:1px solid;width:100%;padding:3px;background-color:#ffccff;text-align:center" >
+  当前选择: {{date}}
+ </view>
+ </picker>
+</view>
+<view class="section">
+ <view class="section__title"style=" padding:2px;width:100%; text-align:center">开始时间:</view>
+ <picker mode="time" value="{{time1}}" start="08：00" end="17:20" bindchange="bindTime1Change">
+ <view class="picker"style="border:1px solid;width:100%;padding:3px;background-color:#ffccff;text-align:center">
+  当前选择: {{time1}}
+ </view>
+ </picker>
+</view>
+<view class="section">
+ <view class="section__title"style=" padding:2px;width:100%; text-align:center">结束时间:</view>
+ <picker mode="time" value="{{time2}}" start="08:00" end="17:20" bindchange="bindTime2Change">
+ <view class="picker"style="border:1px solid;width:100%;padding:3px;background-color:#ffccff;text-align:center">
+  当前选择: {{time2}}
+ </view>
+ </picker>
+</view>
+  <view class="section">
+  <textarea placeholder="请输入请假理由" bindsubmit="bindTextSubmit"auto-focus style="border:2px solid;margin-top:10px;margin-left:5px;padding:3px" />
+</view>
+<button form-type="submit"style="margin-top:10px; background-color:#68d153;width:50%"> 提交 </button>
+ 
+    
+ 
+
