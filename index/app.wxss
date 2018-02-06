@@ -1,0 +1,83 @@
+/* 基础样式 */
+view,scroll-view,swiper,swiper-item,icon,text,progress,button,checkbox-group,checkbox,form,input,label,picker,radio-group,radio,slider,switch,action-sheet,action-sheet-item,action-sheet-cancel,modal,toast,loading,navigator,audio,image,video,map,canvas {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+page {
+        height: 100%;
+        font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+
+
+
+
+checkbox-group,
+radio-group{
+        display:block;
+}
+
+
+
+
+:before,
+:after ,
+::before,
+::after{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+.c-minheight {
+        min-height: 80px;
+}
+.c-full {
+        width: 100%;
+        height: 100%;
+}
+.c-block {
+        display: block;
+}
+.c-autosize {
+        width: auto;
+        height: auto;
+}
+.c-fullwidth {
+        width: 100%;
+}
+.c-fullheight {
+        height: 100%;
+}
+.c-initHide{
+        opacity:0 !important;
+}
+.c-ellipse{
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow:hidden;
+}
+/* 自定义样式 */
+
+
+
+
+.body_uC25RC{background-color:  rgb(249, 104, 108); background-attachment:  fixed; overflow: visible; position:  static; }
+.wx-view_mQUDQh{text-align:  center; position: relative; z-index:  0; }
+.wx-image_n7KDdY{width:  600px; height:  600px; border-radius:  600px; margin:  0px auto auto; left:  0px; right:  0px; top:  0px; bottom:  0px; position:  absolute; display: inline-block; background-color:  transparent; padding-left:  0px; overflow:  hidden; border-width:  0px; transform:  rotate(0deg) scale(1) translate(-110px, 16%); transition:  all 0s ease; }
+.wx-image_hSEMFU{width:  130px; height:  130px; border-radius:  130px; transform: rotate(0deg) scale(1) translate(88%,-24%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(88%,-24%); -o-transform: rotate(0deg) scale(1) translate(88%,-24%); -moz-transform: rotate(0deg) scale(1) translate(88%,-24%); -webkit-transform: rotate(0deg) scale(1) translate(88%,-24%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+.wx-input_fWwoLG{width:  70%; height:  78.75rpx; margin:  0px auto; border-style:  solid; border-radius:  5px; border-width:  1px; border-color:  rgb(255, 255, 255); color:  rgb(255, 255, 255); font-size:  14px; font-weight:  600; transform:  rotate(0deg) scale(1) translate(0%, 70%); transition:  all 0s ease; position: relative; overflow:  hidden; padding-bottom:  1px; }
+.wx-icon_F92wuc{transform:  rotate(0deg) scale(1) translate(261%, -109%); transition:  all 0s ease; background-position:  50% 50%; background-size:  cover; background-color:  transparent; display:  inline-block; width:  25px; background-image: url(http://qty83k.creatby.com/materials/99011/origin/67ac667c67a4cddfe13bc0c0f97f300d_origin.png); }
+.wx-input_5dxDzv{width:  70%; height:  15%; margin-left:  auto; margin-right:  auto; transform:  rotate(0deg) scale(1) translate(0%, 1050%); transition:  all 0s ease; border-radius:  5px; display:  inline-block; position: static; border-width:  1px; border-color:  rgb(255, 255, 255); float:  none; overflow:  hidden; }
+.wx-view_6TIMIJ{border-width:  0px; margin-left:  auto; margin-right:  auto; width:  100%; height: 50%; transform:  rotate(0deg) scale(1) translate(0%, 0%); transition:  all 0s ease; display:  flex; flex-direction:  column; justify-content:  flex-start; align-items:  flex-start; margin-bottom:  0px; }
+.wx-icon_vDsKpQ{position:  static; background-image:  url("http://qty83k.creatby.com/materials/99011/origin/67ac667c67a4cddfe13bc0c0f97f300d_origin.png"); background-size: cover; transform:  rotate(0deg) scale(1) translate(261%, -22%); transition:  all 0s ease; }
+.wx-input_kazJMm{width:  70%; display:  block; flex-direction:  column; height:  78.75rpx; align-self:  center; border-radius:  5px; border-width:  1px; border-style:  solid; border-color:  rgb(255, 255, 255); transform:  rotate(0deg) scale(1) translate(0%, 15%); transition:  all 0s ease; font-weight:  600; font-size: 14px; }
+.wx-icon_4wSeUi{transform:  rotate(0deg) scale(1) translate(261%, -109%); transition:  all 0s ease; background-image:  url("http://qty83k.creatby.com/materials/99011/origin/86374b2f83cab89fb0cd7794d80fc5da_origin.png"); background-size: cover; }
+.wx-text_7FtaCB{display:  flex; align-items:  flex-start; align-self:  flex-start; border-width:  19px; transform: rotate(0deg) scale(1) translate(956%,-43%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(956%,-43%); -o-transform: rotate(0deg) scale(1) translate(956%,-43%); -moz-transform: rotate(0deg) scale(1) translate(956%,-43%); -webkit-transform: rotate(0deg) scale(1) translate(956%,-43%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+.wx-text_6vinIv{align-self:  flex-end; font-family:  "Microsoft YaHei"; font-size:  15px; transform: rotate(0deg) scale(0.8) translate(-87%,-87%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(0.8) translate(-87%,-87%); -o-transform: rotate(0deg) scale(0.8) translate(-87%,-87%); -moz-transform: rotate(0deg) scale(0.8) translate(-87%,-87%); -webkit-transform: rotate(0deg) scale(0.8) translate(-87%,-87%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+.wx-button_JKKHVq{width:  35%; height:  12%; background-color:  rgb(12, 131, 191); border-color:  rgb(12, 131, 191); background-size:  contain; border-radius:  5px; background-attachment:  fixed; font-weight:  normal; color:  rgb(255, 255, 255); font-size:  13px; font-style: normal; }
+
+
+
+

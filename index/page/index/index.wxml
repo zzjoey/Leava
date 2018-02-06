@@ -1,0 +1,14 @@
+<view class="c-minheight wx-view_mQUDQh" data-c_e_id="wx_view_8e2f68f0">
+    <image class="wx-image_n7KDdY" data-c_e_id="wx_image_559fd6be" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/f61244a3ed8b2ad104e84e5467b82267_origin.jpg" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/f61244a3ed8b2ad104e84e5467b82267_origin.jpg); "/>
+</view>
+<image class="wx-image_hSEMFU" data-c_e_id="wx_image_12237b04" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/8f4ddb1bce11507692299d0b2615fa9a_origin.jpg" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/8f4ddb1bce11507692299d0b2615fa9a_origin.jpg); "/>
+<view class="c-minheight wx-view_6TIMIJ" data-c_e_id="wx_view_a6f33438">
+    <input class="c-block c-fullwidth wx-input_fWwoLG" data-c_e_id="wx_inputba0b21ea" name="input1" placeholder="       学号/样式" type="number"/>
+    <icon class="wx-icon_vDsKpQ" color="transparent" data-c_e_id="wx_icon_95b621cd" size="23" type="success"/>
+    <input class="c-block c-fullwidth wx-input_kazJMm" data-c_e_id="wx_input_a20c7838" name="input1" password="True" placeholder="       密码" type="number"/>
+    <icon class="wx-icon_4wSeUi" color="transparent" data-c_e_id="wx_icon_d55425fe" size="23" type="success"/>
+    <text class="c-block wx-text_6vinIv" data-c_e_id="wx_text_167999e2">忘记密码？</text>
+    <button class="wx-button_JKKHVq" data-c_e_id="wx_button_0bb7c09c" hover-class="button-hover" size="mini" type="default">
+          登录
+    </button>
+</view>

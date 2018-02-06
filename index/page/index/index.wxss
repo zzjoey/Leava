@@ -1,0 +1,3 @@
+page { 
+    background-color:  rgb(249, 104, 108); background-attachment:  fixed; overflow: visible; position:  static;  
+}
