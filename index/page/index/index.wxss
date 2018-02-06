@@ -1,3 +1,45 @@
 page { 
-    background-color:  rgb(249, 104, 108); background-attachment:  fixed; overflow: visible; position:  static;  
+     background-color:  rgb(249, 104, 108); 
+     background-attachment:  fixed; 
+     overflow: visible; 
+     position:  static; 
+     padding: 0rpx;
+     margin: 0rpx;
+}
+
+.wx-input_fWwoLG{
+  /* 学号输入框 */
+  /* padding-left: 110rpx; */
+  /* width: 220px; */
+  text-align: center;
+  color: white;
+}
+.wx-input_kazJMm{
+  /* 密码输入框 */
+  /* padding-left: 110rpx; */
+  /* width:220px; */
+  text-align: center;
+  color: white;
+}
+.wx-icon_vDsKpQ{
+  /*学号icon  */
+  /* padding-left: 8rpx; */
+}
+.wx-icon_4wSeUi{
+  /*密码icon  */
+  /* padding-left: 8rpx; */
+}
+.wx-text_6vinIv{
+  /*忘记密码  */
+  margin-top: 10rpx;
+  color: white;
+}
+wx-button.wx-button_JKKHVq{
+  /*登陆按钮  */
+  height: 70rpx;
+  width: 300rpx;
+  text-align: center;
+  background-color: rgb(12, 131, 191);
+  color: white;
+  font-size: 30rpx;
 }

@@ -4,21 +4,21 @@ view,scroll-view,swiper,swiper-item,icon,text,progress,button,checkbox-group,che
         -moz-box-sizing: border-box;
         box-sizing: border-box;
 }
+
 page {
         height: 100%;
         font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
 }
 
-
-
-
 checkbox-group,
 radio-group{
         display:block;
 }
-
-
-
+/* 
+-webkit-input-placeholder{
+  color: white;
+  font-size: 25px;
+} */
 
 :before,
 :after ,
