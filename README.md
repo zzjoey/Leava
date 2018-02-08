@@ -15,4 +15,4 @@ UI/UE：ZYN
 
 前端：[xuyongxiang134](https://github.com/xuyongxiang134)，[Fuhaixu](https://github.com/Fuhaixu)
 
-后端&数据库： [Joey66666](https://github.com/Joey66666)，[Mineldea](https://github.com/Mineldea)
+后端&数据库： [Joey66666](https://github.com/Joey66666)，[MineIdea](https://github.com/MineIdea)
