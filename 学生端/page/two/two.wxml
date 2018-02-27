@@ -1,0 +1,10 @@
+<view class="c-minheight wx-view_dQpERC" data-c_e_id="wx_view_5dab7780">
+    <image class="wx-image_asFwH9" data-c_e_id="wx_image_1d193d70" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); "/>
+    <text class="c-block wx-text_XP2vT6" data-c_e_id="wx_text_192cfd38">当前  第14周.星期三</text>
+    <text class="c-block wx-text_MX6hYz" data-c_e_id="wx_text_6f44ccc4">2017.12.01</text>
+</view>
+<view class="c-minheight wx-view_IxquNX" data-c_e_id="wx_view_036fe0e7">
+    <button class="wx-button_5oXxpi" data-c_e_id="wx_button_d82c0075" hover-class="button-hover" size="default" type="default" style="background-color:#62cced;color:#ffffff">
+        提交申请
+    </button>
+</view>
