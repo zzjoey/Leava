@@ -17,12 +17,13 @@ Page({
 
   data: {
   
-
-  
-
   
   },
-
+  goMoreInfo:function(e){
+    wx.navigateTo({
+      url: '../four/four',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

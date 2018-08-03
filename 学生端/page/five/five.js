@@ -16,11 +16,11 @@ Page({
    */
 
   data: {
-  
-
-  
-
-  
+    room:'北十B113',
+    institute:'计算机院',
+    cla:'计算机科学与技术',
+    id:'202160***',
+    name:'张三'
   },
 
   /**
@@ -29,6 +29,10 @@ Page({
   onLoad () {
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#3BB8EA'
+    });
   },
 
   /**

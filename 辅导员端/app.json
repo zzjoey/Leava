@@ -2,8 +2,8 @@
   "debug": true, 
   "window": {
     "navigationBarTextStyle": "white", 
-    "navigationBarBackgroundColor": "#000000", 
-    "navigationBarTitleText": "", 
+    "navigationBarBackgroundColor": "#F9686C", 
+    "navigationBarTitleText": "请假小程序", 
     "backgroundColor": "#ffffff", 
     "enablePullDownRefresh": false, 
     "backgroundTextStyle": "dark"

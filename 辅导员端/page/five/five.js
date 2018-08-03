@@ -29,6 +29,10 @@ Page({
   onLoad () {
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#3BB8EA'
+    });
   },
 
   /**

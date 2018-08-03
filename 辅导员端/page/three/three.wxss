@@ -1,3 +1,10 @@
 page { 
     text-align: center;  
 }
+
+/* 已批准 */
+.wx-text_DOeMkH{width:  20%; transform: rotate(0deg) scale(1) translate(359%,-543%); transition: All 0s ease; background-color:  rgb(9, 209, 230); color:  rgb(255, 255, 255); font-weight:  800; font-size:  13px; margin-top:  14px; padding-top:  4px; padding-bottom:  3px; -ms-transform: rotate(0deg) scale(1) translate(359%,-543%); -o-transform: rotate(0deg) scale(1) translate(359%,-543%); -moz-transform: rotate(0deg) scale(1) translate(359%,-543%); -webkit-transform: rotate(0deg) scale(1) translate(359%,-543%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+
+
+
+.wx-text_aprfXk{width:  20%; transform:  rotate(0deg) scale(1) translate(360%, -544%); transition:  all 0s ease; background-color:  rgb(173, 172, 172); font-weight:  800; color:  rgb(255, 255, 255); font-size:  13px; margin-top:  14px; padding-top:  4px; margin-bottom:  3px; padding-bottom: 3px; }

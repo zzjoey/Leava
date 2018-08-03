@@ -16,10 +16,7 @@ Page({
    */
 
   data: {
-  
-
-  
-
+    institute:'艺术与设计学院'
   
   },
 

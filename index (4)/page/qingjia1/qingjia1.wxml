@@ -1,0 +1,18 @@
+<view class="c-minheight wx-view_SMtGOg" data-c_e_id="wx_view_022bb336">
+    <image class="wx-image_rHHvcN" data-c_e_id="wx_image_5bee92df" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); "/>
+    <text class="c-block wx-text_vfJddV" data-c_e_id="wx_text_b7f4eadf">南京工程学院</text>
+    <text class="c-block wx-text_Q6agUF" data-c_e_id="wx_text_a1ee104a">刘英才</text>
+</view>
+<view class="c-minheight wx-view_0fyB6z" data-c_e_id="wx_view_d2b2c5da">
+    <text class="c-block wx-text_yhHZII" data-c_e_id="wx_text_1d0b6ded">星期二</text>
+    <text class="c-block wx-text_mdv9kA" data-c_e_id="wx_text_c3caabfe">14 周</text>
+    <text class="c-block wx-text_jiMkjG" data-c_e_id="wx_text_21656db9">高级口语</text>
+    <text class="c-block wx-text_lzYMYD" data-c_e_id="wx_text_5c0a58ef">1-2</text>
+    <text class="c-block wx-text_rpqdYQ" data-c_e_id="wx_text_963c8e59">实用写作</text>
+    <text class="c-block wx-text_lnkPSD" data-c_e_id="wx_text_aae3e4f6">7-8</text>
+    <text class="c-block wx-text_AF19ut" data-c_e_id="wx_text_38ee4274">3</text>
+    <text class="c-block wx-text_Qldx9C" data-c_e_id="wx_text_1b68b336">1</text>
+    <button class="wx-button_rWctTp" data-c_e_id="wx_button_3f9b5e0a" hover-class="button-hover" plain="True" size="default" type="default">
+        查看详情
+    </button>
+</view>

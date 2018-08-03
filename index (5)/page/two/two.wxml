@@ -1,0 +1,23 @@
+<view class="c-minheight wx-view_SMtGOg" data-c_e_id="wx_view_022bb336">
+    <image class="wx-image_rHHvcN" data-c_e_id="wx_image_5bee92df" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); "/>
+    <text class="c-block wx-text_vfJddV" data-c_e_id="wx_text_b7f4eadf">当前 第14周.星期三</text>
+    <text class="c-block wx-text_Q6agUF" data-c_e_id="wx_text_a1ee104a">2017.12.01</text>
+</view>
+<view class="c-minheight wx-view_FtudTp" data-c_e_id="wx_view_b3cdd12e">
+    <view class="c-minheight wx-view_Wo25zL" data-c_e_id="wx_view_400f080b">
+        <input class="c-block c-fullwidth wx-input_6bQNyh" data-c_e_id="wx_input_fdae3319" name="input1" placeholder=" 请假类别" type="text"/>
+        <image class="wx-image_vPUxui" data-c_e_id="wx_image_e3874e56" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/ba1cd65a5ed40367ebcd670842aea362_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/ba1cd65a5ed40367ebcd670842aea362_origin.png); "/>
+    </view>
+    <view class="c-minheight wx-view_oL108B" data-c_e_id="wx_view_ea74ecd5">
+        <input class="c-block c-fullwidth wx-input_vAjqCh" data-c_e_id="wx_input_22e745d4" name="input1" placeholder=" 请假开始时间" type="text"/>
+        <image class="wx-image_4ESIjU" data-c_e_id="wx_image_fce964cd" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/ba1cd65a5ed40367ebcd670842aea362_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/ba1cd65a5ed40367ebcd670842aea362_origin.png); "/>
+    </view>
+    <view class="c-minheight wx-view_iFzBsk" data-c_e_id="wx_view_48bb258c">
+        <input class="c-block c-fullwidth wx-input_gvIpoJ" data-c_e_id="wx_input_298f47aa" name="input1" placeholder=" 请假结束时间" type="text"/>
+        <image class="wx-image_xjurjK" data-c_e_id="wx_image_076de302" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/ba1cd65a5ed40367ebcd670842aea362_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/ba1cd65a5ed40367ebcd670842aea362_origin.png); "/>
+    </view>
+    <input class="c-block c-fullwidth wx-input_6tQHyF" data-c_e_id="wx_input_91b40890" name="input1" placeholder="请假理由" type="text"/>
+</view>
+<button class="wx-button_2cENZy" data-c_e_id="wx_button_ad281c60" hover-class="button-hover" size="default" type="default">
+    提交申请
+</button>

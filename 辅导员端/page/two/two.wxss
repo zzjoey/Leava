@@ -1,0 +1,20 @@
+.txt{
+  color: black;
+  font-size:15px;
+  margin-left: 40px;
+  letter-spacing:0;
+}
+
+.txt-time{
+  color: black;
+  font-size:15px;
+  margin-left: 20px;
+  letter-spacing:0;
+}
+.txt-info{
+   color: black;
+  font-size:15px;
+  margin-left: 20px;
+  letter-spacing:0;
+}
+

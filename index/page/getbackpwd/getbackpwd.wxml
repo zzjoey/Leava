@@ -1,0 +1,16 @@
+<view class="c-minheight wx-view_iZial1" data-c_e_id="wx_view_36cc8914">
+    <!-- <image class="wx-image_iMSlUj" data-c_e_id="wx_image_d4cef166" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); "
+    bindtap='goBackIndex'/> -->
+    <image class="wx-image_jQ1280" data-c_e_id="wx_image_d2c907cc" mode="scaleToFill" src="http://o3bnyc.creatby.com/diazo/images/image-placeholder.svg" style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat; background-image:   url(http://o3bnyc.creatby.com/diazo/images/image-placeholder.svg); "/>
+</view>
+<view class="c-minheight wx-view_gmDZpC" data-c_e_id="wx_view_077bb2fb">
+    <text class="c-block wx-text_OILVzb" data-c_e_id="wx_text_f80b6a9f">{{institute}}</text>
+    <text class="c-block wx-text_CeeplE" data-c_e_id="wx_text_d8f6192f">{{name}}</text>
+    <text class="c-block wx-text_NhGQn7" data-c_e_id="wx_text_091bfa5a">账户信息</text>
+    <text class="c-block wx-text_NhGQn7" data-c_e_id="wx_textf0900d00">设置</text>
+    <text class="c-block wx-text_NhGQn7" data-c_e_id="wx_text0b03938f">关于</text>
+    <text class="c-block wx-text_NhGQn7" data-c_e_id="wx_texta6c9332c">反馈</text>
+    <button class="wx-button_YwCyZz" data-c_e_id="wx_button_036fb395" hover-class="button-hover" size="default" type="default"style="background-color:#3BB8EA;color:#ffffff">
+        修改密码
+    </button>
+</view>

@@ -1,0 +1,3 @@
+page { 
+    overflow:  auto; position:  relative; background-color:  rgb(234, 234, 234); text-align: center;  
+}

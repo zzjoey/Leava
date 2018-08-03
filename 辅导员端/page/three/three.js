@@ -16,13 +16,16 @@ Page({
    */
 
   data: {
-  
-
+    name:"赵星"
   
 
   
   },
-
+  goTwo:function(){
+    wx.navigateTo({
+      url: '../two/two',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
