@@ -26,7 +26,7 @@
     <text class="c-block wx-text_6vinIv" data-c_e_id="wx_text_167999e2" bindtap='gobackpwd'>忘记密码？</text>
     
     <!-- 登录按钮 -->
-    <button class="wx-button_JKKHVq" data-c_e_id="wx_button_0bb7c09c" hover-class="button-hover" size="mini" type="default" bindtap='show'>登录</button>
+    <button class="wx-button_JKKHVq" data-c_e_id="wx_button_0bb7c09c" hover-class="button-hover" size="mini" type="default" bindtap='submit'>登录</button>
     <view>
         <modal title='{{txt}}' hidden='{{modalHidden}}' confirm-text="确定"
     cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">

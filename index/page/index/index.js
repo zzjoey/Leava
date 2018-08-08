@@ -21,6 +21,34 @@ Page({
     pwd:''
   
   },
+  goStudent:function(){
+    wx.switchTab({
+      url: '../student/page/two/two',
+    })
+  },
+  goTeacher:function(){
+    wx.navigateTo({
+      url: '../teacher/page/one/one',
+    })
+  },
+  submit:function(){
+    wx.request({
+      url: 'http://192.168.50.115/test',
+      data:{
+        userId:this.data.id,
+        userPwd:this.data.pwd
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method:"POST",
+      success:function(res){
+        console.log(res.data);
+      }
+    })
+
+    // this.goTeacher();
+  },
   show:function(){
     var showtxt = this.data.id + " " + this.data.pwd;
     this.setData({

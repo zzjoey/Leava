@@ -1,0 +1,66 @@
+
+page { 
+    text-align: center;  
+    background-color: rgba(234,234,234,1); 
+}
+.wx-text_Vnuk2H{width:  55%;
+ background-color:  rgb(255, 255, 255);
+  font-weight:  100; 
+  font-size:  15px;
+   color:  rgb(94, 94, 93);
+   transform:  rotate(0deg) scale(1) translate(16%, 87%); 
+   transition:  all 0s ease;
+    margin-bottom:  14px; 
+   padding-top:  4px;
+    padding-bottom: 4px; }
+ .wx-text{
+  width:  55%; background-color:  rgb(255, 255, 255); font-weight:  100; font-size:  15px; 
+ color:  rgb(94, 94, 93); 
+  transform:  rotate(0deg) scale(1) translate(16%, 87%); transition:  all 0s ease; 
+ margin-bottom:  14px;
+ padding-top:  4px;
+ padding-bottom: 4px; 
+} 
+/* 审批中 */
+.wx-text_JqmNaA{ width:  20%;
+   transform: rotate(0deg) scale(1) translate(359%,-543%);
+    transition: All 0s ease; 
+   color:  rgb(255, 255, 255);
+    font-weight:  800; 
+    font-size:  13px; 
+    margin-top:  14px;
+     padding-top:  4px; 
+    padding-bottom:  3px; 
+    -ms-transform: rotate(0deg) scale(1) translate(359%,-543%); -o-transform: rotate(0deg) scale(1) translate(359%,-543%); -moz-transform: rotate(0deg) scale(1) translate(359%,-543%); -webkit-transform: rotate(0deg) scale(1) translate(359%,-543%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; 
+     background-color:  rgb(249, 104, 108);  
+    }
+.wx-text_DOeMkH{
+  width:  20%;
+   transform: rotate(0deg) scale(1) translate(359%,-543%); transition: All 0s ease; 
+   background-color:  rgb(9, 209, 230);
+   color:  rgb(255, 255, 255);
+    font-weight:  800; 
+    font-size:  13px; 
+    margin-top:  14px;
+     padding-top:  4px; 
+    padding-bottom:  3px; 
+    -ms-transform: rotate(0deg) scale(1) translate(359%,-543%); -o-transform: rotate(0deg) scale(1) translate(359%,-543%); -moz-transform: rotate(0deg) scale(1) translate(359%,-543%); -webkit-transform: rotate(0deg) scale(1) translate(359%,-543%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+.wx-text_aprfXk{width:  20%; transform:  rotate(0deg) scale(1) translate(360%, -544%); transition:  all 0s ease; background-color:  rgb(173, 172, 172); font-weight:  800; color:  rgb(255, 255, 255); font-size:  13px; margin-top:  14px; padding-top:  4px; margin-bottom:  3px; padding-bottom: 3px; }
+
+.btn-view{
+  margin-top: -36px;
+}
+
+
+.wx-text_rXYlBa{width:  30%; margin-left:  auto; margin-right:  auto; color:  rgb(255, 255, 255);
+ font-size:  15px; 
+ font-family:  SimSun;
+  font-weight:  800;
+   height:  5%; 
+  transform: rotate(0deg) scale(1) translate(0%,-195%);
+   transition: All 0s ease;
+    -ms-transform: rotate(0deg) scale(1) translate(0%,-195%); -o-transform: rotate(0deg) scale(1) translate(0%,-195%); -moz-transform: rotate(0deg) scale(1) translate(0%,-195%); -webkit-transform: rotate(0deg) scale(1) translate(0%,-195%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+
+
+    .wx-view_R5j5xo{height: 10%; 
+    background-color:  rgb(249, 104, 108); }
