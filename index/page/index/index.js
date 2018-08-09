@@ -33,7 +33,7 @@ Page({
   },
   submit:function(){
     wx.request({
-      url: 'http://192.168.50.115/test',
+      url: 'http://101.132.117.83:8080/login_test',
       data:{
         userId:this.data.id,
         userPwd:this.data.pwd
@@ -74,7 +74,7 @@ Page({
   },
   gobackpwd:function(){
     wx.navigateTo({
-      url: '../getbackpwd/getbackpwd',
+      url: '../student/page/two/two',
     })
   },
   /**
