@@ -1,0 +1,32 @@
+.txt{
+  color: black;
+  margin-left: 40px;
+  font-weight: normal;
+}
+
+.wx-text_yVPPNX{height:  8%; 
+transform:  rotate(0deg) scale(1) translate(0%, 130%);
+ transition:  all 0s ease; 
+ background-color:  rgb(255, 255, 255);
+  width:  90%;
+   margin-left:  auto;
+    margin-right:  auto; 
+    color:  rgb(59, 184, 234); 
+    font-weight:  800; 
+    line-height:  2em; 
+    letter-spacing:  2px; 
+    text-indent:  11px; margin-bottom: 23px; }
+
+
+.wx-image_jQ1280{width:  80px;
+ height:  80px; margin:  auto; left:  0px; right:  0px; top:  0px;
+ bottom:  0px;
+ position:  absolute; 
+ display: inline-block; border-radius:  50px; 
+ background-color:  rgb(255, 255, 255); transform:  rotate(0deg) scale(1) translate(0%, 52%); 
+ z-index: 10;
+ transition:  all 0s ease; }
+
+
+
+.wx-view_vmgDZb{height: 85%; background-color: rgb(234, 234, 234); margin-bottom: 0px; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 0s ease;}

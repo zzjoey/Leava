@@ -1,0 +1,14 @@
+<view class="c-minheight wx-view_6JhHS1" data-c_e_id="wx_view_72059661">
+  
+    <text class="c-block wx-text_w1iNIb" data-c_e_id="wx_text_2487d5f7">艺术与设计学院</text>
+</view>
+<view class="c-minheight wx-view_lzgb20" data-c_e_id="wx_view_ecaaf3ea">
+    <text class="c-block wx-text_Rzeehk" data-c_e_id="wx_text_76c5393b">周末宿舍假</text>
+    <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_text_24b1e7b6">班级<text class="info">{{clas}}</text></text>
+    <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_texta5799c56">姓名<text class="info">{{name}}</text></text>
+    <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_textb1437814">学号<text class="info">{{id}}</text></text>
+    <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_text4a93b8b6">宿舍<text class="info">{{room}}</text></text>
+    <text class="c-block wx-text_PRJwCh" data-c_e_id="wx_text_f923a6da">请假时间<text class="info">{{date}}</text></text>
+    <text class="c-block wx-text_PRJwCh" data-c_e_id="wx_textd6b5e3c0">请假理由<text class="info">{{leaveinfo}}</text></text>
+    <text class="c-block wx-text_PA6S1h" data-c_e_id="wx_text_4d7e84fa">已批准</text>
+</view>
