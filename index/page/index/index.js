@@ -21,7 +21,7 @@ Page({
     pwd:''
   
   },
- 
+
   show:function(){
     var showtxt = this.data.id + " " + this.data.pwd;
     this.setData({

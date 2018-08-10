@@ -104,6 +104,7 @@ border-radius:  15px;
   position: relative;
   top:-320rpx; }
 
+
   .wx-view_dQpERC{height:  18%;
    background-color:  rgb(249, 104, 108);
     position: relative; }
@@ -123,6 +124,7 @@ border-radius:  15px;
   left: 20%;
   top:630rpx;
   border: 1px solid grey;
+
 }
 
 .picimg{

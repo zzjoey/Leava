@@ -15,7 +15,8 @@ transform:  rotate(0deg) scale(1) translate(0%, 130%);
     font-weight:  800; 
     line-height:  2em; 
     letter-spacing:  2px; 
-    text-indent:  11px; margin-bottom: 23px; }
+    text-indent:  11px;
+    margin-bottom: 23px; }
 
 
 .wx-image_jQ1280{width:  80px;
@@ -29,4 +30,5 @@ transform:  rotate(0deg) scale(1) translate(0%, 130%);
 
 
 
-.wx-view_vmgDZb{height: 85%; background-color: rgb(234, 234, 234); margin-bottom: 0px; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 0s ease;}
+.wx-view_vmgDZb{height: 85%; background-color: rgb(234, 234, 234); margin-bottom: 0px; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 0s ease;
+    text-indent:  11px; margin-bottom: 23px; }

@@ -52,6 +52,8 @@ Page({
     console.log(res.errMsg)
   },
 
+    startTime:''
+  },
   bindTextAreaBlur: function (e) {
     this.setData({
       leaveinfo: e.detail.value
