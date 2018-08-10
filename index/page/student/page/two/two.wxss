@@ -101,7 +101,9 @@ border-radius:  15px;
   line-height:  1.56em; 
   font-size:  18px;
   letter-spacing: 2px;
-  top:-200rpx; }
+  position: relative;
+  top:-320rpx; }
+
 
   .wx-view_dQpERC{height:  18%;
    background-color:  rgb(249, 104, 108);
@@ -122,4 +124,24 @@ border-radius:  15px;
   left: 20%;
   top:630rpx;
   border: 1px solid grey;
+
+}
+
+.picimg{
+  width: 80px;
+  height: 80px;
+}
+.pickpic{
+  width: 50%;
+  font-size: 14px;
+  height: 40px;
+  margin-top: 180px;
+}
+
+.imgview{
+  position: absolute;
+  left: 20%;
+  top: 380px;
+  margin-top: 100px;
+  border: 1px solid white;
 }

@@ -21,34 +21,7 @@ Page({
     pwd:''
   
   },
-  goStudent:function(){
-    wx.switchTab({
-      url: '../student/page/two/two',
-    })
-  },
-  goTeacher:function(){
-    wx.navigateTo({
-      url: '../teacher/page/one/one',
-    })
-  },
-  submit:function(){
-    wx.request({
-      url: 'http://101.132.117.83:8080/login_test',
-      data:{
-        userId:this.data.id,
-        userPwd:this.data.pwd
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method:"POST",
-      success:function(res){
-        console.log(res.data);
-      }
-    })
 
-    // this.goTeacher();
-  },
   show:function(){
     var showtxt = this.data.id + " " + this.data.pwd;
     this.setData({
@@ -74,7 +47,7 @@ Page({
   },
   gobackpwd:function(){
     wx.navigateTo({
-      url: '../student/page/two/two',
+      url: '../getbackpwd/getbackpwd',
     })
   },
   /**
@@ -123,6 +96,70 @@ Page({
 
 
   //以下为自定义点击事件
-  
+  goStudent: function () {
+    wx.switchTab({
+      url: '../student/page/two/two',
+    })
+  },
+  goTeacher: function () {
+    wx.navigateTo({
+      url: '../teacher/page/one/one',
+    })
+  },
+  goClass:function(){
+    wx.navigateTo({
+      url: '../teacher/page/three/three',
+    })
+   
+  },
+  submit: function () {
+    var that=this;
+    var id = this.data.id;
+    if (this.data.id == "") {
+      this.setData({
+        txt: "学号不能为空",
+        modalHidden: !this.data.modalHidden
+      })
+      return;
+    }
+    wx.request({
+      url: 'http://101.132.117.83:8080/login_test',
+      data: {
+        userId: this.data.id,
+        userPwd: this.data.pwd
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method: "POST",
+      success: function (res) {
+        var json = res.data;
+        console.log(json);
+        var flag = parseInt(json["flag"]);
+        var role = parseInt(json["role"]);
+        switch (flag) {
+          case 0:
+            that.setData({
+              txt: "学号或者工号不存在",
+              modalHidden: !that.data.modalHidden
+            });
+            break;
+          case 1:
+            that.setData({
+              txt: "密码错误",
+              modalHidden: !that.data.modalHidden
+            });
+            break;
+          case 2:  
+            if(role==0)
+            that.goTeacher();
+            else if(role==1) 
+            that.goClass();
+            else that.goStudent();
+            break;
+        }
+      }
+    })
+  }
 })
 

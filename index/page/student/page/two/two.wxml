@@ -40,9 +40,21 @@
 </view>
 
 <view>
-<textarea placeholder='请输入请假理由或备注' placeholder-class='txtare-placeholder' class='txtarea' 
+ <textarea placeholder='请输入请假理由或备注' placeholder-class='txtare-placeholder' class='txtarea' 
  bindblur="bindTextAreaBlur"> 
-</textarea>
+</textarea> 
+<button class='pickpic'>拍照</button>
+
+<view class='imgview'>
+<image src='{{tempFilePaths}}' class='picimg' bindtap='pic'></image>
+</view>
+
+<view class='img-v'>
+  <view class='img' wx:for="{{imgs}}" wx:for-items="item" wx:key="this">
+  </view>
+
+</view>
+
 </view>
 
 <!-- -------------------------------------------- -->

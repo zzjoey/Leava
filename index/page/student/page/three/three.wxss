@@ -64,3 +64,6 @@ page {
 
     .wx-view_R5j5xo{height: 10%; 
     background-color:  rgb(249, 104, 108); }
+
+
+.wx-text_JqmNaA{width:  20%; margin:  14px 0px 0px auto; color:  rgb(255, 255, 255); font-size:  13px; font-weight:  800; height:  6%; transform:  rotate(0deg) scale(1) translate(-43%, -543%); transition:  all 0s ease; padding-top: 4px; background-color:  rgb(249, 104, 108); }
