@@ -30,6 +30,16 @@ Page({
   onLoad () {
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
+    var student_id=wx.getStorageSync("student");
+    wx.reLaunch({
+      url: 'http://192.168.50.88/student/ask_leave',
+      data:{
+        student_id: student_id
+      },
+      success:function(res){
+        console.log(res);
+      }
+    })
   },
 
   /**
