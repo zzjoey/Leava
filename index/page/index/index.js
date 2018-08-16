@@ -98,7 +98,7 @@ Page({
   //以下为自定义点击事件
   goStudent: function () {
     wx.switchTab({
-      url: '../student/page/two/two?id',
+      url: '../student/page/two/two',
     })
   },
   goTeacher: function () {
@@ -123,7 +123,8 @@ Page({
       return;
     }
     wx.request({
-      url: 'http://192.168.50.88/login_test',
+
+      url: 'http://101.132.117.83:8080/login_test',
       data: {
         userId: this.data.id,
         userPwd: this.data.pwd
@@ -168,6 +169,7 @@ Page({
               wx.setStorageSync("student_id", student_id);
               that.goStudent();
             } 
+
             break;
         }
       }
