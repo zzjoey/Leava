@@ -123,6 +123,7 @@ Page({
       return;
     }
     wx.request({
+
       url: 'http://101.132.117.83:8080/login_test',
       data: {
         userId: this.data.id,
@@ -151,11 +152,24 @@ Page({
             });
             break;
           case 2:  
-            if(role==0)
-            that.goTeacher();
-            else if(role==1) 
-            that.goClass();
-            else that.goStudent();
+            if(role==0){
+              that.goTeacher();
+            }            
+            else if(role==1) {
+              that.goClass();
+            }
+            else{
+              var s_class=parseString(json["s_class"]);
+              var student_id=parseString(json["student_id"]);
+              var room=parseString(json["room"]);
+              var name = parseInt(json["name"]);
+              wx.setStorageSync("s_class",s_class);
+              wx.setStorageSync("name", name);
+              wx.setStorageSync("room", room);
+              wx.setStorageSync("student_id", student_id);
+              that.goStudent();
+            } 
+
             break;
         }
       }

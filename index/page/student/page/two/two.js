@@ -16,13 +16,14 @@ Page({
    */
 
   data: {
+    student_id:'',
     show:false,
     showStart:false,
     showEnd:false,
     selectData: ['请假类别','事假', '病假'],//下拉列表的数据
     index:0,//选择的下拉列表下标
-    startdate: '2018-10-01', //开始时间
-    enddate:'2018-10-01',    //结束时间
+    startdate: '2018-01-01', //开始时间
+    enddate:'2018-12-31',    //结束时间
     time: '12:00',
     dateTimeArray: null,
     dateTime: null,
@@ -34,7 +35,12 @@ Page({
     txt:'对话框',   //对话框测试标题
     leaveinfo:'',
     startTime:'',
-    tempFilePaths:'../../../../resources/z_add.png'
+    ImgUrl: '../../../../resources/z_add.png',
+    tempFilePaths:'',
+    imageIndex:0,
+    week: 14,
+    day: '三',
+    nowDate: '2018-08-15'
   },
 
   pic: function (options) {
@@ -44,35 +50,21 @@ Page({
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        var tempFilePaths = res.tempFilePaths[0]
-      }
+        var tempFilePaths = res.tempFilePaths;
+      },
+       fail: function (res) {
+        console.log(res.errMsg);
+      },
     })
   },
-  fail: function (res) {
-    console.log(res.errMsg)
-  },
 
-    startTime:''
-  },
   bindTextAreaBlur: function (e) {
     this.setData({
       leaveinfo: e.detail.value
     })
 
   },    
-  //对话model测试函数
-  bindViewTap: function () {
-    var cate = this.data.selectData[this.data.index];
-    var sd=this.data.startdate;
-    var ed = this.data.enddate;
-    var showtxt = cate+" "+sd+" "+
-    ed+" "+this.data.leaveinfo;
-    this.setData({
-      modalHidden: this.data.modalHidden=false,
-      txt:showtxt
-    })
-
-  },
+ 
   //确定按钮点击事件
   modalBindaconfirm: function () {
     this.setData({
@@ -86,9 +78,8 @@ Page({
     })
   },
 
-
   // 点击下拉显示框
-  selectTap() {
+  selectTap(){
     this.setData({
       show: !this.data.show
     });
@@ -105,7 +96,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad () {
+  onLoad:function (res) {
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
     // 获取完整的年月日 时分秒，以及默认显示的数组
@@ -114,12 +105,29 @@ Page({
     // 精确到分的处理，将数组的秒去掉
     var lastArray = obj1.dateTimeArray.pop();
     var lastTime = obj1.dateTime.pop();
-
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDay();
+    switch (day) {
+      case 0: day = "日"; break;
+      case 1: day = "一"; break;
+      case 2: day = "二"; break;
+      case 3: day = "三"; break;
+      case 4: day = "四"; break;
+      case 5: day = "五"; break;
+      case 6: day = "六"; break;
+    }
+    var id=wx.getStorageSync("student_id");
+    console.log(id);
     this.setData({
       dateTime: obj.dateTime,
       dateTimeArray: obj.dateTimeArray,
       dateTimeArray1: obj1.dateTimeArray,
-      dateTime1: obj1.dateTime
+      dateTime1: obj1.dateTime,
+      nowDate: date.toLocaleDateString(),
+      day: day,
+      student_id:id
     });
   },
   changeStartDate(e) {
@@ -196,8 +204,84 @@ Page({
     
   },
 
-
-  //以下为自定义点击事件
   
+  //以下为自定义点击事件
+  //对话model测试函数
+  bindViewTap: function () {
+    var cate = this.data.index;
+    var sd = this.data.startdate;
+    var ed = this.data.enddate;
+    var that = this;
+    var st = new Date(Date.parse(that.data.startdate.replace(/-/, "/")));
+    var et = new Date(Date.parse(that.data.enddate.replace(/-/, "/")));
+
+    console.log(that.data.startdate);
+    wx.request({
+      url: 'http://192.168.50.88/student/ask_leave',
+      data: {
+        student_id: that.data.student_id,
+        start_time: that.data.startdate,
+        end_time: that.data.enddate,
+        reason:that.data.leaveinfo,
+        flag:1, 
+        teacher1_id:111111, 
+        teacher2_id:222222, 
+        type: 1,
+        ensure: "",
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method: "POST",
+          success: function(e){
+            console.log(e);
+          }
+    })
+
+
+
+  },
+
+  // imgToBase64:function(path){
+  //     var img=new Image();
+  //     img.src = path;
+  //     //图片加载完成执行函数
+  //     img.onload = function () {
+  //       //设置Canvas的宽高
+  //       canvas.width = img.width;
+  //       canvas.height = img.height;
+
+  //       //绘制图片
+  //       ctx.drawImage(img, 0, 0, width, height);
+  //       //转换Base64数据
+  //       var dataURL = canvas.toDataURL(type || "image/jpg");
+  //       //回调函数
+  //       callBack && callBack(dataURL);//dataURL.replace("data:image/png;base64,", "");
+
+  // }
+
+
+  testPost:function(){
+        this.setData({
+        student_id: that.data.student_id,
+        start_time: st,//,that.data.startdate
+        end_time: et,//that.data.enddate,
+        flag:1, 
+        teacher1_id:'111111', 
+        teacher2_id:'222222', 
+        type: that.data.index,
+        ensure: "",
+    })
+    var showtxt = 
+    // cate + " " + st + " " +
+    //   et + " " + 
+      this.data.leaveinfo+this.data.flag+this.data.ensure;
+    this.setData({
+      modalHidden: this.data.modalHidden = false,
+      txt: showtxt
+    })
+  }
+
+
 })
 
