@@ -16,7 +16,7 @@ Page({
    */
 
   data: {
-    modalHidden: true,
+    modalHidden: false,
     id:'',
     pwd:''
   
@@ -123,8 +123,12 @@ Page({
       return;
     }
     wx.request({
+<<<<<<< Updated upstream
 
       url: 'http://101.132.117.83:8080/login_test',
+=======
+      url: 'http://127.0.0.1/login_test',
+>>>>>>> Stashed changes
       data: {
         userId: this.data.id,
         userPwd: this.data.pwd

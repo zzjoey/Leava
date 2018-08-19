@@ -65,6 +65,7 @@
     <button class="wx-button_5oXxpi" data-c_e_id="wx_button_d82c0075" hover-class="button-hover" size="default" type="submit" style="background-color:#62cced;color:#ffffff" bindtap='bindViewTap'>
         提交申请
     </button>
+<<<<<<< Updated upstream
 
     <view>
      <modal title='{{txt}}' hidden='{{modalHidden}}' confirm-text="确定"
@@ -73,3 +74,11 @@
     </view>
 </view>
   </form>
+=======
+    <!-- <view>
+     <modal title='{{txt}}' hidden='{{modalHidden}}' confirm-text="确定"
+    cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel" value='{{leaveinfo}}'>
+    </modal>
+    </view> -->
+</view>
+>>>>>>> Stashed changes
