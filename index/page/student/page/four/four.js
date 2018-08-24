@@ -21,18 +21,46 @@ Page({
     id:'202160521',
     room:'北十B113',
     date:'2018-10-1',
-    leaveinfo:'想回宿舍写程序'
-
-  
-
-  
+    leaveinfo:'想回宿舍写程序',
+    flag:0,
+    ensurebase64:''
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad () {
+    app.editTabBar();
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#F9686C',
+    })
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
+    var clas=wx.getStorageSync('s_class');
+    var name=wx.getStorageSync('name');
+    var room =wx.getStorageSync('room');
+    var id=wx.getStorageSync("student_id");
+    var timeStartToEnd = wx.getStorageSync("timeStartToEnd");
+    var reason=wx.getStorageSync("reason");
+    var flag = wx.getStorageSync("flag");
+    console.log('4.js flag=='+flag);
+    var ensurebase64=wx.getStorageSync("ensure");
+
+    if (ensurebase64==null)
+    ensurebase64='';
+
+    this.setData({
+      clas:clas,
+      name:name,
+      room:room,
+      id:id,
+      date:timeStartToEnd,
+      leaveinfo:reason,
+      flag:flag,
+      ensurebase64: ensurebase64
+    })
+
+
   },
 
   /**

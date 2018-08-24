@@ -27,14 +27,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad () {
+    app.editTabBar();
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
+    // room: '北十B113',
+    //   institute:'计算机院',
+    //     cla:'计算机科学与技术',
+    //       id:'202160***',
+    //         name:'张三'
+    var room=wx.getStorageSync("room");
+    var institute=wx.getStorageSync("institue");
+    var cla=wx.getStorageSync("s_class");
+    var id=wx.getStorageSync("student_id");
+    var name=wx.getStorageSync("name");
+
+    this.setData({
+      room:room,
+      institute:institute,
+      cla:cla,
+      id:id,
+      name:name
+    })
+
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
       backgroundColor: '#3BB8EA'
     });
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -73,6 +92,14 @@ Page({
 
 
   //以下为自定义点击事件
-  
+  goChangePwd:function(){
+    wx.redirectTo({
+      url: '../changepwd/changepwd',
+    })
+  },
+
+  exit:function(){
+    app.exit();
+  }
 })
 

@@ -16,23 +16,40 @@ Page({
    */
 
   data: {
-  
-
-  
-
+    school:'',
+    name:'',
+    teacher_id:111111,
+    role:''
   
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  init:function(){
+    var name = wx.getStorageSync('name');
+    var role=wx.getStorageSync('role');
+    var teacher_id = wx.getStorageSync('teacher_id');
+    //var school=wx.getStorageSync('school');
+    this.setData({
+      name: name,
+      //school:school,
+      teacher_id:teacher_id,
+      role:role,
+    })
+  },
   onLoad () {
+    this.init();
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
     wx.setNavigationBarColor({
       frontColor: '#ffffff',
       backgroundColor: '#3BB8EA'
     });
+    var role = wx.getStorageSync('role');
+    if (role == '辅导员/班主任')
+      app.editTabBarTeacher1();
+    else app.editTabBarTeacher2();
   },
 
   /**
@@ -73,6 +90,13 @@ Page({
 
 
   //以下为自定义点击事件
-  
+  changePwd:function(){
+    wx.redirectTo({
+      url: '../change/changepwd',
+    })
+  },
+  exit:function(){
+    app.exit();
+  }
 })
 

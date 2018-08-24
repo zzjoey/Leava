@@ -21,7 +21,6 @@ Page({
     id:'202160***',
     name: '哈哈',
     room:'北十B113',
-    time:'2018-10-01--2018-10-03',
     info:'哈哈哈'
   },
 
@@ -31,6 +30,46 @@ Page({
   onLoad () {
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
+    app.editTabBarTeacher1();
+
+    var str=wx.getStorageSync("str");
+    var that=this;
+    var leave_num = parseInt(str.split('_')[0]);
+    console.log(leave_num);
+    var student_id = str.split('_')[1];
+    wx.request({
+      url: 'http:///api.zzjoeyyy.com/student/search_leave_detail',
+      data:{
+        student_id:student_id
+      },
+      header: {
+        "content-type": "application/json"
+      },
+      method: "post",
+      success:function(e){
+        var json=e.data[0];
+        var leaveinfojson = wx.getStorageSync('leaveinfojson');
+        console.log(leaveinfojson);
+        
+        for(var x in leaveinfojson){
+          if (leaveinfojson[x].leave_num==leave_num){
+            var stime = leaveinfojson[x].start_time;
+            var etime = leaveinfojson[x].end_time;
+            that.setData({
+              cla: json.class,
+              name: json.name,
+              room: json.room,
+              id: student_id,
+              stime: stime,
+              etime: etime,
+              info: leaveinfojson[x].reason
+            })
+            break;
+          }
+        }
+     
+      }
+    })
   },
 
   /**
@@ -71,6 +110,73 @@ Page({
 
 
   //以下为自定义点击事件
-  
+  changeflag2:function(){
+    var str = wx.getStorageSync("str");
+    var leave_num = parseInt(str.split('_')[0]);
+      wx.request({
+        url: 'http://api.zzjoeyyy.com/teacher/update_leave',
+        data: {
+          leave_num: leave_num,
+          flag:2
+        },
+        header: {
+          "content-type": "application/json"
+        },
+        method: "post",
+        success: function (e) {
+          console.log(e.data);          
+          if(e.data=="True"){
+            wx.redirectTo({
+              url: '../one/one',
+            });
+            wx.showToast({
+              title: '批假成功',
+              icon: 'success',
+              duration: 2000
+            })
+          }else{
+            wx.showToast({
+              title: '批假失败',
+              icon:'fail',
+              duration:2000
+            })
+          }
+        }
+      })
+  },
+  changeflag0:function(){
+    var str = wx.getStorageSync("str");
+    var leave_num = parseInt(str.split('_')[0]);
+    wx.request({
+      url: 'http://api.zzjoeyyy.com/teacher/update_leave',
+      data: {
+        leave_num: leave_num,
+        flag: 0
+      },
+      header: {
+        "content-type": "application/json"
+      },
+      method: "post",
+      success: function (e) {
+        console.log(e.data);
+        if (e.data == "True") {
+          wx.redirectTo({
+            url: '../one/one',
+          })
+          wx.showToast({
+            title: '批假成功',
+            icon: 'success',
+            duration: 2000
+          });
+        }else{
+          wx.showToast({
+            title: '批假失败',
+            icon: 'fail',
+            duration: 2000
+          })
+        }
+      }
+    })
+  }
 })
 

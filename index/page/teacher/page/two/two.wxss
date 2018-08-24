@@ -11,6 +11,18 @@
   margin-left: 20px;
   letter-spacing:0;
 }
+
+.txt-etime{
+  position: relative;
+  color: black;
+  background-color: white;
+  font-size:15px;
+  left: 160px;
+  font-weight:800;
+  top: -20px;
+  font-family:SimSun;
+  letter-spacing:0;
+}
 .txt-info{
    color: black;
   font-size:15px;

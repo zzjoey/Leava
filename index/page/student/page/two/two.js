@@ -3,8 +3,7 @@
 require('coolsite.config.js');
 var dateTimePicker=require('../../resources/js/dateTimePicker.js');
 // 获取全局应用程序实例对象
-var app = getApp();
-
+const app = getApp();
 // 创建页面实例对象
 Page({
   /**
@@ -16,13 +15,15 @@ Page({
    */
 
   data: {
+    user:1,
+    student_id:'',
     show:false,
     showStart:false,
     showEnd:false,
     selectData: ['请假类别','事假', '病假'],//下拉列表的数据
     index:0,//选择的下拉列表下标
-    startdate: '2018-10-01', //开始时间
-    enddate:'2018-10-01',    //结束时间
+    startdate: '2018-01-01', //开始时间
+    enddate:'2018-12-31',    //结束时间
     time: '12:00',
     dateTimeArray: null,
     dateTime: null,
@@ -34,25 +35,178 @@ Page({
     txt:'对话框',   //对话框测试标题
     leaveinfo:'',
     startTime:'',
-    tempFilePaths:'../../../../resources/z_add.png'
+    savedFilePath:'/resources/z_add.png',
+    base64: '',
+    imageIndex:0,
+    week: 14,
+    day: '三',
+    nowDate: '2018-08-15',
+    school:['请先选择院系','计算机工程学院','通信工程学院','艺术与设计学院','能源与动力工程学院','电力工程学院'],
+    s1index:0,
+    s2index:0,
+    t1: [' '],
+    t2:[' '],
+    t1id:['0'],
+    t2id:['0'],
+    t1index:0,
+    t2index:0,
+    t1disabled:false,
+    t2disabled:false,
+    filepath:''
   },
-
-  pic: function (options) {
-    wx.chooseImage({
-      count: 1, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        var tempFilePaths = res.tempFilePaths[0]
+  exit:function(){
+    app.exit();
+  },
+  s1PickerSelected:function(e){
+    // console.log(e.detail.value);
+    this.setData({
+      s1index: e.detail.value
+    })
+    var that =this;
+    var school=this.data.school[this.data.s1index];
+    wx.request({
+      url: "http://api.zzjoeyyy.com/teacher/search_id",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method: "POST",
+      data:{
+        school: school
+      },
+      success:function(e){
+        var json=e.data;
+        var namearr=new Array();
+        var idarr=new Array();
+        for(var x in json){
+          console.log(json[x]);
+          if(json[x].role==0){
+            var id = json[x].teacher_id;
+            var name=json[x].name;
+            namearr.push(name);
+            idarr.push(id);
+          }
+        }
+        that.setData({
+          t1: namearr,
+          t1id:idarr,
+          t1disabled:true
+        })
       }
     })
   },
-  fail: function (res) {
-    console.log(res.errMsg)
+  s2PickerSelected: function (e) {
+    this.setData({
+      s2index: e.detail.value
+    })
+
+    var that = this;
+    var school = this.data.school[this.data.s2index];
+    wx.request({
+      url: "http://api.zzjoeyyy.com/teacher/search_id",
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method: "POST",
+      data: {
+        school: school
+      },
+      success: function (e) {
+        var json = e.data;
+        var namearr = new Array();
+        var idarr = new Array();
+        for (var x in json) {
+          console.log(json[x]);
+          if (json[x].role == 1) {
+            var id = json[x].teacher_id;
+            var name = json[x].name;
+            namearr.push(name);
+            idarr.push(id);
+          }
+        }
+        that.setData({
+          t2: namearr,
+          t2id: idarr,
+          t2disabled:true
+        })
+      }
+    })
+  },
+  t1PickerSelected: function (e) {
+    this.setData({
+      t1index: e.detail.value
+    })
+  },
+  t2PickerSelected: function (e) {
+    this.setData({
+      t2index: e.detail.value
+    })
+  },
+  chooseImageTap:function(){
+    let that=this;
+    wx.showActionSheet({
+      itemList: ['从相册中选择','拍照'],
+      itemColor:'black',
+      success:function(e){
+        if(!e.canel){
+          if(e.tapIndex==0){
+            that.chooseWxImage('album');
+          }else if(e.tapIndex==1){
+            that.chooseWxImage('camera');
+          }
+        }
+
+      }
+    })
+
+
   },
 
-    startTime:''
+  chooseWxImage:function(type){
+    let that=this;
+    let tempPath;
+    wx.chooseImage({
+      count:1,
+      sizeType:['original','compressed'],
+      sourceType:[type],
+      success: function(res) {
+        tempPath=res.tempFilePaths[0];
+        let tmpFilepath = res.tempFiles[0].path;
+        let _this=that;
+        wx.saveFile({
+          tempFilePath: tempPath,
+          success:function(res){
+            let savedFilePath=res.savedFilePath;
+            console.log(savedFilePath);
+            _this.setData({
+              savedFilePath: savedFilePath,
+              filepath:tmpFilepath
+            })
+          }
+        })
+      }
+    })
+    let filesystemManager = wx.getFileSystemManager();
+    let b64 = 'data:image/png;base64,'+filesystemManager.readFileSync(this.data.savedFilePath,'base64'); 
+  },
+  toBase64(savedFilePath){
+    let filesystemManager = wx.getFileSystemManager();
+    let res;
+    filesystemManager.readFile({
+      filePath:savedFilePath,
+      encoding: "base64",
+      success: function (res) {
+        let base64 = res.data;
+        res= "data:image/png;base64," + base64
+      }
+    })
+    return res;
+  },
+  toBlob:function(){
+    let blob=dataURLtoBlob(this.data.savedFilePath);
+    console.log(blob);
+  },
+  pickCamera:function(){
+    this.chooseWxImage('camera');
   },
   bindTextAreaBlur: function (e) {
     this.setData({
@@ -60,19 +214,7 @@ Page({
     })
 
   },    
-  //对话model测试函数
-  bindViewTap: function () {
-    var cate = this.data.selectData[this.data.index];
-    var sd=this.data.startdate;
-    var ed = this.data.enddate;
-    var showtxt = cate+" "+sd+" "+
-    ed+" "+this.data.leaveinfo;
-    this.setData({
-      modalHidden: this.data.modalHidden=false,
-      txt:showtxt
-    })
-
-  },
+ 
   //确定按钮点击事件
   modalBindaconfirm: function () {
     this.setData({
@@ -86,9 +228,8 @@ Page({
     })
   },
 
-
   // 点击下拉显示框
-  selectTap() {
+  selectTap(){
     this.setData({
       show: !this.data.show
     });
@@ -105,7 +246,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad () {
+  onLoad:function (res) {
+    app.editTabBar();
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#F9686C',
+    })
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
     // 获取完整的年月日 时分秒，以及默认显示的数组
@@ -114,12 +260,28 @@ Page({
     // 精确到分的处理，将数组的秒去掉
     var lastArray = obj1.dateTimeArray.pop();
     var lastTime = obj1.dateTime.pop();
-
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDay();
+    switch (day) {
+      case 0: day = "日"; break;
+      case 1: day = "一"; break;
+      case 2: day = "二"; break;
+      case 3: day = "三"; break;
+      case 4: day = "四"; break;
+      case 5: day = "五"; break;
+      case 6: day = "六"; break;
+    }
+    var id=wx.getStorageSync("student_id");
     this.setData({
       dateTime: obj.dateTime,
       dateTimeArray: obj.dateTimeArray,
       dateTimeArray1: obj1.dateTimeArray,
-      dateTime1: obj1.dateTime
+      dateTime1: obj1.dateTime,
+      nowDate: date.toLocaleDateString(),
+      day: day,
+      student_id:id
     });
   },
   changeStartDate(e) {
@@ -164,7 +326,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady () {
-
   },
 
   /**
@@ -196,8 +357,81 @@ Page({
     
   },
 
-
-  //以下为自定义点击事件
   
-})
+  //以下为自定义点击事件
+  //对话model测试函数
+  bindViewTap: function () {
+    var cate = this.data.index;
+    var sd = this.data.startdate;
+    var ed = this.data.enddate;
+    var that = this;
+    var st = new Date(Date.parse(that.data.startdate.replace(/-/, "/")));
+    var et = new Date(Date.parse(that.data.enddate.replace(/-/, "/")));
+    var t1id=this.data.t1id[this.data.t1index];
+    var t2id = this.data.t2id[this.data.t2index];
+    var typ = this.data.index;//不能与关键字type冲突，命名为typ
+    var savedFilePath=this.data.savedFilePath;
+    var _this =this;
+    let filesystemManager = wx.getFileSystemManager();
+    let b64 = 'data:image/png;base64,'+filesystemManager.readFileSync(this.data.savedFilePath, 'base64');
+    console.log(b64);
 
+    wx.request({
+      url: 'http://api.zzjoeyyy.com/student/ask_leave',
+      data: {
+        student_id: that.data.student_id,
+        start_time: that.data.startdate,
+        end_time: that.data.enddate,
+        reason:that.data.leaveinfo,
+        flag:1, 
+        teacher1_id:t1id, 
+        teacher2_id:t2id, 
+        type: typ,
+        ensure: b64,
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method: "POST",
+          success: function(e){
+            console.log(e);
+            if(e.data=='True')
+            that.setData({
+                txt:'添加成功',
+                modalHidden:!that.data.modalHidden
+              })
+            else{
+              that.setData({
+                txt: '添加失败(>_<)',
+                modalHidden: !that.data.modalHidden
+              })
+            }
+          }
+    })
+
+
+
+  },
+
+
+  testPost:function(){
+        this.setData({
+        student_id: that.data.student_id,
+        start_time: st,//,that.data.startdate
+        end_time: et,//that.data.enddate,
+        flag:1, 
+        teacher1_id:'111111', 
+        teacher2_id:'222222', 
+        type: that.data.index,
+        ensure: "",
+    })
+    var showtxt = 
+      this.data.leaveinfo+this.data.flag+this.data.ensure;
+    this.setData({
+      modalHidden: this.data.modalHidden = false,
+      txt: showtxt
+    })
+  }
+
+
+})

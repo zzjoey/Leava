@@ -1,3 +1,4 @@
+
 <view class="c-minheight wx-view_mQUDQh" data-c_e_id="wx_view_8e2f68f0">
 
     <image class="wx-image_n7KDdY" data-c_e_id="wx_image_559fd6be" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/f61244a3ed8b2ad104e84e5467b82267_origin.jpg" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/f61244a3ed8b2ad104e84e5467b82267_origin.jpg); "/>
@@ -11,7 +12,7 @@
     <!-- 学号icon -->
     <icon class="wx-icon_vDsKpQ" color="transparent" data-c_e_id="wx_icon_95b621cd" size="23" type="success"/>
     <!-- 学号输入栏 -->
-    <input class="wx-idinput" data-c_e_id="wx_inputba0b21ea" name="user" placeholder="学号" type="number"
+    <input class="wx-idinput" data-c_e_id="wx_inputba0b21ea" name="user" placeholder="学号/工号" type="number"
      bindinput="getId"/>    
     </view>
     <view class='pwd-input'>
@@ -22,11 +23,11 @@
     <input class="wx-pwdinput" data-c_e_id="wx_input_a20c7838" name="password" password="True" placeholder="密码" type="number"  bindinput="getPwd"/>
 
     </view>
-    <!--忘记密码  -->
-    <text class="c-block wx-text_6vinIv" data-c_e_id="wx_text_167999e2" bindtap='gobackpwd'>忘记密码？</text>
+    <!--忘记密码（不完成）-->
+    <!-- <text class="c-block wx-text_6vinIv" data-c_e_id="wx_text_167999e2" bindtap='gobackpwd'>忘记密码？</text> -->
     
     <!-- 登录按钮 -->
-    <button class="wx-button_JKKHVq" data-c_e_id="wx_button_0bb7c09c" hover-class="button-hover" size="mini" type="default" bindtap='submit'>登录</button>
+    <button class="wx-button_login" data-c_e_id="wx_button_0bb7c09c" hover-class="button-hover" size="mini" type="default" bindtap='submit'>登录</button>
     <view>
         <modal title='{{txt}}' hidden='{{modalHidden}}' confirm-text="确定"
     cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">
