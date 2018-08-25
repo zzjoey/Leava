@@ -16,7 +16,9 @@ transform:  rotate(0deg) scale(1) translate(0%, 130%);
     line-height:  2em; 
     letter-spacing:  2px; 
     text-indent:  11px;
-    margin-bottom: 23px; }
+    margin-bottom: 23px;
+    font-size: 18px;
+     }
 
 
 .wx-image_jQ1280{width:  80px;
@@ -32,3 +34,15 @@ transform:  rotate(0deg) scale(1) translate(0%, 130%);
 
 .wx-view_vmgDZb{height: 85%; background-color: rgb(234, 234, 234); margin-bottom: 0px; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 0s ease;
     text-indent:  11px; margin-bottom: 23px; }
+
+
+.wx-button_YA2Q6g{width:  30%;
+height:  6%;
+transform:  rotate(0deg) scale(1) translate(0%, 217%); transition:  all 0s ease; 
+color:  rgb(255, 255, 255); 
+font-weight:  600; 
+background-color:  rgb(15, 112, 255); 
+border-color:  rgb(59, 184, 234);
+border-style:  solid; 
+line-height:  1.56em;
+ font-size:  15px; letter-spacing: 1px; }

@@ -1,3 +1,4 @@
+<import src="../../../template/tabbar.wxml" />
 <view class="c-minheight wx-view_6JhHS1" data-c_e_id="wx_view_72059661">
     <text class="c-block wx-text_w1iNIb" data-c_e_id="wx_text_2487d5f7">艺术与设计学院</text>
     <image class="wx-image_KHlwk9" data-c_e_id="wx_image_bf09a7fd" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/8684ec9b0265f008dd208bcc102e9262_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/8684ec9b0265f008dd208bcc102e9262_origin.png); "/>
@@ -13,3 +14,4 @@
     <text class="c-block wx-text_PRJwCh" data-c_e_id="wx_textd6b5e3c0">请假理由</text>
     <text class="c-block wx-text_PA6S1h" data-c_e_id="wx_text_4d7e84fa">已批准</text>
 </view>
+<template is="tabBar" data="{{tabBar:tabBar}}"></template>

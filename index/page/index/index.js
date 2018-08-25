@@ -16,7 +16,7 @@ Page({
    */
 
   data: {
-    modalHidden: false,
+    modalHidden: true,
     id:'',
     pwd:''
   
@@ -56,6 +56,10 @@ Page({
   onLoad () {
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
+    wx.setNavigationBarColor({
+      frontColor: '#ffffff',
+      backgroundColor: '#F9686C',
+    })
   },
 
   /**
@@ -97,18 +101,33 @@ Page({
 
   //以下为自定义点击事件
   goStudent: function () {
-    wx.switchTab({
+    wx.redirectTo({
       url: '../student/page/two/two',
+    })
+    wx.showToast({
+      title: '登录成功',
+      icon: 'success',
+      duration: 3000
     })
   },
   goTeacher: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../teacher/page/one/one',
+    })
+    wx.showToast({
+      title: '登录成功',
+      icon: 'success',
+      duration: 3000
     })
   },
   goClass:function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../teacher/page/three/three',
+    })
+    wx.showToast({
+      title: '登录成功',
+      icon: 'success',
+      duration: 3000
     })
    
   },
@@ -123,12 +142,7 @@ Page({
       return;
     }
     wx.request({
-<<<<<<< Updated upstream
-
-      url: 'http://101.132.117.83:8080/login_test',
-=======
-      url: 'http://127.0.0.1/login_test',
->>>>>>> Stashed changes
+      url: 'http://api.zzjoeyyy.com/login',
       data: {
         userId: this.data.id,
         userPwd: this.data.pwd
@@ -157,27 +171,39 @@ Page({
             break;
           case 2:  
             if(role==0){
+              var name = json["name"];
+              var teacher_id = json["teacher_id"];
+              wx.setStorageSync("teacher_id", teacher_id);
+              wx.setStorageSync('role', '辅导员/班主任');
+              wx.setStorageSync("name", name);
               that.goTeacher();
             }            
             else if(role==1) {
+              var name = json["name"];
+              wx.setStorageSync("name", name);
+              var teacher_id = json["teacher_id"];
+              wx.setStorageSync("teacher_id", teacher_id);
+              wx.setStorageSync('role', '任课老师');
               that.goClass();
             }
             else{
-              var s_class=parseString(json["s_class"]);
-              var student_id=parseString(json["student_id"]);
-              var room=parseString(json["room"]);
-              var name = parseInt(json["name"]);
+              var s_class=json["s_class"];
+              var student_id=json["student_id"];
+              var room=json["room"];
+              var name = json["name"];
+              //添加学生信息到本地缓存，在退出时记得释放
               wx.setStorageSync("s_class",s_class);
               wx.setStorageSync("name", name);
               wx.setStorageSync("room", room);
               wx.setStorageSync("student_id", student_id);
-              that.goStudent();
+             that.goStudent();
             } 
-
             break;
         }
       }
-    })
+   })
+
+
   }
 })
 

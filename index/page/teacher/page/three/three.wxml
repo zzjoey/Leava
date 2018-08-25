@@ -1,10 +1,14 @@
+<import src="../../../template/tabbar.wxml" />
 <view class="head wx-view_R5j5xo" data-c_e_id="wx_view_5b111682">
 </view>
-<image class="wx-image_GMgp6J" data-c_e_id="wx_image_42b5baf0" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/0e010ef5717bd9b2600189862780808b_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/0e010ef5717bd9b2600189862780808b_origin.png); "/>
-<image class="wx-image_0zNCs5" data-c_e_id="wx_image_070018f1" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); "/>
+<image class="wx-image_GMgp6J" data-c_e_id="wx_image_42b5baf0" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/0e010ef5717bd9b2600189862780808b_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/0e010ef5717bd9b2600189862780808b_origin.png); "  bindtap='modalinput'/>
+<image class="wx-image_0zNCs5" data-c_e_id="wx_image_070018f1" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); " bindtap='exit'/>
 <text class="c-block wx-text_rXYlBa" data-c_e_id="wx_text_3cc70d55">{{name}}</text>
 <scroll-view class="c-minheight wx-scroll-view_UaC4RD" data-c_e_id="wx_scroll_view_ee17b05f" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
-    <text class="c-block wx-text_Vnuk2H" data-c_e_id="wx_text_8855f4d9" bindtap='goTwo'>工业设计161刘坤</text>
+<view wx:for="{{stuinfo}}">
+    <text class="c-block wx-text_Vnuk2H" data-c_e_id="wx_text_8855f4d9" bindtap='goTwo'>{{item}}</text>
+</view> 
+<text class="c-block wx-text_Vnuk2H" data-c_e_id="wx_text_8855f4d9" bindtap='goTwo'>工业设计161陈伟</text>
     <text class="c-block wx-text_Vnuk2H" data-c_e_id="wx_text2267bff1"  bindtap='goTwo'>工业设计161陈伟</text>
     <text class="c-block wx-text_Vnuk2H" data-c_e_id="wx_text39b243e3"  bindtap='goTwo'>产品设计161陈洁</text>
     <text class="c-block wx-text_Vnuk2H" data-c_e_id="wx_textfcd4bd59"  bindtap='goTwo'>工业设计161陈亮</text>
@@ -14,4 +18,10 @@
     <text class="c-block wx-text_aprfXk" data-c_e_id="wx_text_16d8a786">未批准</text>
     <text class="c-block wx-text_aprfXk" data-c_e_id="wx_text74d4f931">未批准</text>
     </view>
+
+
 </scroll-view>
+<modal hidden="{{hiddenmodalput}}" title="请输入姓名" confirm-text="提交" cancel-text="重置" bindcancel="cancel" bindconfirm="confirm">
+    <input type='text'placeholder="请输入内容" auto-focus bindinput='getInput'/>
+</modal>
+<template is="tabBar" data="{{tabBar:tabBar}}"></template>

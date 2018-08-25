@@ -25,7 +25,43 @@ Page({
    */
   onLoad () {
     // 注册coolsite360交互模块
+    var that =this;
     app.coolsite360.register(this);
+    var teacher_id=wx.getStorageSync("teacher_id");
+    console.log(teacher_id);
+    app.editTabBarTeacher1();
+    wx.request({
+      url: 'http://api.zzjoeyyy.com/teacher/search_leave',
+      data:{
+        teacher_id:teacher_id
+      },
+      header:{
+        "content-type":"application/json"
+      },
+      method:"post",
+      success:function(e){
+        console.log(e.data);
+        var currinfo=e.data;
+        // console.log(currinfo);
+        var json=e.data;
+        var nowdate=new Date(); 
+        for (var x in currinfo){
+          var sdate = new Date(currinfo[x].start_time.replace(/-/,'/'));
+          var edate = new Date(currinfo[x].end_time.replace(/-/, '/')); 
+          var time = (edate - sdate) / (1000 * 60 * 60 * 24);
+          var flag=currinfo[x].flag;
+          currinfo[x]["time"]=parseInt(time);
+          if(edate<nowdate||flag!=1){
+            delete currinfo[x];
+          }
+        }
+        console.log(currinfo);
+        that.setData({
+          currinfo:currinfo,
+          leaveinfo:json
+        })
+      }
+    })
   },
 
   /**
@@ -66,6 +102,17 @@ Page({
 
 
   //以下为自定义点击事件
-  
+  exit:function(){
+    app.exit();
+  },
+  goMoreInfo:function(e){
+    var str=e.target.id;
+    console.log('index=='+str);
+    wx.setStorageSync('str', str);
+    wx.setStorageSync('leaveinfojson', this.data.leaveinfo);
+    wx.redirectTo({
+      url: '../two/two',
+    })
+  }
 })
 

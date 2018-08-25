@@ -65,7 +65,7 @@ page {
   margin-top: 120rpx;
   color: white;
 }
-wx-button.wx-button_JKKHVq{
+wx-button.wx-button_login{
   /*登陆按钮  */
   height: 70rpx;
   width: 300rpx;
@@ -74,5 +74,5 @@ wx-button.wx-button_JKKHVq{
   color: white;
   font-size: 30rpx;
   position: relative;
-  /* top:30px; */
+   top:70px; 
 }

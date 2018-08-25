@@ -123,7 +123,7 @@ radio-group{
 .wx-view_vmgDZb{height:  88%; background-color: rgba(234,234,234,1); }
 .wx-text_vKi80T{margin-top: 56px; height: 8%; background-color: rgb(255, 255, 255);}
 
-.wx-button_YA2Q6g{width:  30%; height:  6%; transform:  rotate(0deg) scale(1) translate(0%, 217%); transition:  all 0s ease; color:  rgb(255, 255, 255); font-weight:  600; background-color:  rgb(15, 112, 255); border-color:  rgb(59, 184, 234); border-style:  solid; line-height:  1.56em; font-size:  17px; letter-spacing: 1px; }
+
 .wx-textarea_Temida{width:  80%; margin-left:  auto; margin-right:  auto; margin-top:  37px; background-color: rgba(255,255,255,1); }
 
 
@@ -138,7 +138,7 @@ radio-group{
 .wx-image_G4F2vY{width:  25px; height:  25px; margin-top:  auto; margin-bottom:  auto; left:  0px; right:  0px; top:  0px; bottom:  0px; position:  absolute; display:  inline-block; transform: rotate(0deg) scale(1) translate(109%,-7%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(109%,-7%); -o-transform: rotate(0deg) scale(1) translate(109%,-7%); -moz-transform: rotate(0deg) scale(1) translate(109%,-7%); -webkit-transform: rotate(0deg) scale(1) translate(109%,-7%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
 .wx-text_UEUILw{width:  70%; height:  30%; margin-left:  auto; margin-right:  auto; color:  rgb(255, 255, 255); text-align:  center; font-weight:  600; font-size:  18px; line-height:  1em; letter-spacing:  2px; transform: rotate(0deg) scale(1) translate(0%,123%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(0%,123%); -o-transform: rotate(0deg) scale(1) translate(0%,123%); -moz-transform: rotate(0deg) scale(1) translate(0%,123%); -webkit-transform: rotate(0deg) scale(1) translate(0%,123%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
 
-.wx-text_ljTUi7{width:  20%; text-align:  center; font-weight:  600; font-size:  15px; color: #7f7f7f; transform:  rotate(0deg) scale(1) translate(0%, 109%); transition:  all 0s ease; }
+
 
 .wx-text_Ap2irQ{width: 20%; margin-left: auto; margin-right: 0px; padding-top: 3px; padding-bottom: 3px; transform: rotate(0deg) scale(1) translate(-43%, 0%); transition: all 0s ease;}
 .wx-button_A5vqHE{width: 20%;}
@@ -242,3 +242,38 @@ radio-group{
 .wx-image_asFwH9{width:  25px; height:  25px; margin-top:  auto; margin-bottom:  auto; left:  0px; right:  0px; top:  0px; bottom:  0px; position:  absolute; display:  inline-block; transform: rotate(0deg) scale(1) translate(109%,0%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(109%,0%); -o-transform: rotate(0deg) scale(1) translate(109%,0%); -moz-transform: rotate(0deg) scale(1) translate(109%,0%); -webkit-transform: rotate(0deg) scale(1) translate(109%,0%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
 .wx-text_XP2vT6{width:  65%; margin-left:  auto; margin-right:  auto; transform:  rotate(0deg) scale(1) translate(0%, 65%); transition:  all 0s ease; height:  25%; text-align:  center; font-weight:  600; font-size:  18px; color: #ffffff; }
 .wx-text_MX6hYz{width:  50%; margin-left:  auto; margin-right:  auto; color:  rgb(255, 255, 255); text-align:  center; font-size:  16px; transform: rotate(0deg) scale(1) translate(0%,217%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(0%,217%); -o-transform: rotate(0deg) scale(1) translate(0%,217%); -moz-transform: rotate(0deg) scale(1) translate(0%,217%); -webkit-transform: rotate(0deg) scale(1) translate(0%,217%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+
+
+
+
+/* 模版tabbar的样式 */
+.menu-item{  
+  width: 32%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 8px;  
+}  
+.menu-item2{  
+  width: 32%;  
+  float: left;  
+  text-align: center;  
+  padding-top: 8px;  
+}  
+.img{  
+  width: 45rpx;  
+  height: 45rpx;  
+  display: block;  
+  margin:auto;  
+}  
+.clear{  
+  clear: both;  
+}  
+.tab-bar{  
+  position: fixed;  
+  width: 100%;  
+  padding: 0px 2%;  
+  background-color: white;
+}  
+.tabbar_text{
+  font-size: 28rpx
+}

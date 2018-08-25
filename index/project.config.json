@@ -8,13 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.1",
+	"libVersion": "2.2.3",
 	"appid": "touristappid",
-<<<<<<< Updated upstream
 	"projectname": "%E8%AF%B7%E5%81%87%E5%B0%8F%E7%A8%8B%E5%BA%8Fv2",
-=======
-	"projectname": "%E8%AF%B7%E5%81%87%E5%B0%8F%E7%A8%8B%E5%BA%8Findex",
->>>>>>> Stashed changes
 	"condition": {
 		"search": {
 			"current": -1,

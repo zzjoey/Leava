@@ -35,7 +35,6 @@ page{
   width: 100%;
   height: 70rpx;
   border:1px solid grey; 
-  /* #efefef; */
   border-radius: 8rpx;
   display: flex;
   align-items: center;
@@ -102,7 +101,7 @@ border-radius:  15px;
   font-size:  18px;
   letter-spacing: 2px;
   position: relative;
-  top:-320rpx; }
+  top:-620rpx; }
 
 
   .wx-view_dQpERC{height:  18%;
@@ -131,17 +130,65 @@ border-radius:  15px;
   width: 80px;
   height: 80px;
 }
+
 .pickpic{
+  position: relative;
   width: 50%;
   font-size: 14px;
   height: 40px;
-  margin-top: 180px;
+  top: 50rpx;
+  /* margin-top: 320px; */
 }
 
 .imgview{
-  position: absolute;
+  position: relative;
   left: 20%;
-  top: 380px;
-  margin-top: 100px;
+  width: 80px;
+  top: 30rpx;
+  margin-top: 180px;
   border: 1px solid white;
+}
+
+.fudao{
+  position: relative;
+  left: 20%;
+  top: 320rpx;
+  font-size: 14px;
+  /* border: 1px red solid; */
+}
+
+.fudao picker{
+  color:grey;
+  border:1px solid grey;
+  background: white;
+  width: 60%;
+  height: 70rpx;
+  line-height: 30px;
+  border-radius: 10rpx;
+}
+
+.jiaoshi{
+    position: relative;
+  left: 20%;
+  top: 360rpx;
+  font-size: 14px;
+  
+}
+
+.jiaoshi picker{
+  color:grey;
+  border:1px solid grey;
+  background: white;
+  width: 60%;
+  height: 70rpx;
+  line-height: 30px;
+  border-radius: 10rpx;
+}
+
+.ts1{
+  font-size: 13px;
+  left: 20%;
+  position: relative;
+  top: 20px;
+
 }
