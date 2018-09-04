@@ -50,8 +50,6 @@ page {
     position: relative;
     top: 20rpx; 
     }
-
-    /* -ms-transform: rotate(0deg) scale(1) translate(359%,-543%); -o-transform: rotate(0deg) scale(1) translate(359%,-543%); -moz-transform: rotate(0deg) scale(1) translate(359%,-543%); -webkit-transform: rotate(0deg) scale(1) translate(359%,-543%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; } */
     
 .wx-text_fail{
   width: 120rpx;

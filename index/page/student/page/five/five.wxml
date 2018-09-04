@@ -7,7 +7,7 @@
 <view class="c-minheight wx-view_vmgDZb" data-c_e_id="wx_view_1bf81ee2">
     <text class="c-block wx-text_yVPPNX" data-c_e_id="wx_text_dd2e8986">宿舍<text class='txt'>{{room}}</text>
     </text>
-    <text class="c-block wx-text_yVPPNX" data-c_e_id="wx_text08efcb38">院系<text class='txt'>{{institute}}</text>
+    <text class="c-block wx-text_yVPPNX" data-c_e_id="wx_text08efcb38">院系<text class='txt'>{{school}}</text>
     </text>
     <text class="c-block wx-text_yVPPNX" data-c_e_id="wx_texted6fefcf">班级<text class='txt'>{{cla}}</text>
     </text>

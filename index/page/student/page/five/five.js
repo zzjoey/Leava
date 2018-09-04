@@ -36,14 +36,14 @@ Page({
     //       id:'202160***',
     //         name:'张三'
     var room=wx.getStorageSync("room");
-    var institute=wx.getStorageSync("institue");
     var cla=wx.getStorageSync("s_class");
     var id=wx.getStorageSync("student_id");
     var name=wx.getStorageSync("name");
-
+    var school = wx.getStorageSync('school');
+    
     this.setData({
       room:room,
-      institute:institute,
+      school: school,
       cla:cla,
       id:id,
       name:name

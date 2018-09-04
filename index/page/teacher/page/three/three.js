@@ -17,8 +17,9 @@ Page({
    */
 
   data: {
-    name:"赵星",
-    hiddenmodalput:true
+    name:"查无此人",
+    hiddenmodalput:true,
+    infojson:''
   
   },
   modalinput: function () {
@@ -34,9 +35,41 @@ Page({
   },
   //确认
   confirm: function (e) {
-    console.log(this.data.inputname);
+    var name=this.data.inputname;
     this.setData({
-      hiddenmodalput: true
+      hiddenmodalput: true,
+      name:name
+    })
+  //  wx.setStorageSync('name',name);
+    var name = this.data.name;
+    var that = this;
+    wx.request({
+      url: 'http://zzjoeyyy.com/search_name',
+      data: {
+        name: name//'张麻子'
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      method: "POST",
+      success: function (res) {
+        console.log(res.data);
+        var json = res.data;
+        if (json == 'name is not exist') {
+          that.setData({
+            name: '查无此人'
+          })
+          return;
+        }
+        for (var i = 0; json[i.toString()] != null; i++) {
+          json[i].end_time = json[i].end_time.substring(0, 10);
+          json[i].start_time = json[i].start_time.substring(0, 10);
+        }
+
+        that.setData({
+          infojson: json,
+        });
+      }
     })
   },
   getInput:function(e){
@@ -45,79 +78,54 @@ Page({
     })
     
   },
-  goTwo:function(){
+  goMoreInfo:function(e){
+    //在three.js中已经放入缓存 infotype:'周末宿舍假',
+    // cla: '计算机科学与技术',
+    // id: '202160***',
+    // name: '哈哈',
+    // room: '北十B113',
+    // info: '哈哈哈'
+    try {
+      var infojson = this.data.scjson;
+      var index = e.target.id;//获得在<text>标签中的日期范围值
+      console.log(index);
+      console.log(infojson[index]);
+      var student_id = infojson[index].student_id;
+      var timeStartToEnd = infojson[index].start_time + '——' + infojson[index].end_time;
+      wx.setStorageSync("timeStartToEnd", timeStartToEnd);
+      wx.setStorageSync("student_id", student_id);
+      var reason = infojson[index].reason;
+      wx.setStorageSync("reason", reason);
+      var flag = infojson[index].flag;
+      wx.setStorageSync("flag", flag);
+      var ensure = infojson[index].ensure;
+      if (ensure == null) ensure = '';
+      wx.setStorageSync("ensure", ensure);
+
+      console.log('发送请求的'+student_id);
+  
+
+
+    } catch (ep) {
+      console.log(ep);
+    }
     wx.navigateTo({
-      url: '../two/two',
+      url: '../four/four',
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  // init:function(){
-  //   var that=this;
-  //   var teacher_id=wx.getStorageSync('teacher_id');
-  //   var name=wx.getStorageSync('name');
-  //   wx.request({
-  //     url: 'http://api.zzjoeyyy.com/teacher/search_leave',
-  //     data: {
-  //       teacher_id: teacher_id
-  //     },
-  //     header: {
-  //       "content-type": "application/json"
-  //     },
-  //     method: "post",
-  //     success: function (e) {
-  //       var json=e.data;
-  //       var stuarr=new Array();
-  //       var stuinfo =new Array();
-  //       var emptyjson=JSON.parse("{}");
-  //       for (var x = 0; JSON.stringify(json[x])!='{}'&&json[x]!=undefined;x++){
-  //         //console.log(json[x]);
-  //         var student_id = json[x].student_id;
-  //         if (stuarr.indexOf(student_id)==-1){
-  //           wx.request({
-  //             url: 'http://api.zzjoeyyy.com/student/search_leave_detail',
-  //             data: {
-  //               student_id: student_id
-  //             },
-  //             header: {
-  //               "content-type": "application/json"
-  //             },
-  //             method: "post",
-  //             success: function (e) {
-  //               stuarr.push(student_id); 
-  //               if (JSON.stringify(e.data)!="{}"){
-  //                 //console.log(e.data[0]);
-  //                 var cla = e.data[0].class;
-  //                 var name = e.data[0].name;
-  //                 var str=cla+name;
-  //                 stuinfo.push(str);
-  //               }
-  //             }
-  //           })
-  //         }
-  //      }
-  //     }
-  //   })
-  //   console.log(stuinfo.length);
-  //   for (var i = 0; i < stuinfo.length; i++) {
-  //     console.log(stuinfo[i]);
-  //   }
-  //   that.setData({
-  //     stuinfo: stuinfo,
-  //     name: name
-  //   })
- // },
   onLoad () {
-   // this.init();
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
     var role=wx.getStorageSync('role');
     if(role=='辅导员/班主任'){
-      app.editTabBarTeacher1();  
+      app.editTabBarTeacher1();
+      this.teacherInit(1);  
     } else{
       app.editTabBarTeacher2();
-      this.teacher2Init();
+      this.teacherInit(2);
     }
     this.setData({
       role:role
@@ -137,6 +145,7 @@ Page({
   onShow () {
     // 执行coolsite360交互组件展示
     app.coolsite360.onShow(this);
+    
   },
 
   /**
@@ -166,22 +175,43 @@ Page({
     app.exit();
   },
 
-  teacher2Init(){
+  teacherInit(i){
+    var that=this;
+    var url;
+    if(i==1){
+      url = 'http://zzjoeyyy.com/teacher/search_leave';
+    }else{
+      url = 'http://zzjoeyyy.com/teacher2/search_leave';
+    }
     var teacher_id=wx.getStorageSync('teacher_id');
     wx.request({
-              url: 'http://api.zzjoeyyy.com/teacher2/search_leave',
-              data: {
-                teacher_id: teacher_id
-              },
-              header: {
-                "content-type": "application/json"
-              },
-              method: "post",
-              success:function(e){
-             
-                }
+      url: url,
+      data: {
+        teacher_id: teacher_id
+      },
+      header: {
+        "content-type": "application/json"
+      },
+      method: "post",
+      success:function(res){
+        var json = res.data;
+        var json2=json;
+        console.log(json);
+        for (var i = 0; json[i.toString()] != null; i++) {
+          json[i].end_time = json[i].end_time.substring(0, 10);
+          json[i].start_time = json[i].start_time.substring(0, 10);
+        }      
+        that.setData({
+          infojson: json,
+          scjson:json2
+        });
+      
+      }
 
     })
+
+   
+
   }
 
 })

@@ -55,6 +55,7 @@ Page({
           if (leaveinfojson[x].leave_num==leave_num){
             var stime = leaveinfojson[x].start_time;
             var etime = leaveinfojson[x].end_time;
+            var ensure=leaveinfojson[x].ensure;
             that.setData({
               cla: json.class,
               name: json.name,
@@ -62,7 +63,8 @@ Page({
               id: student_id,
               stime: stime,
               etime: etime,
-              info: leaveinfojson[x].reason
+              info: leaveinfojson[x].reason,
+              ensurebase64: ensure
             })
             break;
           }

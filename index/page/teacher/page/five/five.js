@@ -30,12 +30,12 @@ Page({
     var name = wx.getStorageSync('name');
     var role=wx.getStorageSync('role');
     var teacher_id = wx.getStorageSync('teacher_id');
-    //var school=wx.getStorageSync('school');
+    var school=wx.getStorageSync('school');
     this.setData({
       name: name,
-      //school:school,
       teacher_id:teacher_id,
       role:role,
+      school:school
     })
   },
   onLoad () {

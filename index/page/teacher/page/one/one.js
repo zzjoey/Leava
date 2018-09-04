@@ -31,7 +31,7 @@ Page({
     console.log(teacher_id);
     app.editTabBarTeacher1();
     wx.request({
-      url: 'http://api.zzjoeyyy.com/teacher/search_leave',
+      url: 'http://zzjoeyyy.com/teacher/search_leave',
       data:{
         teacher_id:teacher_id
       },
@@ -42,7 +42,6 @@ Page({
       success:function(e){
         console.log(e.data);
         var currinfo=e.data;
-        // console.log(currinfo);
         var json=e.data;
         var nowdate=new Date(); 
         for (var x in currinfo){

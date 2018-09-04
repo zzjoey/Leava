@@ -33,7 +33,6 @@ Page({
     var reason = infojson[index].reason;
     wx.setStorageSync("reason", reason);
     var flag = infojson[index].flag;
-    console.log('3.js flag=='+flag);
     wx.setStorageSync("flag",flag);
     var ensure=infojson[index].ensure;
     if(ensure==null)ensure='';
@@ -89,7 +88,7 @@ Page({
     app.coolsite360.register(this);
     var student_id=wx.getStorageSync("student");
     wx.reLaunch({
-      url: 'http://192.168.50.88/student/ask_leave',
+      url: 'http://api.zzjoeyyy.com/student/ask_leave',
       data:{
         student_id: student_id
       },

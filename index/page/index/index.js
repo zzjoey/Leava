@@ -142,7 +142,7 @@ Page({
       return;
     }
     wx.request({
-      url: 'http://api.zzjoeyyy.com/login',
+      url: 'http://zzjoeyyy.com/login',
       data: {
         userId: this.data.id,
         userPwd: this.data.pwd
@@ -170,6 +170,9 @@ Page({
             });
             break;
           case 2:  
+            var school=json["school"];
+            console.log(school);
+            wx.setStorageSync("school", school);
             if(role==0){
               var name = json["name"];
               var teacher_id = json["teacher_id"];

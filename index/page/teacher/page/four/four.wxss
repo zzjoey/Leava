@@ -1,1 +1,56 @@
 /* page/teacher/page/four/four.wxss */
+
+
+page{
+   background-color: rgba(234,234,234,1); 
+}
+.info{
+  color: black;
+  font-size: 15px;
+  letter-spacing:  0;
+}
+
+
+.wx-text_PRJwCh{height:  10%;
+ background-color:  rgb(255, 255, 255);
+  color: #3bb8ea; 
+  font-family:  SimSun;
+   font-weight:  700;
+    font-size:  17px; 
+    letter-spacing:  13px;
+     line-height:  2em;
+      text-indent:  20px; }
+
+.failinfo{
+  background-color: grey;
+    position: absolute;
+  top: 900rpx;
+  left: 40%;
+  
+}
+
+
+.pendinginfo{
+  background-color:#3bb8ea;
+  position: absolute;
+  top: 900rpx;
+  left: 40%;
+}
+
+.successinfo{
+  background-color: #F9686C;
+    position: absolute;
+  top: 900rpx;
+  left: 40%;
+}
+
+.base64{
+  position: relative;
+  left: 20%;
+}
+
+.pic{
+  width: 100%;
+  height: 100px;
+  background-color: white;
+}
