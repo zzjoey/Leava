@@ -1,0 +1,78 @@
+page { 
+     background-color:  rgb(249, 104, 108); 
+     background-attachment:  fixed; 
+     overflow: visible; 
+     position:  static; 
+     padding: 0rpx;
+     margin: 0rpx;
+}
+
+.wx-idinput{
+  /* 密码输入框 */
+  color: white;
+  height: 15px;
+  width:80%;
+  font-size: 15px;
+   /* border: 1px solid red;  */
+  position: relative;
+  margin-top: -33px;
+  margin-left: 38px;
+  line-height: 0px;
+}
+.wx-pwdinput{
+ color: white;
+  height: 30px;
+  width:80%;
+  font-size: 15px;
+  /* border: 1px solid red; */
+  position: relative;
+  margin-top: -57px;
+  margin-left: 38px;
+}
+.wx-icon_vDsKpQ{
+  /*学号icon  */
+  /* padding-left: 8rpx; */
+  position: relative;
+  margin-left: -24%;
+  margin-top: 5%;
+
+}
+.id-input{
+  width: 60%;
+  position: absolute;
+  left: 20%;
+  height: 80rpx;
+  border:2px solid white;
+  border-radius: 5px;
+}
+.pwd-input{
+  width:60%;
+  position: relative;
+  top:85rpx;
+  height: 80rpx;
+  border: 2px solid white;
+  border-radius: 5px;  
+  left: 20%;
+}
+.wx-icon_4wSeUi{
+  /*密码icon  */
+  /* padding-left: 8rpx; */
+  margin-left: -24%;
+  margin-top:15%;
+}
+.wx-text_6vinIv{
+  /*忘记密码  */
+  margin-top: 120rpx;
+  color: white;
+}
+wx-button.wx-button_login{
+  /*登陆按钮  */
+  height: 70rpx;
+  width: 300rpx;
+  text-align: center;
+  background-color: rgb(12, 131, 191);
+  color: white;
+  font-size: 30rpx;
+  position: relative;
+   top:70px; 
+}

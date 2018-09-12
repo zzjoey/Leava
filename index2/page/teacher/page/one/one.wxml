@@ -1,0 +1,29 @@
+<import src="../../../template/tabbar.wxml" />
+<scroll-view scroll-y="true">
+<view class="c-minheight wx-view_dPKFFF" data-c_e_id="wx_view_f78fa342">
+    <image class="wx-image_G4F2vY" data-c_e_id="wx_image_af52d68b" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); " bindtap='exit'/>
+    <text class="c-block wx-text_UEUILw" data-c_e_id="wx_text_d5006ef7">{{institute}}</text>
+</view>
+<view class="c-minheight wx-view_OZxpJ0" data-c_e_id="wx_view_39c8d625" >
+    <text class="c-block wx-text_ljTUi7" data-c_e_id="wx_text_cd201d03">今日待审批</text>
+    <view wx:for="{{currinfo}}">
+    <view wx:if="{{item.type==1}}">
+    <text class="c-block wx-text_KQWxBE" data-c_e_id="wx_text_1c5e5bfc">{{item.time}}天 事假</text>
+        <text class="c-block wx-text_blue" data-c_e_id="wx_text_a912583b" id="{{item.leave_num+'_'+item.student_id}}" bindtap='goMoreInfo'>查看详情</text>
+    </view>
+    <view wx:elif="{{item.type==2}}">
+    <text class="c-block wx-text_KQWxBE" data-c_e_id="wx_text_1c5e5bfc">{{item.time}}天 病假</text>
+        <text class="c-block wx-text_blue" data-c_e_id="wx_text_a912583b" id="{{item.leave_num+'_'+item.student_id}}" bindtap='goMoreInfo'>查看详情</text>
+    </view>
+    <view wx:else>
+    <text class="c-block wx-text_KQWxBE" data-c_e_id="wx_text_1c5e5bfc">{{item.time}}天 其他</text>  
+        <text class="c-block wx-text_blue" data-c_e_id="wx_text_a912583b" id="{{item.leave_num+'_'+item.student_id}}" bindtap='goMoreInfo'>查看详情</text>  
+    </view>
+
+    </view>
+    </view>
+    <view style='height:400rpx;'>
+    </view>
+</scroll-view>
+<template is="tabBar" data="{{tabBar:tabBar}}"></template>
+
