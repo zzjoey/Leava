@@ -45,7 +45,14 @@ page{
   left: 40%;
 }
 
-.base64{
+.picture{
   position: relative;
   left: 20%;
+}
+
+.text-back{
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 5%;
 }

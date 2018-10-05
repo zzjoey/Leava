@@ -1,5 +1,7 @@
 <import src="../../../template/tabbar.wxml" />
 <view class="c-minheight wx-view_iZial1" data-c_e_id="wx_view_36cc8914">
+<text class='show_id'>当前用户:{{id}}</text>
+    <text class='text-back' bindtap='goBack'>返回</text>
 </view>
 <view class="c-minheight wx-view_vmgDZb" data-c_e_id="wx_view_1bf81ee2">
     <text class="c-block wx-text_yVPPNX" data-c_e_id="wx_text_dd2e8986">新密码</text>

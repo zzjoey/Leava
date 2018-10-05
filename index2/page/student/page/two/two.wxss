@@ -61,9 +61,9 @@ page{
 .select_time_img{
    width: 65rpx;
   height: 65rpx;
-  position: relative;
+  position: absolute;
   /* margin-top: -1rpx; */
-  left: 40rpx;
+  left: 380rpx;
   transition:transform 0.01s;
 }
 .select_time_img_rotate{

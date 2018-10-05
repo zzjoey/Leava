@@ -107,7 +107,7 @@ radio-group{
 
 .wx-view_6JhHS1{background-color:  rgb(249, 104, 108); padding-bottom:  0px; }
 .wx-image_y8l0Cx{width: 5px; }
-.wx-image_OzAKfy{width:  25px; height:  25px; transform: rotate(0deg) scale(1) translate(0%,109%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(0%,109%); -o-transform: rotate(0deg) scale(1) translate(0%,109%); -moz-transform: rotate(0deg) scale(1) translate(0%,109%); -webkit-transform: rotate(0deg) scale(1) translate(0%,109%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+
 .wx-text_w1iNIb{margin-left:  auto; margin-right:  auto; width:  70%; font-weight:  700; color:  rgb(255, 255, 255); text-align:  center; font-size:  17px; font-family:  SimSun; letter-spacing: 2px; }
 .wx-view_lzgb20{height: 88%; background-color:  rgb(234, 234, 234); transform:  rotate(0deg) scale(1) translate(0%, 0%); transition:  all 0s ease; }
 .wx-text_Rzeehk{margin-top:  0px; text-align:  center; font-weight:  600; font-size: 16px; color:  rgb(66, 60, 60); height:  15%; padding-top:  0px; line-height:  400%; letter-spacing:  3px; }
@@ -276,4 +276,12 @@ radio-group{
 }  
 .tabbar_text{
   font-size: 28rpx
+}
+
+
+.text-back{
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 5%;
 }

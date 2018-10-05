@@ -20,7 +20,8 @@ Page({
     ts1: '请确保无误再提交',
     ts2:'两次密码不一致',
     ts1hidden:true,
-    ts2hidden:true
+    ts2hidden:true,
+    id:''
   },
   getPwd1:function(e){
     var pwd1=e.detail.value;
@@ -86,6 +87,11 @@ Page({
       frontColor: '#ffffff',
       backgroundColor: '#3BB8EA'
     });
+    var student_id = wx.getStorageSync('student_id');
+    this.setData({
+      id:student_id
+    });
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -125,6 +131,10 @@ Page({
 
 
   //以下为自定义点击事件
-
+  goBack:function(){
+    wx.redirectTo({
+      url: '../five/five',
+    })
+  }
 })
 

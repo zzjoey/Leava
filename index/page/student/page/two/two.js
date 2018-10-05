@@ -65,7 +65,7 @@ Page({
     var that =this;
     var school=this.data.school[this.data.s1index];
     wx.request({
-      url: "http://api.zzjoeyyy.com/teacher/search_id",
+      url: "http://118.25.139.179/teacher/search_id",
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -78,7 +78,7 @@ Page({
         var namearr=new Array();
         var idarr=new Array();
         for(var x in json){
-          console.log(json[x]);
+          // console.log(json[x]);
           if(json[x].role==0){
             var id = json[x].teacher_id;
             var name=json[x].name;
@@ -102,7 +102,7 @@ Page({
     var that = this;
     var school = this.data.school[this.data.s2index];
     wx.request({
-      url: "http://api.zzjoeyyy.com/teacher/search_id",
+      url: "http://118.25.139.179/teacher/search_id",
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -115,7 +115,7 @@ Page({
         var namearr = new Array();
         var idarr = new Array();
         for (var x in json) {
-          console.log(json[x]);
+          // console.log(json[x]);
           if (json[x].role == 1) {
             var id = json[x].teacher_id;
             var name = json[x].name;
@@ -176,7 +176,7 @@ Page({
           tempFilePath: tempPath,
           success:function(res){
             let savedFilePath=res.savedFilePath;
-            console.log(savedFilePath);
+            // console.log(savedFilePath);
             _this.setData({
               savedFilePath: savedFilePath,
               filepath:tmpFilepath
@@ -374,10 +374,10 @@ Page({
     var _this =this;
     let filesystemManager = wx.getFileSystemManager();
     let b64 = 'data:image/png;base64,'+filesystemManager.readFileSync(this.data.savedFilePath, 'base64');
-    console.log(b64);
+    // console.log(b64);
 
     wx.request({
-      url: 'http://api.zzjoeyyy.com/student/ask_leave',
+      url: 'http://118.25.139.179/student/ask_leave',
       data: {
         student_id: that.data.student_id,
         start_time: that.data.startdate,
@@ -394,7 +394,7 @@ Page({
       },
       method: "POST",
           success: function(e){
-            console.log(e);
+            // console.log(e);
             if(e.data=='True')
             that.setData({
                 txt:'添加成功',

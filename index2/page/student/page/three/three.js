@@ -41,12 +41,9 @@ Page({
       console.log(e);
     }
     
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../four/four',
     })
-  },
-  click:function(){
-    
   },
   /**
    * 生命周期函数--监听页面加载
@@ -86,16 +83,6 @@ Page({
       }
     })
     app.coolsite360.register(this);
-    var student_id=wx.getStorageSync("student");
-    wx.reLaunch({
-      url: 'http://118.25.139.179/student/ask_leave',
-      data:{
-        student_id: student_id
-      },
-      success:function(res){
-        console.log(res);
-      }
-    })
   },
 
   /**
@@ -138,6 +125,15 @@ Page({
   //以下为自定义点击事件
   exit:function(){
     app.exit();
+  },
+  cancelConfirmExit: function () {
+    wx.showModal({
+      title: '提示',
+      content: '确定要退出吗',
+      success: function (res) {
+        if (res.confirm) app.exit();
+      }
+    })
   }
 })
 

@@ -24,7 +24,7 @@ Page({
     date: '2018-10-1',
     leaveinfo: '想回宿舍写程序',
     flag: 0,
-    ensurebase64: ''
+    ensure: ''
 
   
   },
@@ -50,9 +50,9 @@ Page({
     var timeStartToEnd = wx.getStorageSync("timeStartToEnd");
     var reason = wx.getStorageSync("reason");
     var flag = wx.getStorageSync("flag");
-    var ensurebase64 = wx.getStorageSync("ensure");
-    if (ensurebase64 == null)
-      ensurebase64 = '';
+    var ensure = wx.getStorageSync("ensure");
+    if (ensure == null)
+      ensure = '';
 
 
 
@@ -80,7 +80,7 @@ Page({
           date: timeStartToEnd,
           leaveinfo: reason,
           flag: flag,
-          ensurebase64: ensurebase64
+          ensure: ensure
         })
       }
 
@@ -123,9 +123,52 @@ Page({
   onPullDownRefresh () {
     
   },
-
+ 
 
   //以下为自定义点击事件
-  
+  preImage: function () {
+    console.log("ok");
+    var urlArray = new Array();
+    var ensure=this.data.ensure;
+    wx.previewImage({
+      current: ensure,
+      urls: [ensure],
+      success: function (res) {
+
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  goEdit:function(){
+    var teacher_id = wx.getStorageSync("teacher_id");
+    var that =this;
+    wx.request({
+      url: 'http://118.25.139.179/teacher/search_leave',
+      data: {
+        teacher_id: teacher_id
+      },
+      header: {
+        "content-type": "application/json"
+      },
+      method: "post",
+      success: function (e) {
+        var json = e.data;
+        wx.setStorageSync('leaveinfojson',json);
+        var student_id = wx.getStorageSync("student_id");
+        var leave_num = wx.getStorageSync("leave_num");
+        var str = leave_num + "_" + student_id;
+        wx.setStorageSync("str", str);
+        wx.redirectTo({
+          url: '../edit/edit',
+        })
+      }
+    })
+  },
+  goBack:function(){
+    wx.redirectTo({
+      url: '../three/three',
+    })
+  }
 })
 

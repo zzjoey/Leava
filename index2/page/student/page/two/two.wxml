@@ -3,7 +3,7 @@
 <!-- 学生端
 提交假条申请页面 -->
  <view class="c-minheight wx-view_dQpERC" data-c_e_id="wx_view_5dab7780">
-    <image class="wx-image_asFwH9" data-c_e_id="wx_image_1d193d70" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); " bindtap='exit'/>
+    <image class="wx-image_asFwH9" data-c_e_id="wx_image_1d193d70" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); " bindtap='cancelConfirmExit'/>
     <text class="c-block wx-text_XP2vT6" data-c_e_id="wx_text_192cfd38">当前  <!--第{{week}}周.-->星期{{day}}</text>
     <text class="c-block wx-text_MX6hYz" data-c_e_id="wx_text_6f44ccc4">{{nowDate}}</text>
 </view> 
@@ -26,7 +26,7 @@
       请假开始时间: {{startdate}}
     </view>
   </picker>
-   <image class='select_time_img {{showStart&&"select_time_img_rotate"}}' src='/resources/down.png' bindchange="changeStartDate"></image>  
+   <image class='select_time_img {{showStart&&"select_time_img_rotate"}}' src='/resources/down.png' bindtap="changeStartDate"></image>  
 </view>
 </view>
 
@@ -37,7 +37,7 @@
       请假结束时间: {{enddate}}
     </view>
   </picker>
-   <image class='select_time_img {{showEnd&&"select_time_img_rotate"}}' src='/resources/down.png'   bindchange="changeEndDate"></image>  
+   <image class='select_time_img {{showEnd&&"select_time_img_rotate"}}' src='/resources/down.png'   bindtap="changeEndDate"></image>  
 </view>
 </view>
 
@@ -72,7 +72,7 @@
 <image src='{{savedFilePath}}' class='picimg' bindtap='chooseImageTap'></image>
 </view>
 <view>
-<text class='ts1'>图片请不要大于7k</text>
+<!-- <text class='ts1'>图片请不要大于7k</text> -->
 <button class='pickpic' bindtap="pickCamera">拍照</button>
 </view>
 </view>
@@ -89,6 +89,7 @@
     cancel-text="取消" bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel" value='{{leaveinfo}}'>
     </modal>
     </view>
+    
 </view>
 </form>
 

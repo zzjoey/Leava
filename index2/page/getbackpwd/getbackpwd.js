@@ -77,6 +77,8 @@ Page({
 
 
   //以下为自定义点击事件
-
+  goBack:function(){
+    
+  }
 })
 

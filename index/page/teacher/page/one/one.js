@@ -40,7 +40,6 @@ Page({
       },
       method:"post",
       success:function(e){
-        console.log(e.data);
         var currinfo=e.data;
         var json=e.data;
         var nowdate=new Date(); 
@@ -106,10 +105,9 @@ Page({
   },
   goMoreInfo:function(e){
     var str=e.target.id;
-    console.log('index=='+str);
     wx.setStorageSync('str', str);
     wx.setStorageSync('leaveinfojson', this.data.leaveinfo);
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../two/two',
     })
   }

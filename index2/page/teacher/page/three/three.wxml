@@ -2,7 +2,7 @@
 <view class="head wx-view_R5j5xo" data-c_e_id="wx_view_5b111682">
 </view>
 <image class="wx-image_GMgp6J" data-c_e_id="wx_image_42b5baf0" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/0e010ef5717bd9b2600189862780808b_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/0e010ef5717bd9b2600189862780808b_origin.png); "  bindtap='modalinput'/>
-<image class="wx-image_0zNCs5" data-c_e_id="wx_image_070018f1" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); " bindtap='exit'/>
+<image class="wx-image_0zNCs5" data-c_e_id="wx_image_070018f1" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/2e3248e00e194c10de9183a8780cbb93_origin.png); " bindtap='cancelConfirmExit'/>
 <text class="c-block wx-text_rXYlBa" data-c_e_id="wx_text_3cc70d55">{{name}}</text>
 <scroll-view class="c-minheight wx-scroll-view_UaC4RD" data-c_e_id="wx_scroll_view_ee17b05f" lower-threshold="50" scroll-y="True" style="overflow-x: hidden; overflow-y: auto;" upper-threshold="50">
 

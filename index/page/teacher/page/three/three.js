@@ -100,8 +100,9 @@ Page({
       wx.setStorageSync("flag", flag);
       var ensure = infojson[index].ensure;
       if (ensure == null) ensure = '';
+      console.log(ensure);
       wx.setStorageSync("ensure", ensure);
-
+      wx.setStorageSync('leavenum', index);
       console.log('发送请求的'+student_id);
   
 

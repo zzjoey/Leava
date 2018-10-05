@@ -24,11 +24,17 @@ Page({
     date: '2018-10-1',
     leaveinfo: '想回宿舍写程序',
     flag: 0,
-    ensurebase64: ''
-
+    ensurebase64: '',
+    school:'计算机工程学院',
+    role: '辅导员/班主任'
   
   },
 
+  goEdit:function(){
+    wx.redirectTo({
+      url: '../two/two',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -46,11 +52,16 @@ Page({
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
     var that=this;
+    //获取学生id
+    //开始时间到结束时间
+    //请假理由，请假状态
+    //请假图片
     var id = wx.getStorageSync("student_id");
     var timeStartToEnd = wx.getStorageSync("timeStartToEnd");
     var reason = wx.getStorageSync("reason");
     var flag = wx.getStorageSync("flag");
     var ensurebase64 = wx.getStorageSync("ensure");
+    console.log(ensurebase64);
     if (ensurebase64 == null)
       ensurebase64 = '';
 
