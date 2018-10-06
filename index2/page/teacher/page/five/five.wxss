@@ -1,7 +1,0 @@
-/* page/teacher/page/five/five.wxss */
-
-.txt{
-  color: black;
-  margin-left: 40px;
-  font-weight: normal;
-}

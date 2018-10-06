@@ -1,0 +1,40 @@
+<import src="../../../template/tabbar.wxml" />
+<scroll-view>
+<view class="c-minheight wx-view_6JhHS1" data-c_e_id="wx_view_72059661">
+    <!-- <image class="wx-image_OzAKfy" data-c_e_id="wx_image_0c0cce44" mode="scaleToFill" src="http://qty83k.creatby.com/materials/99011/origin/8684ec9b0265f008dd208bcc102e9262_origin.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://qty83k.creatby.com/materials/99011/origin/8684ec9b0265f008dd208bcc102e9262_origin.png); "/> -->
+    <text class="c-block wx-text_w1iNIb" data-c_e_id="wx_text_2487d5f7">请假详情管理</text>
+    <text class='text-back' bindtap='goBack'>返回</text>
+</view>
+
+<view class="c-minheight wx-view_lzgb20" data-c_e_id="wx_view_ecaaf3ea">
+    <text class="c-block wx-text_Rzeehk" data-c_e_id="wx_text_76c5393b">{{infotype}}</text>
+    <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_text_24b1e7b6">班级<text class="txt">{{cla}}</text>
+    </text>
+    <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_texta5799c56">学号<text class="txt">{{id}}</text>
+    <button class="wx-button_VeQSJW" data-c_e_id="wx_button_551f7d47" hover-class="button-hover" size="default" type="default">
+        联系方式
+    </button>
+    </text>
+    <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_textb1437814">姓名<text class="txt">{{name}}</text>
+     </text>
+    <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_text4a93b8b6">宿舍<text class="txt">{{room}}</text>
+    </text>
+    <text class="c-block wx-text_PRJwCh" data-c_e_id="wx_text_f923a6da">请假时间<text class='txt-time'>{{stime}}至</text></text>
+    <text class='txt-etime'>{{etime}}</text>
+    <text class="c-block wx-text_PRJwCh" data-c_e_id="wx_textd6b5e3c0">请假理由<text class='txt-info'>{{info}}</text></text>
+     <view class='pic'>
+      <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_text4a93b8b6">图片</text>
+      <view class='base64'>
+    <view wx:if="{{ensure!=''}}">
+    <image src='{{ensure}}' style='width:60px;height:60px;' bindtap='preImage'></image>
+    </view>
+    <view wx:else>
+    <text style='font-size:14px'>无</text>
+    </view>
+    </view>
+    </view>
+    <button class="wx-button_UsPy45" data-c_e_id="wx_button_a411bd59" hover-class="button-hover" size="default" type="default" bindtap='changeflag2'>批准</button>
+    <button class="wx-button_vWMAC7" data-c_e_id="wx_button_f33d4a0a" hover-class="button-hover" size="default" type="default" bindtap='changeflag0'>不批准</button>
+</view>
+</scroll-view>
+<template is="tabBar" data="{{tabBar:tabBar}}"></template>
