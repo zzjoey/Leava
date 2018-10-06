@@ -1,7 +1,8 @@
 <import src="../../../template/tabbar.wxml" />
 <view class="c-minheight wx-view_6JhHS1" data-c_e_id="wx_view_72059661">
-  
+    <text class='text-edit' bindtap='goEdit'>编辑</text>
     <text class="c-block wx-text_w1iNIb" data-c_e_id="wx_text_2487d5f7">艺术与设计学院</text>
+    <text class='text-back' bindtap='goBack'>返回</text>
 </view>
 <scroll-view scroll-y='{{true}}'>
 <view class="c-minheight wx-view_lzgb20" data-c_e_id="wx_view_ecaaf3ea">
@@ -13,10 +14,10 @@
     <text class="c-block wx-text_PRJwCh" data-c_e_id="wx_text_f923a6da">请假时间<text class="info">{{date}}</text></text>
     <text class="c-block wx-text_PRJwCh" data-c_e_id="wx_textd6b5e3c0">请假理由<text class="info">{{leaveinfo}}</text></text>
     <view class='pic'>
-      <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_text4a93b8b6">图片</text>
-      <view class='base64'>
-    <view wx:if="{{ensurebase64!=''}}">
-    <image src='{{ensurebase64}}' style='width:60px;height:60px;'></image>
+      <text class="c-block wx-text_PIG2ri" data-c_e_id="wx_text4a93b8b6" bindtap='preImage'>图片</text>
+      <view class='picture'>
+    <view wx:if="{{ensure!=''}}" bindtap='preImage'>
+    <image src='{{ensure}}' style='width:60px;height:60px;'></image>
     </view>
     <view wx:else>
     <text style='font-size:14px'>无</text>

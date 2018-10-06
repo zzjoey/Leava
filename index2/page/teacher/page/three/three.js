@@ -23,6 +23,17 @@ Page({
     infojson:''
   
   },
+  cancelConfirmExit: function () {
+    wx.showModal({
+      title: '提示',
+      content: '确定要退出吗',
+      success: function (res) {
+        if (res.confirm) app.exit();
+      }
+    })
+  },
+
+
   modalinput: function () {
     this.setData({
       hiddenmodalput: !this.data.hiddenmodalput
@@ -102,7 +113,8 @@ Page({
       var ensure = infojson[index].ensure;
       if (ensure == null) ensure = '';
       wx.setStorageSync("ensure", ensure);
-
+      var leave_num = infojson[index].leave_num;
+      wx.setStorageSync("leave_num", leave_num);      
       console.log('发送请求的'+student_id);
   
 
@@ -110,7 +122,7 @@ Page({
     } catch (ep) {
       console.log(ep);
     }
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../four/four',
     })
   },

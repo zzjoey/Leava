@@ -90,6 +90,11 @@ Page({
       frontColor: '#ffffff',
       backgroundColor: '#3BB8EA'
     });
+
+    var id = wx.getStorageSync("teacher_id");
+    this.setData({
+      id:id
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -129,6 +134,10 @@ Page({
 
 
   //以下为自定义点击事件
-
+  goBack: function () {
+    wx.redirectTo({
+      url: '../five/five',
+    })
+  }
 })
 

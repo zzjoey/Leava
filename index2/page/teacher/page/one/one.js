@@ -47,10 +47,10 @@ Page({
         for (var x in currinfo){
           var sdate = new Date(currinfo[x].start_time.replace(/-/,'/'));
           var edate = new Date(currinfo[x].end_time.replace(/-/, '/')); 
-          var time = (edate - sdate) / (1000 * 60 * 60 * 24);
+          var time = (edate - sdate) / (1000 * 60 * 60 * 24)+1;
           var flag=currinfo[x].flag;
           currinfo[x]["time"]=parseInt(time);
-          if(edate<nowdate||flag!=1){
+          if(flag!=1){
             delete currinfo[x];
           }
         }
@@ -106,11 +106,19 @@ Page({
   },
   goMoreInfo:function(e){
     var str=e.target.id;
-    console.log('index=='+str);
     wx.setStorageSync('str', str);
     wx.setStorageSync('leaveinfojson', this.data.leaveinfo);
     wx.redirectTo({
       url: '../two/two',
+    })
+  },
+  cancelConfirmExit: function () {
+    wx.showModal({
+      title: '提示',
+      content: '确定要退出吗',
+      success: function (res) {
+        if (res.confirm) app.exit();
+      }
     })
   }
 })

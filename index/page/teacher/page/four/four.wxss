@@ -54,3 +54,11 @@ page{
   height: 100px;
   background-color: white;
 }
+
+.edit_txt{
+  color: white;
+  font-size: 15px;
+  left: 5%;
+  position: absolute;
+  top:20px;
+}

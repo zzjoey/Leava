@@ -30,7 +30,12 @@ Page({
   onLoad () {
     // 注册coolsite360交互模块
     app.coolsite360.register(this);
-    app.editTabBarTeacher1();
+    var role = wx.getStorageSync('role');
+    if (role == '辅导员/班主任') {
+      app.editTabBarTeacher1();
+    } else {
+      app.editTabBarTeacher2();
+    }
 
     var str=wx.getStorageSync("str");
     var that=this;
@@ -38,7 +43,7 @@ Page({
     console.log(leave_num);
     var student_id = str.split('_')[1];
     wx.request({
-      url: 'http:///api.zzjoeyyy.com/student/search_leave_detail',
+      url: 'http:///118.25.139.179/student/search_leave_detail',
       data:{
         student_id:student_id
       },
@@ -64,7 +69,7 @@ Page({
               stime: stime,
               etime: etime,
               info: leaveinfojson[x].reason,
-              ensurebase64: ensure
+              ensure: ensure
             })
             break;
           }
@@ -77,7 +82,9 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady (){},
+  onReady () {
+
+  },
 
   /**
    * 生命周期函数--监听页面显示
@@ -94,7 +101,7 @@ Page({
 
   },
 
-  /*
+  /**
    * 生命周期函数--监听页面卸载
    */
   onUnload () {
@@ -114,7 +121,7 @@ Page({
     var str = wx.getStorageSync("str");
     var leave_num = parseInt(str.split('_')[0]);
       wx.request({
-        url: 'http://api.zzjoeyyy.com/teacher/update_leave',
+        url: 'http://118.25.139.179/teacher/update_leave',
         data: {
           leave_num: leave_num,
           flag:2
@@ -148,7 +155,7 @@ Page({
     var str = wx.getStorageSync("str");
     var leave_num = parseInt(str.split('_')[0]);
     wx.request({
-      url: 'http://api.zzjoeyyy.com/teacher/update_leave',
+      url: 'http://118.25.139.179/teacher/update_leave',
       data: {
         leave_num: leave_num,
         flag: 0
@@ -176,6 +183,25 @@ Page({
           })
         }
       }
+    })
+  },
+  preImage: function () {
+    console.log("ok");
+    var urlArray = new Array();
+    var ensure = this.data.ensure;
+    wx.previewImage({
+      current: ensure,
+      urls: [ensure],
+      success: function (res) {
+
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  goBack:function(){
+    wx.redirectTo({
+      url: '../three/three',
     })
   }
 })

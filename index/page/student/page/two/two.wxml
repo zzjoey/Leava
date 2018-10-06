@@ -72,7 +72,6 @@
 <image src='{{savedFilePath}}' class='picimg' bindtap='chooseImageTap'></image>
 </view>
 <view>
-<text class='ts1'>图片请不要大于7k</text>
 <button class='pickpic' bindtap="pickCamera">拍照</button>
 </view>
 </view>

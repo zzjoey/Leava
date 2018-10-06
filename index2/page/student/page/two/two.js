@@ -1,9 +1,10 @@
 
 // 引入coolsite360交互配置设定
 require('coolsite.config.js');
-var dateTimePicker=require('../../resources/js/dateTimePicker.js');
+var dateTimePicker=require('../../../../resources/js/dateTimePicker.js');
 // 获取全局应用程序实例对象
 const app = getApp();
+
 // 创建页面实例对象
 Page({
   /**
@@ -15,7 +16,6 @@ Page({
    */
 
   data: {
-    user:1,
     student_id:'',
     show:false,
     showStart:false,
@@ -52,7 +52,8 @@ Page({
     t2index:0,
     t1disabled:false,
     t2disabled:false,
-    filepath:''
+    filepath:'',
+    cancelConfirm:true
   },
   exit:function(){
     app.exit();
@@ -102,7 +103,7 @@ Page({
     var that = this;
     var school = this.data.school[this.data.s2index];
     wx.request({
-      url: "http://api.zzjoeyyy.com/teacher/search_id",
+      url: "http://118.25.139.179/teacher/search_id",
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -185,26 +186,9 @@ Page({
         })
       }
     })
-    let filesystemManager = wx.getFileSystemManager();
-    let b64 = 'data:image/png;base64,'+filesystemManager.readFileSync(this.data.savedFilePath,'base64'); 
+
   },
-  toBase64(savedFilePath){
-    let filesystemManager = wx.getFileSystemManager();
-    let res;
-    filesystemManager.readFile({
-      filePath:savedFilePath,
-      encoding: "base64",
-      success: function (res) {
-        let base64 = res.data;
-        res= "data:image/png;base64," + base64
-      }
-    })
-    return res;
-  },
-  toBlob:function(){
-    let blob=dataURLtoBlob(this.data.savedFilePath);
-    console.log(blob);
-  },
+
   pickCamera:function(){
     this.chooseWxImage('camera');
   },
@@ -227,7 +211,15 @@ Page({
       modalHidden: this.data.modalHidden=true
     })
   },
-
+  cancelConfirmExit:function(){
+    wx.showModal({
+      title: '提示',
+      content: '确定要退出吗',
+      success:function(res){
+        if (res.confirm) app.exit();
+      }
+    })
+  },
   // 点击下拉显示框
   selectTap(){
     this.setData({
@@ -263,6 +255,8 @@ Page({
     var date = new Date();
     var year = date.getFullYear();
     var month = date.getMonth() + 1;
+    var today=date.getDate();
+    today=today<10?'0'+today:today;
     var day = date.getDay();
     switch (day) {
       case 0: day = "日"; break;
@@ -280,6 +274,7 @@ Page({
       dateTimeArray1: obj1.dateTimeArray,
       dateTime1: obj1.dateTime,
       nowDate: date.toLocaleDateString(),
+      startdate: year+'-'+month+'-'+today,
       day: day,
       student_id:id
     });
@@ -367,17 +362,35 @@ Page({
     var that = this;
     var st = new Date(Date.parse(that.data.startdate.replace(/-/, "/")));
     var et = new Date(Date.parse(that.data.enddate.replace(/-/, "/")));
-    var t1id=this.data.t1id[this.data.t1index];
+
+    var _this =this;
+    
+    var fileId;
+    var file=this.data.savedFilePath;
+    file = file.substring(file.lastIndexOf("/")+1);
+    if (file =='z_add.png'){
+      file="";
+      that.upLoad(file);
+      return;
+      }
+    wx.cloud.uploadFile({
+      cloudPath: file,
+      filePath: this.data.savedFilePath,
+      success:function(res){
+        fileId=res.fileID;
+        that.upLoad(fileId);
+      },
+      fail:console.error
+    })
+  },
+
+  upLoad:function(fileId){
+    var t1id = this.data.t1id[this.data.t1index];
     var t2id = this.data.t2id[this.data.t2index];
     var typ = this.data.index;//不能与关键字type冲突，命名为typ
-    var savedFilePath=this.data.savedFilePath;
-    var _this =this;
-    let filesystemManager = wx.getFileSystemManager();
-    let b64 = 'data:image/png;base64,'+filesystemManager.readFileSync(this.data.savedFilePath, 'base64');
-    console.log(b64);
-
-    wx.request({
-      url: 'http://api.zzjoeyyy.com/student/ask_leave',
+    var that=this;
+     wx.request({
+      url: 'http://118.25.139.179/student/ask_leave',
       data: {
         student_id: that.data.student_id,
         start_time: that.data.startdate,
@@ -386,8 +399,8 @@ Page({
         flag:1, 
         teacher1_id:t1id, 
         teacher2_id:t2id, 
-        type: typ,
-        ensure: b64,
+        type: typ,//请假类型
+        ensure:fileId
       },
       header: {
         'content-type': 'application/json' // 默认值
@@ -410,9 +423,7 @@ Page({
     })
 
 
-
   },
-
 
   testPost:function(){
         this.setData({

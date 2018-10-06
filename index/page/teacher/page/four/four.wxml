@@ -1,7 +1,9 @@
 <import src="../../../template/tabbar.wxml" />
 <view class="c-minheight wx-view_6JhHS1" data-c_e_id="wx_view_72059661">
-  
-    <text class="c-block wx-text_w1iNIb" data-c_e_id="wx_text_2487d5f7">艺术与设计学院</text>
+<view wx:if="{{role=='辅导员/班主任'}}">
+  <text bindtap='goEdit' class='edit_txt'>重新批假</text>
+</view>
+    <text class="c-block wx-text_w1iNIb" data-c_e_id="wx_text_2487d5f7">{{school}}</text>
 </view>
 <scroll-view scroll-y='{{true}}'>
 <view class="c-minheight wx-view_lzgb20" data-c_e_id="wx_view_ecaaf3ea">

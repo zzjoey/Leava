@@ -23,7 +23,7 @@ Page({
     date:'2018-10-1',
     leaveinfo:'想回宿舍写程序',
     flag:0,
-    ensurebase64:''
+    ensure:''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -43,11 +43,10 @@ Page({
     var timeStartToEnd = wx.getStorageSync("timeStartToEnd");
     var reason=wx.getStorageSync("reason");
     var flag = wx.getStorageSync("flag");
-    console.log('4.js flag=='+flag);
-    var ensurebase64=wx.getStorageSync("ensure");
+    var ensure=wx.getStorageSync("ensure");
 
-    if (ensurebase64==null)
-    ensurebase64='';
+    if (ensure==null)
+    ensure='';
 
     this.setData({
       clas:clas,
@@ -57,7 +56,7 @@ Page({
       date:timeStartToEnd,
       leaveinfo:reason,
       flag:flag,
-      ensurebase64: ensurebase64
+      ensure: ensure
     })
 
 
@@ -101,6 +100,23 @@ Page({
 
 
   //以下为自定义点击事件
-  
+  preImage: function () {
+    console.log("ok");
+    var urlArray = new Array();
+    var ensure=this.data.ensure;
+    wx.previewImage({
+      current: ensure,
+      urls: [ensure],
+      success: function (res) {
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
+  goBack:function(){
+    wx.redirectTo({
+      url: '../three/three',
+    })
+  }
 })
 

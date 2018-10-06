@@ -1,4 +1,8 @@
 var coolsite360 = require('./coolsite/index.js');
+wx.cloud.init({
+  traceUser: true
+});
+const db = wx.cloud.database();
 App({
   coolsite360: coolsite360,
   //第一种状态的底部  
