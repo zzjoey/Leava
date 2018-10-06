@@ -123,36 +123,36 @@ UI/UE：ZYN
 
 ##### 登录界面
 
-![login](docs/IMG_6817.png)
+![login](docs/IMG_6817.PNG)
 
 ##### 学生端
 
-![login](docs/IMG_6833.png)
+![login](docs/IMG_6833.PNG)
 
-![login](docs/IMG_6819.png)
+![login](docs/IMG_6819.PNG)
 
-![login](docs/IMG_6820.png)
+![login](docs/IMG_6820.PNG)
 
 ##### 辅导员端
 
-![login](docs/IMG_6821.png)
+![login](docs/IMG_6821.PNG)
 
-![login](docs/IMG_6822.png)
+![login](docs/IMG_6822.PNG)
 
-![login](docs/IMG_6823.png)
+![login](docs/IMG_6823.PNG)
 
-![login](docs/IMG_6824.png)
+![login](docs/IMG_6824.PNG)
 
-![login](docs/IMG_6825.png)
+![login](docs/IMG_6825.PNG)
 
-![login](docs/IMG_6826.png)
+![login](docs/IMG_6826.PNG)
 
-![login](docs/IMG_6827.png)
+![login](docs/IMG_6827.PNG)
 
-![login](docs/IMG_6828.png)
+![login](docs/IMG_6828.PNG)
 
 ##### 任课老师端
 
-![login](docs/IMG_6829.png)
+![login](docs/IMG_6829.PNG)
 
-![login](docs/IMG_6830.png)
+![login](docs/IMG_6830.PNG)
