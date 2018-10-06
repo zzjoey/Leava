@@ -14,7 +14,11 @@ page {
    padding-top:  4px;
     padding-bottom: 4px; }
  .wx-text{
-  width:  55%; background-color:  rgb(255, 255, 255); font-weight:  100; font-size:  15px; 
+  width:  55%; 
+  height: 40rpx;
+  background-color:  rgb(255, 255, 255); 
+  font-weight:  100; 
+  font-size:  15px; 
  color:  rgb(94, 94, 93); 
   transform:  rotate(0deg) scale(1) translate(16%, 87%); transition:  all 0s ease; 
  margin-bottom:  14px;
@@ -36,61 +40,54 @@ page {
     }
 .wx-text_success{
   width: 120rpx;
-  height: 50rpx;
-   /* transform: rotate(0deg) scale(1) translate(359%,-543%); transition: All 0s ease;  */
-   background-color:  #F9686C;
-   color:  rgb(255, 255, 255);
-    font-weight:  800; 
-    font-size:  13px; 
-    margin-top: 25rpx;
-    margin-bottom: 33rpx;
-    padding-bottom: 10rpx;
-    padding-top: 10rpx;
-    line-height: 30rpx;
-    position: relative;
-    top: 20rpx; 
+  height: 40rpx;
+  background-color: #F9686C; 
+  font-weight:  800; 
+  line-height: 25rpx;
+  font-size:  15px; 
+ color:  rgb(255, 255, 255); 
+
+ margin-bottom:  14px;
+ padding-top:  4px;
+ padding-bottom: 4px; 
     }
     
 .wx-text_fail{
   width: 120rpx;
-  height: 50rpx;
-/* transform:  rotate(0deg) scale(1) translate(360%, -544%);  */
+  height: 40rpx;
 background-color:  grey; 
-font-weight:  800;
- color:  rgb(255, 255, 255);
-    font-size:  13px;
-    margin-top: 25rpx;
-    margin-bottom: 33rpx;
-    padding-bottom: 10rpx;
-    padding-top: 10rpx;
-    line-height: 30rpx;
-    position: relative;
-    top: 20rpx; 
+  font-weight:  800; 
+  font-size:  15px; 
+ color:  rgb(255, 255, 255); 
+   line-height: 25rpx;
+  margin-bottom:  14px;
+ padding-top:  4px;
+ padding-bottom: 4px; 
+
+
+    
      }
 
 .wx-text_pending{
     width: 120rpx;
-  height: 50rpx;
- /* transform:  rotate(0deg) scale(1) translate(360%, -544%);  */ 
- /* transition:  all 0s ease; */
-  background-color:  #3bb8ea; 
+  height: 40rpx;
+background-color: #3bb8ea; 
   font-weight:  800; 
- color:  rgb(255, 255, 255);
-  font-size:  13px; 
-    margin-top: 25rpx;
-    margin-bottom: 33rpx;
-    padding-bottom: 10rpx;
-    padding-top: 10rpx;
-    line-height: 30rpx;
-    position: relative;
-    top: 20rpx; 
+    line-height: 25rpx;
+  font-size:  15px; 
+ color:  rgb(255, 255, 255); 
+  margin-bottom:  14px;
+ padding-top:  4px;
+ padding-bottom: 4px;  
+
+
     }
 
 .btn-view{
   /* position: fixed; */
   position: absolute;
   left:70%;
-  top: 12rpx;
+  top:38rpx;
 }
 .wx-text_rXYlBa{width:  30%; margin-left:  auto; margin-right:  auto; color:  rgb(255, 255, 255);
  font-size:  15px; 
@@ -112,3 +109,7 @@ font-weight:  800;
 .pic{
   background-color: white;
 }
+.wx-image_0zNCs5{
+  position: absolute;
+  top: 90rpx;
+  width:  20px; height:  20px; clear:  none; float:  none; transform: rotate(0deg) scale(1) translate(-804%,-239%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(-804%,-239%); -o-transform: rotate(0deg) scale(1) translate(-804%,-239%); -moz-transform: rotate(0deg) scale(1) translate(-804%,-239%); -webkit-transform: rotate(0deg) scale(1) translate(-804%,-239%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }

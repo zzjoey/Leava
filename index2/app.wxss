@@ -100,7 +100,7 @@ radio-group{
 .wx-text_N2Plg5{width: 30%; margin-left: auto; margin-right: auto; position: static; text-align: center; transform: rotate(0deg) scale(1) translate(0%, 43%); transition: all 0s ease;}
 
 .wx-image_WtJnTN{width: 10px; }
-.wx-image_0zNCs5{width:  20px; height:  20px; clear:  none; float:  none; transform: rotate(0deg) scale(1) translate(-804%,-152%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(-804%,-152%); -o-transform: rotate(0deg) scale(1) translate(-804%,-152%); -moz-transform: rotate(0deg) scale(1) translate(-804%,-152%); -webkit-transform: rotate(0deg) scale(1) translate(-804%,-152%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+
 .wx-view_XVZQWS{width:  100%; height:  75%; transform:  rotate(0deg) scale(1) translate(0%, -13%); transition:  all 0s ease; color:  rgb(234, 234, 234); background-color: rgba(234,234,234,1); }
 .wx-scroll-view_UaC4RD{height: 75%; transform:  rotate(0deg) scale(1) translate(0%, -13%); transition:  all 0s ease; background-color:  rgb(234, 234, 234); width:  100%; margin-top:  0px; padding-top:  0px; }
 
@@ -164,7 +164,7 @@ radio-group{
 .wx-button_VeQSJW{width:  30%; height:  4%; color:  rgb(59, 184, 234); line-height:  2em; font-size:  8px; margin:  auto; left:  0px; right:  0px; top:  0px; bottom:  0px; position:  absolute; display:  inline-block; transform:  rotate(0deg) scale(1) translate(109%, -500%); transition:  all 0s ease; border-style:  none; background-color: rgba(255,255,255,1); }
 .body_2LWFkL{text-align: center; }
 .wx-view_R5j5xo{height: 10%; background-color:  rgb(249, 104, 108); }
-.wx-image_0zNCs5{width:  20px; height:  20px; clear:  none; float:  none; transform: rotate(0deg) scale(1) translate(-804%,-239%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(-804%,-239%); -o-transform: rotate(0deg) scale(1) translate(-804%,-239%); -moz-transform: rotate(0deg) scale(1) translate(-804%,-239%); -webkit-transform: rotate(0deg) scale(1) translate(-804%,-239%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+
 .wx-text_rXYlBa{width:  30%; margin-left:  auto; margin-right:  auto; color:  rgb(255, 255, 255); font-size:  15px; font-family:  SimSun; font-weight:  800; height:  5%; transform: rotate(0deg) scale(1) translate(0%,-239%); transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(0%,-239%); -o-transform: rotate(0deg) scale(1) translate(0%,-239%); -moz-transform: rotate(0deg) scale(1) translate(0%,-239%); -webkit-transform: rotate(0deg) scale(1) translate(0%,-239%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
 .wx-scroll-view_UaC4RD{height: 90%; transform:  rotate(0deg) scale(1) translate(0%, -13%); transition:  all 0s ease; background-color:  rgb(234, 234, 234); width:  100%; margin-top:  0px; padding-top:  0px; }
 .wx-text_Vnuk2H{width:  55%; background-color:  rgb(255, 255, 255); font-weight:  100; font-size:  15px; color:  rgb(94, 94, 93); transform:  rotate(0deg) scale(1) translate(16%, 87%); transition:  all 0s ease; margin-bottom:  14px; padding-top:  4px; padding-bottom: 4px; }
@@ -179,7 +179,18 @@ radio-group{
 .wx-image_iMSlUj{width: 25px; height:  25px; margin-top:  auto; margin-bottom:  auto; left:  0px; right:  0px; top:  0px; bottom:  0px; position:  absolute; display:  inline-block; transform:  rotate(0deg) scale(1) translate(109%, 0%); transition:  all 0s ease; }
 
 .wx-text_yVPPNX{height:  8%; transform:  rotate(0deg) scale(1) translate(0%, 130%); transition:  all 0s ease; background-color:  rgb(255, 255, 255); width:  90%; margin-left:  auto; margin-right:  auto; color:  rgb(59, 184, 234); font-weight:  800; line-height:  2em; letter-spacing:  2px; text-indent:  11px; margin-bottom: 23px; }
-.wx-button_YA2Q6g{width:  30%; height:  6%; transform:  rotate(0deg) scale(1) translate(0%, 217%); transition:  all 0s ease; color:  rgb(255, 255, 255); font-weight:  600; background-color:  rgb(15, 112, 255); border-color:  rgb(59, 184, 234); border-style:  solid; line-height:  1.56em; font-size:  17px; letter-spacing: 1px; }
+.wx-button_YA2Q6g{ 
+  height:  6%;
+   /* transform:  rotate(0deg) scale(1) translate(0%, 217%);  */
+   /* transition:  all 0s ease;  */
+   color:  rgb(255, 255, 255); 
+   font-weight:  500; background-color:  rgb(15, 112, 255);
+   border-color:  rgb(59, 184, 234);
+    border-style:  solid; 
+    line-height:  1.56em;
+    text-align: center; 
+    font-size:  17px; letter-spacing: 1px; 
+    }
 .wx-text_vh0Tsn{transform:  rotate(0deg) scale(1) translate(0%, 217%); transition:  all 0s ease; width:  60%; margin-left:  auto; margin-right:  auto; text-align:  center; color:  rgb(59, 184, 234); font-size:  17px; font-weight: 800; }
 .wx-text_aoNqAZ{width:  50%; margin-left:  auto; margin-right:  auto; color:  rgb(59, 184, 234); text-align:  center; font-size:  15px; transform:  rotate(0deg) scale(1) translate(0%, 326%); transition:  all 0s ease; font-weight: 600; }
 .wx-text_NhGQn7{width:  70%; margin-left:  auto; margin-right:  auto; transform:  rotate(0deg) scale(1.2) translate(0%, 369%); transition:  all 0s ease; background-color:  rgb(255, 255, 255); color: #3bb8ea; text-align:  left; font-size:  18px; font-weight:  600; letter-spacing:  2px; font-family:  SimSun; border-radius:  3px; text-indent:  4px; margin-bottom:  25px; }

@@ -77,3 +77,14 @@ page {
   left:70%;
   top: 0rpx;
 }
+
+.wx-image_0zNCs5{
+  position: absolute;
+  top: 90rpx;
+  width:  20px;
+  height:  20px;
+  clear:  none; 
+  float:  none; 
+  transform: rotate(0deg) scale(1) translate(-804%,-152%); 
+  transition: All 0s ease; -ms-transform: rotate(0deg) scale(1) translate(-804%,-152%); -o-transform: rotate(0deg) scale(1) translate(-804%,-152%); -moz-transform: rotate(0deg) scale(1) translate(-804%,-152%); -webkit-transform: rotate(0deg) scale(1) translate(-804%,-152%); -ms-transition: All 0s ease; -o-transition: All 0s ease; -moz-transition: All 0s ease; -webkit-transition: All 0s ease; }
+
