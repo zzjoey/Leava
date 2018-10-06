@@ -57,7 +57,7 @@ Page({
     wx.request({
       url: 'http://118.25.139.179/search_name',
       data: {
-        name: name//'张麻子'
+        name: name
       },
       header: {
         'content-type': 'application/json' // 默认值

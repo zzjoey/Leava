@@ -20,10 +20,10 @@
 
     <!--密码icon  -->
     <icon class="wx-icon_4wSeUi" color="transparent" data-c_e_id="wx_icon_d55425fe" size="23" type="success"/>
-    <input class="wx-pwdinput" data-c_e_id="wx_input_a20c7838" name="password" password="True" placeholder="密码" type="number"  bindinput="getPwd"/>
+    <input class="wx-pwdinput" data-c_e_id="wx_input_a20c7838" name="password" password="True" placeholder="密码" type="text"  bindinput="getPwd"/>
 
     </view>
-    <!--忘记密码（不完成）-->
+    <!--忘记密码（封印）-->
     <!-- <text class="c-block wx-text_6vinIv" data-c_e_id="wx_text_167999e2" bindtap='gobackpwd'>忘记密码？</text> -->
     
     <!-- 登录按钮 -->
