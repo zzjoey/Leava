@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @Time:               2018/8/5 11:14
-# @Author:            zzJoeyyy
-# @Software         PyCharm
+# @Author:            Joey66666
+# @Software         VSCode
 
 import json
 import logging
@@ -13,6 +13,7 @@ from decimal import *
 
 from flask import Flask, jsonify, abort, request
 from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 
 from sqlalchemy import create_engine, MetaData, create_engine, MetaData, Table, Column, Date, Integer, String, ForeignKey
 from sqlalchemy.orm import sessionmaker
@@ -53,14 +54,11 @@ def login():
             rec_pwd = data['userPwd']
 
             if len(str(rec_id)) == 6:
-                # print (len(rec_id))
                 db_data = search_t(str(rec_id))
-                # print(db_data)
                 if (db_data) is None:
                     return_data = dict()
                     return_data['flag'] = '0'
                     return jsonify(return_data)
-                    # logging.info(return_data)
                 else:
                     db_id = str(
                         Decimal(db_data['teacher_id']).quantize(Decimal('0')))
@@ -69,13 +67,12 @@ def login():
                     db_role = db_data['role']
                     db_school = db_data['school']
 
-                    if str(rec_pwd) != str(db_pwd):
+                    if check_password_hash(str(db_pwd),str(rec_pwd)) is not True:
                         return_data = dict()
                         return_data['flag'] = '1'
                         return_data['teacher_id'] = rec_id
                         return jsonify(return_data)
-                        # logging.info(return_data)
-                    elif str(rec_pwd) == str(db_pwd):
+                    elif check_password_hash(str(db_pwd),str(rec_pwd)) is True:
                         return_data = dict()
                         db_id = str(
                             Decimal(db_data['teacher_id']).quantize(Decimal('0')))
@@ -86,16 +83,13 @@ def login():
                         return_data['flag'] = '2'
 
                         return (jsonify(return_data))
-                        # logging.info(return_data)
             if len(str(rec_id)) == 9:
-                # print (len(rec_id))
-                # print (rec_id)
                 db_data = search_s(str(rec_id))
                 if (db_data) is None:
                     return_data = dict()
                     return_data['flag'] = '0'
                     return jsonify(return_data)
-                    # logging.info(return_data)
+
                 else:
                     db_id = str(
                         Decimal(db_data['student_id']).quantize(Decimal('0')))
@@ -103,14 +97,14 @@ def login():
                     db_pwd = db_data['passwd']
                     db_class = db_data['s_class']
                     db_room = db_data['room']
-                    # db_role = db_data['role']
-                    if db_pwd != rec_pwd:
+                    if check_password_hash(str(db_pwd),str(rec_pwd)) is not True:
                         return_data = dict()
                         return_data['flag'] = '1'
                         return_data['student_id'] = rec_id
                         return jsonify(return_data)
-                        # logging.info(return_data)
-                    elif db_pwd == rec_pwd:
+
+
+                    elif check_password_hash(str(db_pwd),str(rec_pwd)) is True:
                         return_data = dict()
                         db_id = str(
                             Decimal(db_data['student_id']).quantize(Decimal('0')))
@@ -120,17 +114,17 @@ def login():
                         return_data['room'] = db_data['room']
                         return_data['flag'] = '2'
                         return (jsonify(return_data))
-                        # logging.info(return_data)
+
             else:
-                # print(len(rec_id))
+
                 return_data = dict()
                 return_data['flag'] = '0'
                 return jsonify(return_data)
-                # logging.info(return_data)
+
 
     else:
         return jsonify('not POST method')
-        # logging.warning('not POST method')
+
 
 
 @app.route("/student/ask_leave", methods=['GET', 'POST'])
@@ -156,12 +150,9 @@ def ask_leave():
                                       ensure)
                 if (insert == True):
                     return ('True')
-                    # logging.info(insert)
                 else:
                     return ('False')
-                    # print(insert)
-                    # logging.Waring('False')
-                    # logging.Waring(insert)
+
             except Exception:
                 return("ERROR")
 
@@ -179,10 +170,10 @@ def search_s_leave():
             student_id = data['student_id']
             result = search_stu_leave(student_id)
             return (result)
-            # logging.info(result)
+
     else:
         return jsonify("not POST")
-        # logging.warning("not POST")
+
 
 
 @app.route("/student/search_leave_detail", methods=['GET', 'POST'])
@@ -195,10 +186,10 @@ def search_s_leave_detail():
             student_id = data['student_id']
             result = search_stu_leave_detail(student_id)
             return (result)
-            # logging.info(result)
+
     else:
         return jsonify("not POST")
-        # logging.warning("not POST")
+
 
 
 @app.route("/teacher/search_leave", methods=['GET', 'POST'])
@@ -211,10 +202,10 @@ def search_t_leave():
             teacher_id = data['teacher_id']
             result = search_tea_leave(teacher_id)
             return (result)
-            # logging.info(result)
+
     else:
         return jsonify("not POST")
-        # logging.warning("not POST")
+
 
 
 @app.route("/teacher2/search_leave", methods=['GET', 'POST'])
@@ -227,10 +218,10 @@ def search_t2_leave():
             teacher_id = data['teacher_id']
             result = search_tea2_leave(teacher_id)
             return (result)
-            # logging.info(result)
+
     else:
         return jsonify("not POST")
-        # logging.warning("not POST")
+
 
 
 @app.route("/teacher/update_leave", methods=['GET', 'POST'])
@@ -244,10 +235,10 @@ def update_leave():
             flag = data['flag']
             result = update_leave(leave_num, flag)
             return (result)
-            # logging.info(result)
+
     else:
         return jsonify("not POST")
-        # logging.warning("not POST")
+
 
 
 @app.route("/teacher/search_id", methods=['GET', 'POST'])
@@ -260,10 +251,10 @@ def search_t_id():
             school = data['school']
             result = search_t_id(school)
             return (result)
-            # logging.info(result)
+
     else:
         return jsonify("not POST")
-        # logging.warning("not POST")
+
 
 
 @app.route("/change_pwd", methods=['GET', 'POST'])
@@ -278,13 +269,13 @@ def change_pwd():
                 rec_pwd = data['userPwd']
                 change_passwd(rec_id, rec_pwd)
                 return jsonify("True")
-                # logging.info("True")
+
             except:
                 return jsonify("False")
-                # logging.warning("False")
+
     else:
         return jsonify('not POST method')
-        # logging.warning("not POST method")
+
 
 @app.route("/search_name",methods=['GET','POST'])
 def search_name():
@@ -301,10 +292,7 @@ def search_name():
                     return jsonify("name is not exist")
                 else:
                     return jsonify(return_data)
-                # logging.info("True")
-            # except:
-            #     return jsonify("False")
-                # logging.warning("False")
+
     else:
         return jsonify('not POST method')
 
@@ -351,14 +339,10 @@ class leave(db.Model):
         return {c.name: getattr(self, c.name, None) for c in self.__table__.columns}
 
 # 字符串转二进制
-
-
 def b_encode(s):
     return(''.join([bin(ord(c)).replace('0b', '')for c in s]))
 
 # 二进制转字符串
-
-
 def b_decode(s):
     return(''.join([chr(i)for i in [int(b, 2)for b in s.split('')]]))
 
@@ -372,9 +356,7 @@ def search_t(id):
 
 
 def search_s(id):
-    # print(id)
     result = student.query.filter_by(student_id=id).first()
-    # print('success')
     if result is None:
         return (None)
     else:
@@ -387,9 +369,6 @@ def insert_leave(student_id, start_time, end_time, reason, flag, teacher1_id, te
     metadata = MetaData(engine)
     # 连接数据表
     leave_table = Table('leave', metadata, autoload=True)
-
-    # ins_ensure=base64.b64encode(ensure)
-
     try:  # 创建 insert 对象
         ins = leave_table.insert()
         # 绑定要插入的数据
@@ -399,8 +378,6 @@ def insert_leave(student_id, start_time, end_time, reason, flag, teacher1_id, te
         conn = engine.connect()
         # 执行语句
         result = conn.execute(ins)
-        # logging.warning(result)
-        # print(result)
         return (True)
     except:
         print(result)
@@ -409,8 +386,6 @@ def insert_leave(student_id, start_time, end_time, reason, flag, teacher1_id, te
 
 def search_stu_leave(id):
     result = leave.query.filter_by(student_id=id).all()
-    # return(json.dumps(result))
-    #
     if result is None:
         return (None)
     else:
@@ -445,7 +420,6 @@ def search_stu_leave(id):
             return_data[i] = temp_data
             i += 1
         return (jsonify(return_data))
-        # logging.info(return_data)
 
 
 def search_stu_leave_detail(id):
@@ -472,7 +446,6 @@ def search_stu_leave_detail(id):
             return_data[i] = temp_data
             i += 1
         return (jsonify(return_data))
-        # logging.info(return_data)
 
 
 def search_tea_leave(id):
@@ -517,7 +490,6 @@ def search_tea_leave(id):
             return_data[i] = temp_data
             i += 1
         return (jsonify(return_data))
-        # logging.info(return_data)
 
 
 def search_tea2_leave(id):
@@ -544,7 +516,6 @@ def search_tea2_leave(id):
                               'teacher2_id']).quantize(Decimal('0')))
             data_type = result[i].to_dict()['type']
             ensure = result[i].to_dict()['ensure']
-            # print(leave_num, start_time, end_time, reason, flag, teacher1_id, teacher2_id, data_type, ensure)
             temp_data['leave_num'] = leave_num
             temp_data['student_id'] = student_id
             temp_data['start_time'] = start_time
@@ -559,21 +530,17 @@ def search_tea2_leave(id):
             return_data[i] = temp_data
             i += 1
         return (jsonify(return_data))
-        # logging.info(return_data)
 
 
 def search_s_name(name):
     result = student.query.filter_by(name=name).first()
-    # print('success')
     if result is None:
         return (None)
     else:
         return (result.to_dict())
 
 def search_name(name):
-    # try:
     student_data = search_s_name(name)
-    # print(student_data)
     student_id=str(Decimal(student_data['student_id']).quantize(Decimal('0')))
     student_name=student_data['name']
     student_class=student_data['s_class']
@@ -630,10 +597,8 @@ def update_leave(leave_num, flag):
         db.session.commit()
         db.session.close()
         return jsonify("True")
-        # logging.info("True")
     except:
         return jsonify("False")
-        # logging.warning("False")
 
 
 def search_t_id(school):
@@ -657,7 +622,6 @@ def search_t_id(school):
             return_data[i] = temp_data
             i += 1
         return (jsonify(return_data))
-        # logging.info(return_data)
 
 
 def change_passwd(userId, userPwd):
@@ -665,28 +629,24 @@ def change_passwd(userId, userPwd):
         try:
             data = db.session.query(teacher).filter_by(
                 teacher_id=userId).first()
-            data.passwd = userPwd
+            data.passwd = generate_password_hash(str(userPwd))
             db.session.commit()
             db.session.close()
             return jsonify("True")
-            # logging.info("True")
         except:
             return jsonify("False")
-            # logging.warning("False")
     elif len(str(userId)) == 9:
         try:
             data = db.session.query(student).filter_by(
                 student_id=userId).first()
-            data.passwd = userPwd
+            data.passwd = generate_password_hash(str(userPwd))
             db.session.commit()
             db.session.close()
             return jsonify("True")
-            # logging.info("True")
         except:
             return jsonify("False")
-            # logging.warning("False")
 
 
 if __name__ == '__main__':
     # db = None
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
