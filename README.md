@@ -45,9 +45,15 @@ UI/UE：ZYN
 
 ***
 
-## 流程图
+## 功能流程
 
-![流程图](docs/请假小程序流程图.png)
+![功能流程](docs/请假系统流程功能图.jpg)
+
+***
+
+## 架构设计
+
+![ 架构设计](docs/请假系统架构设计.jpg)
 
 ***
 
@@ -98,7 +104,7 @@ UI/UE：ZYN
 |       type       |       请假种类（1事假，2病假，3其他）       |  decimal-65   |
 |   teacher1_id    |                 辅导员工号                  |  decimal-65   |
 |   teacher2_id    |                任课老师工号                 |     int-2     |
-|      ensure      |              提交的证明图片等               |  varchar-255  |
+|      ensure      |             提交的证明图片路径              |  varchar-255  |
 
 ***
 
