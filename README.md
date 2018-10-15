@@ -27,7 +27,9 @@ UI/UE：ZYN
 
 前端：[Fuhaixu](https://github.com/Fuhaixu) & [xuyongxiang](https://github.com/xuyongxiang134)
 
-后端&数据库： [Joey](https://github.com/Joey66666)
+后端： [Joey](https://github.com/Joey66666) 
+
+数据库： [Joey](https://github.com/Joey66666) & [Fuhaixu](https://github.com/Fuhaixu)
 
 ### 用户身份
 
