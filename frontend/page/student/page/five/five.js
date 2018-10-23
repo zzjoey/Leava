@@ -16,11 +16,11 @@ Page({
    */
 
   data: {
-    room:'北十B113',
-    institute:'计算机院',
-    cla:'计算机科学与技术',
-    id:'202160***',
-    name:'张三'
+    room:'',
+    institute:'',
+    cla:'',
+    id:'',
+    name:''
   },
 
   /**

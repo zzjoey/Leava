@@ -16,12 +16,12 @@ Page({
    */
 
   data: {
-    clas:'数嵌161',
-    name:'某某',
-    id:'202160521',
-    room:'北十B113',
-    date:'2018-10-1',
-    leaveinfo:'想回宿舍写程序',
+    clas:'',
+    name:'',
+    id:'',
+    room:'',
+    date:'',
+    leaveinfo:'',
     flag:0,
     ensure:''
   },

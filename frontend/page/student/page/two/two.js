@@ -357,9 +357,17 @@ Page({
   //对话model测试函数
   bindViewTap: function () {
     var cate = this.data.index;
+    var that = this;
+    if(cate==0){
+      that.setData({
+        txt: '添加失败(>_<)',
+        modalHidden: !that.data.modalHidden
+      })
+      return;
+    }
+
     var sd = this.data.startdate;
     var ed = this.data.enddate;
-    var that = this;
     var st = new Date(Date.parse(that.data.startdate.replace(/-/, "/")));
     var et = new Date(Date.parse(that.data.enddate.replace(/-/, "/")));
 

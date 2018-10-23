@@ -45,6 +45,7 @@ Page({
         var json=e.data;
         var nowdate=new Date(); 
         for (var x in currinfo){
+          // console.log(currinfo[x]);
           var sdate = new Date(currinfo[x].start_time.replace(/-/,'/'));
           var edate = new Date(currinfo[x].end_time.replace(/-/, '/')); 
           var time = (edate - sdate) / (1000 * 60 * 60 * 24)+1;

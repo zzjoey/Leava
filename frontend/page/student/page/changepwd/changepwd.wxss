@@ -5,14 +5,13 @@
 }
 
 .wx-pwdinput{
- color: black;
+  color: black;
   height: 30px;
   width: 200px;
   font-size: 15px;
   position: relative;
   margin-top: -4px;
-  margin-left: 130px;
-  /* z-index: 10; */
+  margin-left: 170px;
   border:1px solid grey;
 }
 

@@ -16,12 +16,12 @@ Page({
    */
 
   data: {
-    infotype:'周末宿舍假',
-    cla:'计算机科学与技术',
-    id:'202160***',
-    name: '哈哈',
-    room:'北十B113',
-    info:'哈哈哈'
+    infotype:'',
+    cla:'',
+    id:'',
+    name: '',
+    room:'',
+    info:''
   },
 
   /**
