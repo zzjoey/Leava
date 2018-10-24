@@ -12,17 +12,17 @@
   
   "pages": [
     "page/index/index",
+    "page/teacher/page/five/five",
     "page/student/page/five/five",
-    "page/student/page/three/three",
-    "page/student/page/two/two",
     "page/student/page/four/four",
-    "page/student/page/changepwd/changepwd",
+    "page/student/page/changepwd/changepwd",   
+    "page/student/page/three/three",
+    "page/student/page/two/two",   
     "page/teacher/page/three/three",
     "page/getbackpwd/getbackpwd",
     "page/teacher/page/one/one",
     "page/teacher/page/two/two",
     "page/teacher/page/four/four",
-    "page/teacher/page/five/five",
     "page/teacher/page/edit/edit",
     "page/teacher/page/change/changepwd"
   ]

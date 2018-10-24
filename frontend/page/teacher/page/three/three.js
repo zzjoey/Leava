@@ -69,7 +69,8 @@ Page({
         var json = res.data;
         if (json == 'name is not exist') {
           that.setData({
-            name: '查无此人'
+            name: name,
+            infojson:{}
           })
           return;
         }

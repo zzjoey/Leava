@@ -32,17 +32,19 @@ transform:  rotate(0deg) scale(1) translate(0%, 130%);
 
 
 
-.wx-view_vmgDZb{height: 85%; background-color: rgb(234, 234, 234); margin-bottom: 0px; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 0s ease;
+.wx-view_vmgDZb{height: 85%; background-color: rgb(234, 234, 234);transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 0s ease;
     text-indent:  11px; margin-bottom: 23px; }
 
 
 .wx-button_YA2Q6g{width:  30%;
 height:  6%;
-transform:  rotate(0deg) scale(1) translate(0%, 217%); transition:  all 0s ease; 
 color:  rgb(255, 255, 255); 
-font-weight:  600; 
+font-weight: 600; 
 background-color:  rgb(15, 112, 255); 
 border-color:  rgb(59, 184, 234);
 border-style:  solid; 
-line-height:  1.56em;
- font-size:  15px; letter-spacing: 1px; }
+line-height: 50rpx;
+ font-size:  13px; 
+ letter-spacing: 1px;
+ text-align: center;
+  }
