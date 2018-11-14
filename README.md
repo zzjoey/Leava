@@ -16,7 +16,7 @@
 
 - 在本地建立数据库，详情参见**数据库设计**部分
 - 在[RESTful_backend](backend/RESTful_backend.py)中配置数据库连接并启动
-- 在微信web开发者工具中新建小程序项目，选择空目录创建并复制粘贴 [frontend](frontend) 中文件，在小程序源代码中配置请求地址，所有请求IP改为127.0.0.1，URL不变
+- 在微信web开发者工具中新建小程序项目，选择空目录创建并复制粘贴 [frontend](frontend) 中文件
 - 开始使用
 
 **用户需求**：
@@ -110,9 +110,9 @@ UI/UE：ZYN
 |     end_time     |                请假结束时间                 |  datetime-0   |
 |      reason      |                  请假理由                   |  varchar-255  |
 |       flag       | 请假是否批准状态(0不通过，1待批准，2已批准) |     int-2     |
-|       type       |       请假种类（1事假，2病假，3其他）       |  decimal-65   |
+|       type       |       请假种类（1事假，2病假，3其他）       |  int-2   |
 |   teacher1_id    |                 辅导员工号                  |  decimal-65   |
-|   teacher2_id    |                任课老师工号                 |     int-2     |
+|   teacher2_id    |                任课老师工号                 |     decimal-65     |
 |      ensure      |             提交的证明图片路径              |  varchar-255  |
 
 ***
