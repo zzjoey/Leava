@@ -8,7 +8,7 @@
     <input class='wx-pwdinput' bindinput="getPwd1" type='text' maxlength="{{16}}"></input>
     <text class='ts' hidden='{{ts1hidden}}'>{{ts1}}</text>
     <text class="c-block wx-text_yVPPNX" data-c_e_id="wx_text08efcb38">确认新密码</text>
-    <input class='wx-pwdinput' bindinput='getPwd2' type="number" maxlength="{{16}}"></input>
+    <input class='wx-pwdinput' bindinput='getPwd2' type="text" maxlength="{{16}}"></input>
     <text class='ts' hidden='{{ts2hidden}}'>{{ts2}}</text>
     <button class="wx-button_YA2Q6g" data-c_e_id="wx_button_5c7fea6f" hover-class="button-hover" size="default" type="default"style="background-color:#62cced;color:#ffffff" bindtap='submit'>确认</button>
 </view>

@@ -65,6 +65,11 @@ Page({
       success:function(e){
         console.log(e);
         if(e["data"]=="True"){
+          wx.showToast({
+            title: '修改成功',
+            icon: 'success',
+            duration: 3000
+          })
           wx.redirectTo({
             url: '/page/index/index'
           })

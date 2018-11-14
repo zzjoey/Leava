@@ -5,7 +5,7 @@
 
 </view>
 
-<image class="wx-image_hSEMFU" data-c_e_id="wx_image_12237b04" mode="scaleToFill" src="http://p2n5qfbb1.bkt.clouddn.com/mini_programe%E5%8D%97%E4%BA%AC%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2logo_2.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://p2n5qfbb1.bkt.clouddn.com/mini_programe%E5%8D%97%E4%BA%AC%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2logo_2.png); "/>
+<image class="wx-image_hSEMFU" data-c_e_id="wx_image_12237b04" mode="scaleToFill" src="../../resources/logo_2.png" style="background-size:  100% 100%; background-position:  0% 0%; background-repeat:  no-repeat; background-image: url(http://p2n5qfbb1.bkt.clouddn.com/mini_programe%E5%8D%97%E4%BA%AC%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2logo_2.png); "/>
 
 <view class="wx-view_6TIMIJ" data-c_e_id="wx_view_a6f33438">
     <view class='id-input'>

@@ -90,7 +90,7 @@ Page({
 
 
   //以下为自定义点击事件
-  changePwd:function(){
+  goChangePwd:function(){
     wx.redirectTo({
       url: '../change/changepwd',
     })
