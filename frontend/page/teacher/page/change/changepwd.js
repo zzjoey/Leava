@@ -53,7 +53,7 @@ Page({
     var teacher_id = wx.getStorageSync('teacher_id');
     var pwd=this.data.pwd2;
     wx.request({
-      url: 'http://118.25.139.179/change_pwd',
+      url: 'http://127.0.0.1/change_pwd',
       data: {
         userId: teacher_id,
         userPwd: pwd

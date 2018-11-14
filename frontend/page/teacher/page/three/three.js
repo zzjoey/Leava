@@ -56,7 +56,7 @@ Page({
     var name = this.data.name;
     var that = this;
     wx.request({
-      url: 'http://118.25.139.179/search_name',
+      url: 'http://127.0.0.1/search_name',
       data: {
         name: name
       },
@@ -192,9 +192,9 @@ Page({
     var that=this;
     var url;
     if(i==1){
-      url = 'http://118.25.139.179/teacher/search_leave';
+      url = 'http://127.0.0.1/teacher/search_leave';
     }else{
-      url = 'http://118.25.139.179/teacher2/search_leave';
+      url = 'http://127.0.0.1/teacher2/search_leave';
     }
     var teacher_id=wx.getStorageSync('teacher_id');
     wx.request({

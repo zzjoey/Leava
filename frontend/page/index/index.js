@@ -142,7 +142,7 @@ Page({
       return;
     }
     wx.request({
-      url: 'http://118.25.139.179/login',
+      url: 'http://127.0.0.1/login',
       data: {
         userId: this.data.id,
         userPwd: this.data.pwd

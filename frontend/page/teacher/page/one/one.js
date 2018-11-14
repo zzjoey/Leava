@@ -31,7 +31,7 @@ Page({
     console.log(teacher_id);
     app.editTabBarTeacher1();
     wx.request({
-      url: 'http://118.25.139.179/teacher/search_leave',
+      url: 'http://127.0.0.1/teacher/search_leave',
       data:{
         teacher_id:teacher_id
       },

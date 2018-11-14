@@ -60,7 +60,7 @@ Page({
     console.log(student_id);
     var that = this;
     wx.request({
-      url: "http://118.25.139.179/student/search_leave",
+      url: "http://127.0.0.1/student/search_leave",
       header: {
         'content-type': 'application/json' // 默认值
       },

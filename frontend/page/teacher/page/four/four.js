@@ -57,7 +57,7 @@ Page({
 
 
     wx.request({
-      url: 'http://118.25.139.179/student/search_leave_detail',
+      url: 'http://127.0.0.1/student/search_leave_detail',
       data: {
         student_id: id
       },
@@ -144,7 +144,7 @@ Page({
     var teacher_id = wx.getStorageSync("teacher_id");
     var that =this;
     wx.request({
-      url: 'http://118.25.139.179/teacher/search_leave',
+      url: 'http://127.0.0.1/teacher/search_leave',
       data: {
         teacher_id: teacher_id
       },

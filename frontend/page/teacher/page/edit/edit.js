@@ -43,7 +43,7 @@ Page({
     console.log(leave_num);
     var student_id = str.split('_')[1];
     wx.request({
-      url: 'http:///118.25.139.179/student/search_leave_detail',
+      url: 'http:///127.0.0.1/student/search_leave_detail',
       data:{
         student_id:student_id
       },
@@ -121,7 +121,7 @@ Page({
     var str = wx.getStorageSync("str");
     var leave_num = parseInt(str.split('_')[0]);
       wx.request({
-        url: 'http://118.25.139.179/teacher/update_leave',
+        url: 'http://127.0.0.1/teacher/update_leave',
         data: {
           leave_num: leave_num,
           flag:2
@@ -155,7 +155,7 @@ Page({
     var str = wx.getStorageSync("str");
     var leave_num = parseInt(str.split('_')[0]);
     wx.request({
-      url: 'http://118.25.139.179/teacher/update_leave',
+      url: 'http://127.0.0.1/teacher/update_leave',
       data: {
         leave_num: leave_num,
         flag: 0

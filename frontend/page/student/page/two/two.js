@@ -66,7 +66,7 @@ Page({
     var that =this;
     var school=this.data.school[this.data.s1index];
     wx.request({
-      url: "http://118.25.139.179/teacher/search_id",
+      url: "http://127.0.0.1/teacher/search_id",
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -103,7 +103,7 @@ Page({
     var that = this;
     var school = this.data.school[this.data.s2index];
     wx.request({
-      url: "http://118.25.139.179/teacher/search_id",
+      url: "http://127.0.0.1/teacher/search_id",
       header: {
         'content-type': 'application/json' // 默认值
       },
@@ -398,7 +398,7 @@ Page({
     var typ = this.data.index;//不能与关键字type冲突，命名为typ
     var that=this;
      wx.request({
-      url: 'http://118.25.139.179/student/ask_leave',
+      url: 'http://127.0.0.1/student/ask_leave',
       data: {
         student_id: that.data.student_id,
         start_time: that.data.startdate,
