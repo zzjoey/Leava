@@ -138,6 +138,6 @@ UI/UE：ZYN
 
 ## 最终效果
 
-![demo](docs/demo.jpg)
+![demo](docs/final_demo.jpg)
 
 [More screen shots](./docs/screenshot)
