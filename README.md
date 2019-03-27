@@ -2,6 +2,8 @@
 
 基于Flask+MySQL开发的开源在线请假系统（微信小程程序），包含前后端完整源代码和数据库设计 
 
+![](<https://img.shields.io/github/license/joey66666/leave-miniprogram.svg>) ![](<https://img.shields.io/github/last-commit/joey66666/leave-miniprogram.svg>)
+
 **仓库路径声明**
 
 - [Images&UI](Images&UI) 为设计图和icon，logo
@@ -136,38 +138,6 @@ UI/UE：ZYN
 
 ## 最终效果
 
-##### 登录界面
+![demo](docs/demo.jpg)
 
-![login](docs/IMG_6817.PNG)
-
-##### 学生端
-
-![login](docs/IMG_6833.PNG)
-
-![login](docs/IMG_6819.PNG)
-
-![login](docs/IMG_6820.PNG)
-
-##### 辅导员端
-
-![login](docs/IMG_6821.PNG)
-
-![login](docs/IMG_6822.PNG)
-
-![login](docs/IMG_6823.PNG)
-
-![login](docs/IMG_6824.PNG)
-
-![login](docs/IMG_6825.PNG)
-
-![login](docs/IMG_6826.PNG)
-
-![login](docs/IMG_6827.PNG)
-
-![login](docs/IMG_6828.PNG)
-
-##### 任课老师端
-
-![login](docs/IMG_6829.PNG)
-
-![login](docs/IMG_6830.PNG)
+[More screen shots](./docs/screenshot)
