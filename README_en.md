@@ -8,7 +8,7 @@ Leava project contains the following components:
 
 - [A RESTful API based on Flask](backend/RESTful_backend.py)
 
-- [A Wechat Miniprogram](frotend)
+- [A Wechat Miniprogram](frontend)
 
 - [Framework Design](docs)
 
