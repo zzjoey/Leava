@@ -1,4 +1,6 @@
-# leave-miniprogram
+# Leava
+
+### leave-miniprogram
 
 基于Flask+MySQL开发的开源在线请假系统（微信小程程序），包含前后端完整源代码和数据库设计 
 
