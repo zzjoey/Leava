@@ -23,7 +23,7 @@ Faculty receive request
 ## Preparation
 
 1. Create local database
-    
+   
     MySQL design
 
     > Three tables

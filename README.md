@@ -1,11 +1,19 @@
+<p align="center">
+  <a href="https://github.com/joey66666/Leava">
+    <img src="docs/logo/Leava.png"  width="152">
+  </a>
+  <h3 align="center">Leava</h3>
+  <p align="center">
+    <a href="https://github.com/joey66666/Leava/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Anti%20996-blue.svg"></a>
+    <a href="https://juejin.im/post/5aab4f985188255582521c57"><img src="https://img.shields.io/badge/doc-中文版-red.svg"></a>
+    <a href="http://hits.dwyl.io/joey66666/Leava" alt="hit count"><img src="http://hits.dwyl.io/joey66666/Leava.svg" /></a> 
+  </p>
+  <p align="center">
+    基于Flask+MySQL的在线请假微信小程序<br>
+  </p>
+</p>
+
 # Leava
-
-### leave-miniprogram
-
-基于Flask+MySQL开发的开源在线请假系统（微信小程程序），包含前后端完整源代码和数据库设计 
-
-[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](./LICENSE) [![GitHub](https://img.shields.io/badge/doc-English-red.svg)](README_en.md)
-
 
 **仓库路径声明**
 
@@ -20,7 +28,7 @@
 **如何启动**
 
 - 在本地建立数据库，详情参见**数据库设计**部分
-- 在[RESTful_backend](backend/RESTful_backend.py)中配置数据库连接并启动
+- 在[RESTful_backend](backend/RESTful_backend.py)中配置数据库连接(Line: 32 & 368) 并启动
 - 在微信web开发者工具中新建小程序项目，选择空目录创建并复制粘贴 [frontend](frontend) 中文件
 - 开始使用
 
@@ -133,7 +141,6 @@
 ![demo](docs/final_demo.jpg)
 
 [More screen shots](./docs/screenshot)
-
 
 
 ### 致谢
