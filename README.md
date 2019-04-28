@@ -32,17 +32,6 @@
 
 - 任课老师接查看学生的请假请求和是否被批准情况
 
-
-### 开发人员
-
-UI/UE：ZYN
-
-前端：[Fuhaixu](https://github.com/Fuhaixu) & [xuyongxiang](https://github.com/xuyongxiang134)
-
-后端： [Joey](https://github.com/Joey66666) 
-
-数据库： [Joey](https://github.com/Joey66666) & [Fuhaixu](https://github.com/Fuhaixu)
-
 ### 用户身份
 
 1. 学生，用户名为学号， 长度9位
@@ -144,3 +133,9 @@ UI/UE：ZYN
 ![demo](docs/final_demo.jpg)
 
 [More screen shots](./docs/screenshot)
+
+
+
+### 致谢
+
+ZYN、[Fuhaixu](https://github.com/Fuhaixu)、[xuyongxiang](https://github.com/xuyongxiang134)
