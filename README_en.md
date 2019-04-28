@@ -2,7 +2,7 @@
 
 Wechat-MiniProgram leave Management System based on Flask Framework and RESTful API
 
-[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](./LICENSE)    [![GitHub](https://img.shields.io/badge/doc-中文版-red.svg)](README.md)
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg?style=popout-square)](./LICENSE)  [![GitHub](https://img.shields.io/badge/doc-中文版-red.svg?style=popout-square)](README.md)
 
 Leava project contains the following components:
 
