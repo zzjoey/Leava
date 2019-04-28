@@ -4,7 +4,8 @@
 
 基于Flask+MySQL开发的开源在线请假系统（微信小程程序），包含前后端完整源代码和数据库设计 
 
-[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](./LICENSE)
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](./LICENSE) [![GitHub](https://img.shields.io/badge/doc-English-red.svg)](README_en.md)
+
 
 **仓库路径声明**
 
