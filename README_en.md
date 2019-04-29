@@ -1,6 +1,8 @@
-# Leava 
+![logo](https://github.com/joey66666/Leava/blob/master/docs/logo/Leava.png)
 
-Wechat-MiniProgram leave Management System based on Flask Framework and RESTful API
+# Leava
+
+Leave Management Wechat-MiniProgram based on Flask
 
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg?style=popout-square)](./LICENSE)  [![GitHub](https://img.shields.io/badge/doc-中文版-red.svg?style=popout-square)](README.md)
 
