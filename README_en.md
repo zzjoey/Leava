@@ -16,9 +16,9 @@ Leava project contains the following components:
 
 ## Feature
 
-Students ask for leave
+Student ask for leave
 
-Staffs manage leave request
+Staff manage requests
 
 Faculty receive request
 
