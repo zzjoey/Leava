@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/joey66666/Leava">
-    <img src="docs/logo/Leava.png"  width="152">
+    <img src="https://github.com/joey66666/Leava/blob/master/docs/logo/Leava.png"  width="152">
   </a>
   <h3 align="center">Leava</h3>
   <p align="center">
@@ -17,19 +17,19 @@
 
 **仓库路径声明**
 
-- [Images&UI](Images&UI) 为设计图和icon，logo
+- [Images&UI](https://github.com/joey66666/Leava/tree/master/Images%26UI/UI%E5%9B%BEpng) 为设计图和icon，logo
 
-- [frontend](frontend) 为微信小程序源代码
+- [frontend](https://github.com/joey66666/Leava/tree/master/frontend) 为微信小程序源代码
 
-- [backend](backend) 为后端源代码
+- [backend](https://github.com/joey66666/Leava/tree/master/backend) 为后端源代码
 
-- [docs](docs) 为数据库设计文档，调试记录，流程图和真机调试截图
+- [docs](https://github.com/joey66666/Leava/tree/master/docs) 为数据库设计文档，调试记录，流程图和真机调试截图
 
 **如何启动**
 
 - 在本地建立数据库，详情参见**数据库设计**部分
-- 在[RESTful_backend](backend/RESTful_backend.py)中配置数据库连接(Line: 32 & 368) 并启动
-- 在微信web开发者工具中新建小程序项目，选择空目录创建并复制粘贴 [frontend](frontend) 中文件
+- 在[RESTful_backend](https://github.com/joey66666/Leava/tree/master/backend/RESTful_backend.py)中配置数据库连接(Line: 32 & 368) 并启动
+- 在微信web开发者工具中新建小程序项目，选择空目录创建并复制粘贴 [frontend](https://github.com/joey66666/Leava/tree/master/frontend) 中文件
 - 开始使用
 
 **用户需求**：
@@ -58,13 +58,13 @@
 
 ## 功能流程
 
-![功能流程](docs/请假系统流程功能图.jpg)
+![功能流程](https://github.com/joey66666/Leava/tree/master/docs/请假系统流程功能图.jpg)
 
 ***
 
 ## 架构设计
 
-![ 架构设计](docs/请假系统架构设计.jpg)
+![ 架构设计](https://github.com/joey66666/Leava/tree/master/docs/请假系统架构设计.jpg)
 
 ***
 
@@ -138,9 +138,9 @@
 
 ## 最终效果
 
-![demo](docs/final_demo.jpg)
+![demo](https://github.com/joey66666/Leava/tree/master/docs/final_demo.jpg)
 
-[More screen shots](./docs/screenshot)
+[More screen shots](https://github.com/joey66666/Leava/tree/master/docs/screenshot)
 
 
 ### 致谢
