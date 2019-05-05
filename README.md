@@ -27,7 +27,7 @@
 
 **如何启动**
 
-- 在本地建立数据库，详情参见**数据库设计**部分
+- 在本地建立数据库，详见[数据库设计](https://github.com/joey66666/Leava/blob/master/docs/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1.md)
 - 在[RESTful_backend](https://github.com/joey66666/Leava/tree/master/backend/RESTful_backend.py)中配置数据库连接(Line: 32 & 368) 并启动
 - 在微信web开发者工具中新建小程序项目，选择空目录创建并复制粘贴 [frontend](https://github.com/joey66666/Leava/tree/master/frontend) 中文件
 - 开始使用
@@ -58,13 +58,13 @@
 
 ## 功能流程
 
-![功能流程](https://github.com/joey66666/Leava/tree/master/docs/请假系统流程功能图.jpg)
+![功能流程](https://github.com/joey66666/Leava/blob/master/docs/%E8%AF%B7%E5%81%87%E7%B3%BB%E7%BB%9F%E6%B5%81%E7%A8%8B%E5%8A%9F%E8%83%BD%E5%9B%BE.jpg)
 
 ***
 
 ## 架构设计
 
-![ 架构设计](https://github.com/joey66666/Leava/tree/master/docs/请假系统架构设计.jpg)
+![ 架构设计](https://github.com/joey66666/Leava/blob/master/docs/%E8%AF%B7%E5%81%87%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.jpg)
 
 ***
 
