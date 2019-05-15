@@ -15,6 +15,8 @@
 
 # Leava
 
+[English Version](https://github.com/joey66666/Leava/blob/master/README_en.md)
+
 **仓库路径声明**
 
 - [Images&UI](https://github.com/joey66666/Leava/tree/master/Images%26UI/UI%E5%9B%BEpng) 为设计图和icon，logo
