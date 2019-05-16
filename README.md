@@ -4,7 +4,7 @@
   </a>
   <h3 align="center">Leava</h3>
   <p align="center">
-    <a href="https://github.com/joey66666/Leava/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Anti%20996-blue.svg?style=popout-square"></a>
+    <a href="https://github.com/joey66666/Leava/blob/master/LICENSE_cn"><img src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-%E5%8F%8D996-blue.svg?style=popout-square"></a>
     <a href="https://github.com/joey66666/Leava/blob/master/README_en.md"><img src="https://img.shields.io/badge/doc-English-red.svg?style=popout-square"></a>
     <a href="http://hits.dwyl.io/joey66666/Leava" alt="hit count"><img src="http://hits.dwyl.io/joey66666/Leava.svg" /></a> 
   </p>
