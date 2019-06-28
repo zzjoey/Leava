@@ -76,7 +76,15 @@
 
 [More screen shots](https://github.com/joey66666/Leava/tree/master/docs/screenshot)
 
+### 依赖
+
+[flask](https://github.com/pallets/flask)
+
+[flask_sqlalchemy](https://github.com/pallets/flask-sqlalchemy)
+
+[werkzeug.security](https://github.com/pallets/werkzeug)
 
 ### 致谢
 
 [Fuhaixu](https://github.com/Fuhaixu)、ZYN、[xuyongxiang](https://github.com/xuyongxiang134)
+
