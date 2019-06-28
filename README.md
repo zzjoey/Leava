@@ -80,6 +80,8 @@
 
 [flask](https://github.com/pallets/flask)
 
+[sqlalchemy](https://github.com/zzzeek/sqlalchemy)
+
 [flask_sqlalchemy](https://github.com/pallets/flask-sqlalchemy)
 
 [werkzeug.security](https://github.com/pallets/werkzeug)
