@@ -70,12 +70,15 @@ Faculty receive request
     |   teacher2_id    |                faculty's id                 |     decimal-26     |
     |      ensure      |             route of picture              |  varchar-255  |
 
-2. Install required library
+2. Install dependencies
 
-- flask
-- flask_sqlalchemy
-- werkzeug
-- sqlalchemy
+- [flask](https://github.com/pallets/flask)
+
+- [sqlalchemy](https://github.com/zzzeek/sqlalchemy)
+
+- [flask_sqlalchemy](https://github.com/pallets/flask-sqlalchemy)
+
+- [werkzeug.security](https://github.com/pallets/werkzeug)
 
 ## Start backend server
 
@@ -110,10 +113,3 @@ Screenshots
 
 [More screen shots](docs/screenshot)
 
-### Dependency
-
-[flask](https://github.com/pallets/flask)
-
-[flask_sqlalchemy](https://github.com/pallets/flask-sqlalchemy)
-
-[werkzeug.security](https://github.com/pallets/werkzeug)
