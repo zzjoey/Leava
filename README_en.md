@@ -110,4 +110,10 @@ Screenshots
 
 [More screen shots](docs/screenshot)
 
+### Dependency
 
+[flask](https://github.com/pallets/flask)
+
+[flask_sqlalchemy](https://github.com/pallets/flask-sqlalchemy)
+
+[werkzeug.security](https://github.com/pallets/werkzeug)
