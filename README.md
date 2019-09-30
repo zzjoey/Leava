@@ -29,10 +29,7 @@
 
 **如何启动**
 
-- 在本地建立数据库，详见[数据库设计](https://github.com/joey66666/Leava/blob/master/docs/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1.md)
-- 在[RESTful_backend](https://github.com/joey66666/Leava/tree/master/backend/RESTful_backend.py)中配置数据库连接(Line: 32 & 368) 并启动
-- 在微信web开发者工具中新建小程序项目，选择空目录创建并复制粘贴 [frontend](https://github.com/joey66666/Leava/tree/master/frontend) 中文件
-- 开始使用
+![搭建指南](https://github.com/joey66666/Leava/issues/10)
 
 **用户需求**：
 
