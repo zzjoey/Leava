@@ -29,7 +29,7 @@
 
 **如何启动**
 
-![搭建指南](https://github.com/joey66666/Leava/issues/10)
+[搭建指南](https://github.com/joey66666/Leava/issues/10)
 
 **用户需求**：
 
