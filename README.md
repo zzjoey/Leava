@@ -15,7 +15,7 @@
 
 [English Version](https://github.com/joey66666/Leava/blob/master/README_en.md)
 
-**👋🏻仓库路径声明**
+### 👋🏻仓库路径声明
 
 - [Images&UI](https://github.com/joey66666/Leava/tree/master/Images%26UI/UI%E5%9B%BEpng) 为设计图和icon，logo
 
@@ -25,11 +25,11 @@
 
 - [docs](https://github.com/joey66666/Leava/tree/master/docs) 为数据库设计文档，调试记录，流程图和真机调试截图
 
-**💡如何启动**
+### 💡如何启动
 
 [搭建指南](https://github.com/joey66666/Leava/issues/10)
 
-**用户需求**：
+### 🗣用户需求：
 
 - 学生提交请假请求，查看自己的请假详情和请假是否被批准等情况
 
@@ -51,21 +51,15 @@
 
 数据库：MySQL
 
-***
-
-## 🖇功能流程
+### 🖇功能流程
 
 ![功能流程](https://github.com/joey66666/Leava/blob/master/docs/%E8%AF%B7%E5%81%87%E7%B3%BB%E7%BB%9F%E6%B5%81%E7%A8%8B%E5%8A%9F%E8%83%BD%E5%9B%BE.jpg)
 
-***
-
-## 🔩架构设计
+### 🔩架构设计
 
 ![ 架构设计](https://github.com/joey66666/Leava/blob/master/docs/%E8%AF%B7%E5%81%87%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.jpg)
 
-***
-
-## 📸最终效果
+### 📸最终效果
 
 ![demo](https://github.com/joey66666/Leava/blob/master/docs/final_demo.jpg)
 
