@@ -17,7 +17,7 @@
 
 ### 👋🏻仓库路径声明
 
-- [Images&UI](https://github.com/joey66666/Leava/tree/master/Images%26UI/UI%E5%9B%BEpng) 为设计图和icon，logo
+- [Images&UI](https://github.com/joey66666/Leava/tree/master/Images%26UI/UI%E5%9B%BEpng) 为UI图
 
 - [frontend](https://github.com/joey66666/Leava/tree/master/frontend) 为微信小程序源代码
 
