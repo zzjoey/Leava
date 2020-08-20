@@ -1,4 +1,4 @@
-![logo](https://github.com/joey66666/Leava/blob/master/docs/logo/Leava.png)
+<!-- ![logo](https://github.com/joey66666/Leava/blob/master/docs/logo/Leava.png)
 
 # Leava
 
@@ -7,6 +7,26 @@ Leave Management Wechat-MiniProgram based on Flask
 [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg?style=popout-square)](./LICENSE)  [![GitHub](https://img.shields.io/badge/doc-中文版-red.svg?style=popout-square)](README.md)
 
 Leava project contains the following components:
+
+ -->
+
+ <p align="center">
+  <a href="https://github.com/joey66666/Leava">
+    <img src="https://github.com/joey66666/Leava/blob/master/docs/logo/Leava.png"  width="152">
+  </a>
+  <h1 align="center">Leava</h1>
+  <p align="center">
+    <a href="https://github.com/joey66666/Leava/blob/master/LICENSE_cn"><img src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-%E5%8F%8D996-red.svg?style=popout-square"></a>
+    <a href="https://github.com/joey66666/Leava/blob/master/README_en.md"><img src="https://img.shields.io/badge/doc-English-blue.svg?style=popout-square"></a>
+    <a href="http://hits.dwyl.io/joey66666/Leava" alt="hit count"><img src="http://hits.dwyl.io/joey66666/Leava.svg" /></a> 
+  </p>
+  <p align="center">
+    Leave Management Wechat-MiniProgram based on Flask<br>
+  </p>
+</p>
+
+
+
 
 - [A RESTful API based on Flask](backend/RESTful_backend.py)
 
