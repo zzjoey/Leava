@@ -29,6 +29,8 @@
 
 [搭建指南](https://github.com/joey66666/Leava/issues/10)
 
+任何问题请在[Discussions](https://github.com/joey66666/Leava/discussions)中提问
+
 
 1. 建立数据库
    
