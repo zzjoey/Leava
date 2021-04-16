@@ -249,7 +249,7 @@ def search_t_id():
         else:
             data = request.get_json()
             school = data['school']
-            result = search_t_id(school)
+            result = search_tea_id(school)
             return (result)
 
     else:
@@ -601,7 +601,7 @@ def update_leave(leave_num, flag):
         return jsonify("False")
 
 
-def search_t_id(school):
+def search_tea_id(school):
     result = teacher.query.filter_by(school=school).all()
     if result is None:
         return jsonify("None")
