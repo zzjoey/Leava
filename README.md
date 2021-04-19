@@ -67,7 +67,7 @@
 
     |       name        |               explanation               | type-length |
     | :--------------: | :-----------------------------------------: | :-----------: |
-    | leave_num(pri key) |                  unique index                   |  decimal-65   |
+    | leave_num(pri key) |                  unique index                   |  int-4   |
     |    student_id    |     reference on student(student_id)      |  decimal-65   |
     |    start_time    |                start time                 |  datetime-0   |
     |     end_time     |                end time                 |  datetime-0   |
