@@ -11,7 +11,7 @@ from sqlalchemy import create_engine, MetaData, Table
 
 app = Flask('test')
 
-# # 配置数据库连接
+# 配置数据库连接
 mysql_connect_url = 'mysql+mysqlconnector://root:123456@localhost:3306/leava?auth_plugin=mysql_native_password'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = mysql_connect_url
