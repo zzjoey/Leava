@@ -5,8 +5,8 @@
   <h1 align="center">Leava</h1>
   <p align="center">
     <a href="https://github.com/zzjoey/Leava/blob/master/LICENSE_cn"><img src="https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF%E8%AF%81-%E5%8F%8D996-red.svg?style=popout-square"></a>
-    <a href="https://github.com/zzjoey/Leava/blob/master/README_en.md"><img src="https://img.shields.io/badge/doc-English-blue.svg?style=popout-square"></a>
-    <a href="http://hits.dwyl.io/zzjoey/Leava" alt="hit count"><img src="http://hits.dwyl.io/joey66666/Leava.svg" /></a> 
+<!--     <a href="https://github.com/zzjoey/Leava/blob/master/README_en.md"><img src="https://img.shields.io/badge/doc-English-blue.svg?style=popout-square"></a> -->
+<!--     <a href="http://hits.dwyl.io/zzjoey/Leava" alt="hit count"><img src="http://hits.dwyl.io/joey66666/Leava.svg" /></a>  -->
   </p>
   <p align="center">
     基于Flask + MySQL的在线请假微信小程序<br>
