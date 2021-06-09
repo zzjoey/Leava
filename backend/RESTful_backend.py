@@ -1,40 +1,66 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time:               2018/8/5 11:14
-# @Author:            Joey66666
+# @Time:            2021/6/9
+# @Author:          zzJoey
 # @Software         VSCode
 
-import json
-import logging
-import time
-import base64
-
-from decimal import *
-
-from flask import Flask, jsonify, abort, request
+from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-
-from sqlalchemy import create_engine, MetaData, create_engine, MetaData, Table, Column, Date, Integer, String, ForeignKey
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.dialects.mysql import \
-    BIGINT, BINARY, BIT, BLOB, BOOLEAN, CHAR, DATE, \
-    DATETIME, DECIMAL, DECIMAL, DOUBLE, ENUM, FLOAT, INTEGER, \
-    LONGBLOB, LONGTEXT, MEDIUMBLOB, MEDIUMINT, MEDIUMTEXT, NCHAR, \
-    NUMERIC, NVARCHAR, REAL, SET, SMALLINT, TEXT, TIME, TIMESTAMP, \
-    TINYBLOB, TINYINT, TINYTEXT, VARBINARY, VARCHAR, YEAR
-
+from sqlalchemy import create_engine, MetaData, Table
 
 app = Flask('test')
 
 # # 配置数据库连接
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://user:passwd@IP:port/DB'
+mysql_connect_url = 'mysql+mysqlconnector://root:123456@localhost:3306/leava?auth_plugin=mysql_native_password'
+
+app.config['SQLALCHEMY_DATABASE_URI'] = mysql_connect_url
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
-
 db = SQLAlchemy(app)
+
+
+class student(db.Model):
+    __tablename__ = 'student'
+    student_id = db.Column(db.INT, primary_key=True)
+    name = db.Column(db.VARCHAR(255))
+    s_class = db.Column(db.VARCHAR(255))
+    passwd = db.Column(db.VARCHAR(255))
+    room = db.Column(db.VARCHAR(255))
+    school = db.Column(db.VARCHAR(255))
+
+    def to_dict(self):
+        return {c.name: getattr(self, c.name, None) for c in self.__table__.columns}
+
+
+class teacher(db.Model):
+    __tablename__ = 'teacher'
+    teacher_id = db.Column(db.INT, primary_key=True)
+    name = db.Column(db.VARCHAR(255))
+    passwd = db.Column(db.VARCHAR(255))
+    role = db.Column(db.VARCHAR(2))
+    school = db.Column(db.VARCHAR(255))
+
+    def to_dict(self):
+        return {c.name: getattr(self, c.name, None) for c in self.__table__.columns}
+
+
+class leave(db.Model):
+    __tablename__ = 'leave'
+    leave_num = db.Column(db.INT, primary_key=True)
+    student_id = db.Column(db.INT)
+    start_time = db.Column(db.DATETIME)
+    end_time = db.Column(db.DATETIME)
+    reason = db.Column(db.VARCHAR(255))
+    flag = db.Column(db.VARCHAR(2))
+    teacher1_id = db.Column(db.INT)
+    teacher2_id = db.Column(db.INT)
+    type = db.Column(db.VARCHAR(2))
+    ensure = db.Column(db.VARCHAR(255))
+
+    def to_dict(self):
+        return {c.name: getattr(self, c.name, None) for c in self.__table__.columns}
 
 
 @app.route('/')
@@ -53,6 +79,7 @@ def login():
             rec_id = data['userId']
             rec_pwd = data['userPwd']
 
+            # id长度为6，教师
             if len(str(rec_id)) == 6:
                 db_data = search_t(str(rec_id))
                 if (db_data) is None:
@@ -60,54 +87,50 @@ def login():
                     return_data['flag'] = '0'
                     return jsonify(return_data)
                 else:
-                    db_id = str(
-                        Decimal(db_data['teacher_id']).quantize(Decimal('0')))
+                    db_id = str(db_data['teacher_id'])
                     db_name = db_data['name']
                     db_pwd = db_data['passwd']
                     db_role = db_data['role']
                     db_school = db_data['school']
 
-                    if check_password_hash(str(db_pwd),str(rec_pwd)) is not True:
+                    if check_password_hash(str(db_pwd), str(rec_pwd)) is not True:
                         return_data = dict()
                         return_data['flag'] = '1'
                         return_data['teacher_id'] = rec_id
                         return jsonify(return_data)
-                    elif check_password_hash(str(db_pwd),str(rec_pwd)) is True:
+                    elif check_password_hash(str(db_pwd), str(rec_pwd)) is True:
                         return_data = dict()
-                        db_id = str(
-                            Decimal(db_data['teacher_id']).quantize(Decimal('0')))
+                        db_id = db_data['teacher_id']
                         return_data['teacher_id'] = db_id
                         return_data['name'] = db_name
                         return_data['role'] = db_role
                         return_data['school'] = db_school
                         return_data['flag'] = '2'
-
                         return (jsonify(return_data))
+
+            # id长度为9，学生
             if len(str(rec_id)) == 9:
-                db_data = search_s(str(rec_id))
+                db_data = search_s(rec_id)
                 if (db_data) is None:
                     return_data = dict()
                     return_data['flag'] = '0'
                     return jsonify(return_data)
 
                 else:
-                    db_id = str(
-                        Decimal(db_data['student_id']).quantize(Decimal('0')))
+                    db_id = db_data['student_id']
                     db_name = db_data['name']
                     db_pwd = db_data['passwd']
                     db_class = db_data['s_class']
                     db_room = db_data['room']
-                    if check_password_hash(str(db_pwd),str(rec_pwd)) is not True:
+                    if check_password_hash(str(db_pwd), str(rec_pwd)) is not True:
                         return_data = dict()
                         return_data['flag'] = '1'
                         return_data['student_id'] = rec_id
                         return jsonify(return_data)
 
-
-                    elif check_password_hash(str(db_pwd),str(rec_pwd)) is True:
+                    elif check_password_hash(str(db_pwd), str(rec_pwd)) is True:
                         return_data = dict()
-                        db_id = str(
-                            Decimal(db_data['student_id']).quantize(Decimal('0')))
+                        db_id = db_data['student_id']
                         return_data['student_id'] = db_id
                         return_data['name'] = db_name
                         return_data['s_class'] = db_data['s_class']
@@ -116,15 +139,12 @@ def login():
                         return (jsonify(return_data))
 
             else:
-
                 return_data = dict()
                 return_data['flag'] = '0'
                 return jsonify(return_data)
 
-
     else:
         return jsonify('not POST method')
-
 
 
 @app.route("/student/ask_leave", methods=['GET', 'POST'])
@@ -135,7 +155,6 @@ def ask_leave():
         else:
             try:
                 data = request.get_json()
-
                 student_id = data['student_id']
                 start_time = data['start_time']
                 end_time = data['end_time']
@@ -145,16 +164,13 @@ def ask_leave():
                 teacher2_id = data['teacher2_id']
                 s_type = data['type']
                 ensure = data['ensure']
-
-                insert = insert_leave(student_id, start_time, end_time, reason, flag, teacher1_id, teacher2_id, s_type,
+                insert = insert_leave(int(student_id), start_time, end_time, reason, int(flag), int(teacher1_id),
+                                      int(teacher2_id), int(s_type),
                                       ensure)
-                if (insert == True):
-                    return ('True')
-                else:
-                    return ('False')
+                return 'True'
 
             except Exception:
-                return("ERROR")
+                return "ERROR"
 
     else:
         return jsonify('not POST method')
@@ -175,7 +191,6 @@ def search_s_leave():
         return jsonify("not POST")
 
 
-
 @app.route("/student/search_leave_detail", methods=['GET', 'POST'])
 def search_s_leave_detail():
     if request.method == 'POST':
@@ -189,7 +204,6 @@ def search_s_leave_detail():
 
     else:
         return jsonify("not POST")
-
 
 
 @app.route("/teacher/search_leave", methods=['GET', 'POST'])
@@ -207,7 +221,6 @@ def search_t_leave():
         return jsonify("not POST")
 
 
-
 @app.route("/teacher2/search_leave", methods=['GET', 'POST'])
 def search_t2_leave():
     if request.method == 'POST':
@@ -221,7 +234,6 @@ def search_t2_leave():
 
     else:
         return jsonify("not POST")
-
 
 
 @app.route("/teacher/update_leave", methods=['GET', 'POST'])
@@ -240,7 +252,6 @@ def update_leave():
         return jsonify("not POST")
 
 
-
 @app.route("/teacher/search_id", methods=['GET', 'POST'])
 def search_t_id():
     if request.method == 'POST':
@@ -254,7 +265,6 @@ def search_t_id():
 
     else:
         return jsonify("not POST")
-
 
 
 @app.route("/change_pwd", methods=['GET', 'POST'])
@@ -277,74 +287,34 @@ def change_pwd():
         return jsonify('not POST method')
 
 
-@app.route("/search_name",methods=['GET','POST'])
+@app.route("/search_name", methods=['GET', 'POST'])
 def search_name():
     if (request.method == 'POST'):
         if not (request.json):
             return jsonify('not json')
         else:
             # try:
-                data = request.get_json()
-                rec_name = data['name']
-                try:
-                    return_data=search_name(rec_name)
-                except:
-                    return jsonify("name is not exist")
-                else:
-                    return jsonify(return_data)
+            data = request.get_json()
+            rec_name = data['name']
+            try:
+                return_data = search_name(rec_name)
+            except:
+                return jsonify("name is not exist")
+            else:
+                return jsonify(return_data)
 
     else:
         return jsonify('not POST method')
 
 
-class student(db.Model):
-    __tablename__ = 'student'
-    student_id = db.Column(db.DECIMAL(65), primary_key=True)
-    name = db.Column(db.VARCHAR(255))
-    s_class = db.Column(db.VARCHAR(255))
-    passwd = db.Column(db.VARCHAR(255))
-    room = db.Column(db.VARCHAR(255))
-    school = db.Column(db.VARCHAR(255))
-
-    def to_dict(self):
-        return {c.name: getattr(self, c.name, None) for c in self.__table__.columns}
-
-
-class teacher(db.Model):
-    __tablename__ = 'teacher'
-    teacher_id = db.Column(db.DECIMAL(65), primary_key=True)
-    name = db.Column(db.VARCHAR(255))
-    passwd = db.Column(db.VARCHAR(255))
-    role = db.Column(db.VARCHAR(2))
-    school = db.Column(db.VARCHAR(255))
-
-    def to_dict(self):
-        return {c.name: getattr(self, c.name, None) for c in self.__table__.columns}
-
-
-class leave(db.Model):
-    __tablename__ = 'leave'
-    leave_num = db.Column(db.DECIMAL(65), primary_key=True)
-    student_id = db.Column(db.DECIMAL(65))
-    start_time = db.Column(db.DATETIME)
-    end_time = db.Column(db.DATETIME)
-    reason = db.Column(db.VARCHAR(255))
-    flag = db.Column(db.VARCHAR(2))
-    teacher1_id = db.Column(db.DECIMAL(65))
-    teacher2_id = db.Column(db.DECIMAL(65))
-    type = db.Column(db.VARCHAR(2))
-    ensure = db.Column(db.VARCHAR(255))
-
-    def to_dict(self):
-        return {c.name: getattr(self, c.name, None) for c in self.__table__.columns}
-
 # 字符串转二进制
 def b_encode(s):
-    return(''.join([bin(ord(c)).replace('0b', '')for c in s]))
+    return (''.join([bin(ord(c)).replace('0b', '') for c in s]))
+
 
 # 二进制转字符串
 def b_decode(s):
-    return(''.join([chr(i)for i in [int(b, 2)for b in s.split('')]]))
+    return (''.join([chr(i) for i in [int(b, 2) for b in s.split('')]]))
 
 
 def search_t(id):
@@ -364,12 +334,12 @@ def search_s(id):
 
 
 def insert_leave(student_id, start_time, end_time, reason, flag, teacher1_id, teacher2_id, s_type, ensure):
-    engine = create_engine(
-        'mysql+mysqlconnector://user:passwd@IP:port/DB')
+    engine = create_engine(mysql_connect_url)
     metadata = MetaData(engine)
-    # 连接数据表
-    leave_table = Table('leave', metadata, autoload=True)
-    try:  # 创建 insert 对象
+    try:
+        # 连接数据表
+        leave_table = Table('leave', metadata, autoload=True)
+        # 创建 insert 对象
         ins = leave_table.insert()
         # 绑定要插入的数据
         ins = ins.values(student_id=student_id, start_time=start_time, end_time=end_time, reason=reason, flag=flag,
@@ -378,10 +348,9 @@ def insert_leave(student_id, start_time, end_time, reason, flag, teacher1_id, te
         conn = engine.connect()
         # 执行语句
         result = conn.execute(ins)
-        return (True)
+        return True
     except:
-        print(result)
-        return (False)
+        return False
 
 
 def search_stu_leave(id):
@@ -400,10 +369,8 @@ def search_stu_leave(id):
             end_time = str(result[i].to_dict()['end_time'])
             reason = result[i].to_dict()['reason']
             flag = result[i].to_dict()['flag']
-            teacher1_id = str(Decimal(result[i].to_dict()[
-                              'teacher1_id']).quantize(Decimal('0')))
-            teacher2_id = str(Decimal(result[i].to_dict()[
-                              'teacher2_id']).quantize(Decimal('0')))
+            teacher1_id = result[i].to_dict()['teacher1_id']
+            teacher2_id = result[i].to_dict()['teacher2_id']
             data_type = result[i].to_dict()['type']
             ensure = result[i].to_dict()['ensure']
 
@@ -433,8 +400,7 @@ def search_stu_leave_detail(id):
         while i < result_length:
             temp_data = dict()
 
-            student_id = str(Decimal(result[i].to_dict()[
-                             'student_id']).quantize(Decimal('0')))
+            student_id = result[i].to_dict()['student_id']
             name = result[i].to_dict()['name']
             s_class = result[i].to_dict()['s_class']
             room = result[i].to_dict()['room']
@@ -460,16 +426,13 @@ def search_tea_leave(id):
             temp_data = dict()
 
             leave_num = result[i].to_dict()['leave_num']
-            student_id = str(Decimal(result[i].to_dict()[
-                             'student_id']).quantize(Decimal('0')))
+            student_id = result[i].to_dict()['student_id']
             start_time = str(result[i].to_dict()['start_time'])
             end_time = str(result[i].to_dict()['end_time'])
             reason = result[i].to_dict()['reason']
             flag = result[i].to_dict()['flag']
-            teacher1_id = str(Decimal(result[i].to_dict()[
-                              'teacher1_id']).quantize(Decimal('0')))
-            teacher2_id = str(Decimal(result[i].to_dict()[
-                              'teacher2_id']).quantize(Decimal('0')))
+            teacher1_id = result[i].to_dict()['teacher1_id']
+            teacher2_id = result[i].to_dict()['teacher2_id']
             data_type = result[i].to_dict()['type']
             ensure = result[i].to_dict()['ensure']
 
@@ -504,16 +467,13 @@ def search_tea2_leave(id):
             temp_data = dict()
 
             leave_num = result[i].to_dict()['leave_num']
-            student_id = str(Decimal(result[i].to_dict()[
-                             'student_id']).quantize(Decimal('0')))
+            student_id = result[i].to_dict()['student_id']
             start_time = str(result[i].to_dict()['start_time'])
             end_time = str(result[i].to_dict()['end_time'])
             reason = result[i].to_dict()['reason']
             flag = result[i].to_dict()['flag']
-            teacher1_id = str(Decimal(result[i].to_dict()[
-                              'teacher1_id']).quantize(Decimal('0')))
-            teacher2_id = str(Decimal(result[i].to_dict()[
-                              'teacher2_id']).quantize(Decimal('0')))
+            teacher1_id = result[i].to_dict()['teacher1_id']
+            teacher2_id = result[i].to_dict()['teacher2_id']
             data_type = result[i].to_dict()['type']
             ensure = result[i].to_dict()['ensure']
             temp_data['leave_num'] = leave_num
@@ -539,14 +499,15 @@ def search_s_name(name):
     else:
         return (result.to_dict())
 
+
 def search_name(name):
     student_data = search_s_name(name)
-    student_id=str(Decimal(student_data['student_id']).quantize(Decimal('0')))
-    student_name=student_data['name']
-    student_class=student_data['s_class']
-    student_room=student_data['room']
-    student_school=student_data['school']
-    
+    student_id = student_data['student_id']
+    student_name = student_data['name']
+    student_class = student_data['s_class']
+    student_room = student_data['room']
+    student_school = student_data['school']
+
     result = leave.query.filter_by(student_id=student_id).all()
 
     if result is None:
@@ -563,11 +524,10 @@ def search_name(name):
             end_time = str(result[i].to_dict()['end_time'])
             reason = result[i].to_dict()['reason']
             flag = result[i].to_dict()['flag']
-            teacher1_id = str(Decimal(result[i].to_dict()['teacher1_id']).quantize(Decimal('0')))
-            teacher2_id = str(Decimal(result[i].to_dict()['teacher2_id']).quantize(Decimal('0')))
+            teacher1_id = result[i].to_dict()['teacher1_id']
+            teacher2_id = result[i].to_dict()['teacher2_id']
             data_type = result[i].to_dict()['type']
             ensure = result[i].to_dict()['ensure']
-
 
             temp_data['leave_num'] = leave_num
             temp_data['start_time'] = start_time
@@ -578,16 +538,15 @@ def search_name(name):
             temp_data['teacher2_id'] = teacher2_id
             temp_data['type'] = data_type
             temp_data['ensure'] = ensure
-            temp_data['student_id']=student_id
-            temp_data['class']=student_class
-            temp_data['room']=student_room
-            temp_data['school']=student_school
-            temp_data['name']=student_name
+            temp_data['student_id'] = student_id
+            temp_data['class'] = student_class
+            temp_data['room'] = student_room
+            temp_data['school'] = student_school
+            temp_data['name'] = student_name
 
             return_data[i] = temp_data
             i += 1
         return (return_data)
-
 
 
 def update_leave(leave_num, flag):
@@ -612,8 +571,7 @@ def search_tea_id(school):
         while i < result_length:
             temp_data = dict()
 
-            teacher_id = str(Decimal(result[i].to_dict()[
-                             'teacher_id']).quantize(Decimal('0')))
+            teacher_id = result[i].to_dict()['teacher_id']
             name = result[i].to_dict()['name']
             role = result[i].to_dict()['role']
             temp_data['teacher_id'] = teacher_id
@@ -648,5 +606,4 @@ def change_passwd(userId, userPwd):
 
 
 if __name__ == '__main__':
-    # db = None
     app.run(host='0.0.0.0', port=80, debug=True)
