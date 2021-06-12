@@ -17,13 +17,11 @@
 
 ### 👋🏻仓库路径声明
 
-- [Images&UI](https://github.com/zzjoey/Leava/tree/master/Images%26UI/UI%E5%9B%BEpng) 为UI图
-
 - [frontend](https://github.com/zzjoey/Leava/tree/master/frontend) 为微信小程序源代码
 
 - [backend](https://github.com/zzjoey/Leava/tree/master/backend) 为后端源代码和`db` `sql`语句
 
-- [docs](https://github.com/zzjoey/Leava/tree/master/docs) 为设计文档
+- [docs](https://github.com/zzjoey/Leava/tree/master/docs) 为文档，功能流程，架构设计，UI
 
 
 ### 💡如何启动
