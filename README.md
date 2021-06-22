@@ -68,14 +68,6 @@ API
 
 数据库：MySQL
 
-### 🖇功能流程
-
-![功能流程](https://github.com/joey66666/Leava/blob/master/docs/%E8%AF%B7%E5%81%87%E7%B3%BB%E7%BB%9F%E6%B5%81%E7%A8%8B%E5%8A%9F%E8%83%BD%E5%9B%BE.jpg)
-
-### 🔩架构设计
-
-![ 架构设计](https://github.com/joey66666/Leava/blob/master/docs/%E8%AF%B7%E5%81%87%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.jpg)
-
 ### 📸最终效果
 
 ![demo](https://github.com/joey66666/Leava/blob/master/docs/final_demo.jpg)
@@ -83,7 +75,15 @@ API
 [More screen shots](https://github.com/joey66666/Leava/tree/master/docs/screenshot)
 
 
+### 🖇功能流程
+
+![功能流程](https://github.com/zzjoey/Leava/blob/master/docs/%E5%8A%9F%E8%83%BD%E6%B5%81%E7%A8%8B.jpg)
+
+### 🔩架构设计
+
+![ 架构设计](https://github.com/zzjoey/Leava/blob/master/docs/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1.jpg)
+
+
 ### 👍🏻致谢
 
 [Fuhaixu](https://github.com/Fuhaixu)、ZYN、[xuyongxiang](https://github.com/xuyongxiang134)
-
