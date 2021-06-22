@@ -5,12 +5,12 @@ USE leava;
 DROP TABLE IF EXISTS student;
 CREATE TABLE student
 (
-    student_id INT PRIMARY KEY NOT NULL, #学生id
-    name       VARCHAR(255)    NOT NULL, #学生姓名
-    s_class    VARCHAR(255)    NOT NULL, #学生班级
-    passwd     VARCHAR(255)    NOT NULL, #密码
-    room       VARCHAR(255)    NOT NULL, #学生宿舍
-    school     VARCHAR(255)    NOT NULL  #所属学院
+    student_id INT PRIMARY KEY NOT NULL, # 学生id
+    name       VARCHAR(255)    NOT NULL, # 学生姓名
+    s_class    VARCHAR(255)    NOT NULL, # 学生班级
+    passwd     VARCHAR(255)    NOT NULL, # 密码
+    room       VARCHAR(255)    NOT NULL, # 学生宿舍
+    school     VARCHAR(255)    NOT NULL  # 所属学院
 );
 
 
@@ -18,19 +18,27 @@ CREATE TABLE student
 DROP TABLE IF EXISTS teacher;
 CREATE TABLE teacher
 (
-    teacher_id INT PRIMARY KEY NOT NULL, #教师id
-    name       VARCHAR(255)    NOT NULL, #教师姓名
-    passwd     VARCHAR(255)    NOT NULL, #密码
-    role       INT             NOT NULL, #教师身份：0 辅导员，1 任课老师
-    school     VARCHAR(255)    NOT NULL  #所属学院
+    teacher_id INT PRIMARY KEY NOT NULL, # 教师id
+    name       VARCHAR(255)    NOT NULL, # 教师姓名
+    passwd     VARCHAR(255)    NOT NULL, # 密码
+    role       INT             NOT NULL, # 教师身份(0辅导员，1任课老师)
+    school     VARCHAR(255)    NOT NULL  # 所属学院
 );
 
 # 请假表
 DROP TABLE IF EXISTS `leave`;
 CREATE TABLE `leave`
 (
-    leave_num  INT PRIMARY KEY NOT NULL AUTO_INCREMENT, #假条id
-    student_id INT             NOT NULL                 #学生id
+    leave_num   INT PRIMARY KEY NOT NULL AUTO_INCREMENT, # 假条id
+    student_id  INT             NOT NULL,                # 学生id
+    start_time  DATETIME,                                # 开始时间
+    end_time    DATETIME,                                # 结束时间
+    reason      VARCHAR(255),                            # 理由
+    flag        INT,                                     # 是否批准状态(0不通过，1待批准，2已批准)
+    type        INT,                                     # 类型(1事假，2病假，3其他)
+    teacher1_id INT,                                     # 辅导员id
+    teacher2_id INT,                                     # 任课教师id
+    ensure      varchar(255)                             # 凭证
 );
 
 
